@@ -3,7 +3,7 @@ IncludeFile "form.pbf"
 ;
 ;
 ;
-Structure Type
+Structure Type Align 2
   BasicTypeID.b
   CType.s
 EndStructure
@@ -12,7 +12,7 @@ Global NewList TypeList.Type()
 ;
 ;
 ;
-#PB_MAXBASICTYPES = 12
+#PB_MAXBASICTYPES = 13
 Global Dim PB_BasicType.s(#PB_MAXBASICTYPES)
 Global Dim ColumnNames.s(4)
 ColumnNames.s(0) = "C"
@@ -34,6 +34,7 @@ PB_BasicType.s(9) = "Quad,.q,8 bytes,-9223372036854775808 To +922337203685477580
 PB_BasicType.s(10) = "Double,.d,8 bytes,unlimited" 
 PB_BasicType.s(11) = "String,.s,string length + 1,unlimited"
 PB_BasicType.s(12) = "Fixed String,.s{Length},string length,unlimited"
+PB_BasicType.s(13) = "*,*,,pointer"
 
 
 ;
@@ -116,9 +117,9 @@ Repeat
   event = MainWindow_Events(WaitWindowEvent())
 Until event = #False
 
-; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 42
-; FirstLine = 24
+; IDE Options = PureBasic 6.03 LTS (Windows - x64)
+; CursorPosition = 36
+; FirstLine = 3
 ; Folding = --
 ; EnableXP
 ; DPIAware
