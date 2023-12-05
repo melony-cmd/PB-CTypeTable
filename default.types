@@ -1,0 +1,4 @@
+long,Long,.l,4 bytes,-2147483648 To +2147483647
+int,Integer32,.i,4 bytes (using 32-bit compiler),-2147483648 To +2147483647
+int,Integer64,.i,8 bytes (using 64-bit compiler),-9223372036854775808 To +9223372036854775807
+char,Character,.c,2 bytes,0 To +65535
