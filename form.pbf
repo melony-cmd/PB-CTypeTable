@@ -7,8 +7,6 @@
 ; Event procedures needs to be put in another source file.
 ;
 
-Global ST_Search
-
 Enumeration FormWindow
   #MainWindow
 EndEnumeration
@@ -19,6 +17,7 @@ Enumeration FormGadget
   #BT_Save
   #BT_Delete
   #BT_Add
+  #ST_Search
   #BT_Search
   #CB_PureTypes
 EndEnumeration
@@ -26,21 +25,22 @@ EndEnumeration
 Declare Delete(EventType)
 Declare Add(EventType)
 Declare Save(EventType)
+Declare Search(EventType)
 
-Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 425)
+Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 415)
   OpenWindow(#MainWindow, x, y, width, height, "CTypeTable", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
-  ListIconGadget(#LI_CTypeTable, 5, 40, 560, 315, "C", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
+  ListIconGadget(#LI_CTypeTable, 5, 35, 560, 315, "C", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
   AddGadgetColumn(#LI_CTypeTable, 1, "Name", 80)
   AddGadgetColumn(#LI_CTypeTable, 2, "E", 70)
   AddGadgetColumn(#LI_CTypeTable, 3, "Size", 60)
   AddGadgetColumn(#LI_CTypeTable, 4, "Range", 200)
-  StringGadget(#ST_Arguments, 5, 360, 405, 30, "")
-  ButtonGadget(#BT_Save, 515, 360, 50, 30, "Save")
-  ButtonGadget(#BT_Delete, 465, 360, 45, 30, "Delete")
-  ButtonGadget(#BT_Add, 415, 360, 45, 30, "Add")
-  ST_Search = StringGadget(#PB_Any, 5, 5, 510, 25, "")
-  ButtonGadget(#BT_Search, 520, 5, 45, 30, "Search")
-  ComboBoxGadget(#CB_PureTypes, 5, 395, 560, 25)
+  StringGadget(#ST_Arguments, 5, 355, 405, 25, "")
+  ButtonGadget(#BT_Save, 515, 355, 50, 25, "Save")
+  ButtonGadget(#BT_Delete, 465, 355, 45, 25, "Delete")
+  ButtonGadget(#BT_Add, 415, 355, 45, 25, "Add")
+  StringGadget(#ST_Search, 5, 5, 510, 25, "")
+  ButtonGadget(#BT_Search, 520, 5, 45, 25, "Search")
+  ComboBoxGadget(#CB_PureTypes, 5, 385, 560, 25)
 EndProcedure
 
 Procedure MainWindow_Events(event)
@@ -60,6 +60,8 @@ Procedure MainWindow_Events(event)
           Delete(EventType())          
         Case #BT_Add
           Add(EventType())          
+        Case #BT_Search
+          Search(EventType())          
       EndSelect
   EndSelect
   ProcedureReturn #True

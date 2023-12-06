@@ -9,6 +9,7 @@ Structure Type Align 2
 EndStructure
 
 Global NewList TypeList.Type()
+Global NewList SearchResults.s()
 ;
 ;
 ;
@@ -99,11 +100,45 @@ EndProcedure
 ;
 ;
 ;
+Procedure Search(eventType)
+  
+  ClearList(SearchResults())
+  
+  If GetGadgetText(#ST_Search)=""
+    ClearGadgetItems(#LI_CTypeTable)
+    Load()
+    ProcedureReturn 
+  EndIf
+    
+  For r = 0 To CountGadgetItems(#LI_CTypeTable)-1
+    lnout.s = ""
+    For c = 0 To GetGadgetAttribute(#LI_CTypeTable,#PB_ListIcon_ColumnCount)-1
+      lnout + GetGadgetItemText(#LI_CTypeTable,r,c) + ","
+    Next
+    
+    fpos = FindString(lnout,GetGadgetText(#ST_Search))    
+    If fpos
+      AddElement(SearchResults())
+      SearchResults() = lnout
+    EndIf      
+  Next
+  
+  ClearGadgetItems(#LI_CTypeTable)  
+  ForEach SearchResults()
+    Add_CTypeTable(SearchResults())
+  Next
+  
+EndProcedure
+
+;
+;
+;
 Procedure SetupMainWindow()
   For i = 0 To #PB_MAXBASICTYPES    
     AddGadgetItem(#CB_PureTypes,-1,PB_BasicType.s(i))
   Next
   SetGadgetState(#CB_PureTypes,0)
+  SetGadgetState(#CB_SearchColumn,0)
   Load()
 EndProcedure
 
@@ -118,8 +153,8 @@ Repeat
 Until event = #False
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x64)
-; CursorPosition = 36
-; FirstLine = 3
+; CursorPosition = 107
+; FirstLine = 89
 ; Folding = --
 ; EnableXP
 ; DPIAware
