@@ -3,7 +3,7 @@ IncludeFile "form.pbf"
 ;
 ;
 ;
-Structure Type Align 2
+Structure Type
   BasicTypeID.b
   CType.s
 EndStructure
@@ -138,8 +138,21 @@ Procedure SetupMainWindow()
     AddGadgetItem(#CB_PureTypes,-1,PB_BasicType.s(i))
   Next
   SetGadgetState(#CB_PureTypes,0)
-  SetGadgetState(#CB_SearchColumn,0)
   Load()
+EndProcedure
+
+;
+; [design in progress]
+;
+Procedure ProgArgs()  
+  For i = 0 To CountProgramParameters()
+    Select ProgramParameter(i)
+      Case "-s"
+        search.s = ProgramParameter(i+1)
+      Case "-c"
+        convert.s = ProgramParameter(i+1)
+    EndSelect
+  Next  
 EndProcedure
 
 ;
@@ -147,14 +160,16 @@ EndProcedure
 ;
 OpenMainWindow()
 SetupMainWindow()
+ProgArgs()
 
 Repeat 
   event = MainWindow_Events(WaitWindowEvent())
 Until event = #False
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x64)
-; CursorPosition = 107
-; FirstLine = 89
+; CursorPosition = 144
+; FirstLine = 120
 ; Folding = --
 ; EnableXP
 ; DPIAware
+; CommandLine = -s "thisiswhat you want"
