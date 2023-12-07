@@ -37,6 +37,31 @@ PB_BasicType.s(11) = "String,.s,string length + 1,unlimited"
 PB_BasicType.s(12) = "Fixed String,.s{Length},string length,unlimited"
 PB_BasicType.s(13) = "*,*,,pointer"
 
+;
+; LineStart,ColumnStart,LineEnd,ColumnEnd
+; LSxCSxLExCE
+;
+Procedure.s ReadSelection(arg_input.s)
+  filename.s = StringField(arg_input,1,",")
+  location.s = StringField(arg_input,2,",")
+     
+  ls = Val(StringField(location,1,"x"))
+  cs = Val(StringField(location,2,"x"))
+  le = Val(StringField(location,3,"x"))
+  ce = Val(StringField(location,4,"x"))
+    
+  If ReadFile(0,filename)
+    Repeat
+      inline.s = ReadString(0)
+      If i=ls-1
+        Break
+      EndIf      
+      i=i+1
+    Until Eof(0) <> 0
+    CloseFile(0)
+  EndIf
+  ProcedureReturn Mid(inline,cs,ce-cs)  
+EndProcedure
 
 ;
 ;
@@ -51,6 +76,7 @@ Procedure Add_CTypeTable(addln.s = "")
   EndIf
   AddGadgetItem(#LI_CTypeTable,-1,type+pbtype)  
 EndProcedure
+
 ;
 ;
 ;
@@ -142,15 +168,22 @@ Procedure SetupMainWindow()
 EndProcedure
 
 ;
-; [design in progress]
+;-[design in progress]
 ;
 Procedure ProgArgs()  
   For i = 0 To CountProgramParameters()
     Select ProgramParameter(i)
+      Case "-ui"
       Case "-s"
+        OpenConsole()
         search.s = ProgramParameter(i+1)
+        selection.s = ReadSelection(search)
+        SetGadgetText(#ST_Search,selection)
       Case "-c"
+        OpenConsole()
+
         convert.s = ProgramParameter(i+1)
+        PrintN(convert)
     EndSelect
   Next  
 EndProcedure
@@ -162,14 +195,16 @@ OpenMainWindow()
 SetupMainWindow()
 ProgArgs()
 
+
 Repeat 
   event = MainWindow_Events(WaitWindowEvent())
 Until event = #False
-
+CloseConsole()
 ; IDE Options = PureBasic 6.03 LTS (Windows - x64)
-; CursorPosition = 144
-; FirstLine = 120
+; CursorPosition = 178
+; FirstLine = 156
 ; Folding = --
 ; EnableXP
 ; DPIAware
+; Executable = CTypeTable.exe
 ; CommandLine = -s "thisiswhat you want"
