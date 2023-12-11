@@ -84,8 +84,8 @@ EndProcedure
 ;
 ;
 Procedure Add_Table(gadgetid.l,addln.s = "") ; #LI_CTypeTable
-  uniqueid = Val(StringField(addln,1,","))  
-  addln = RemoveString(addln,StringField(addln,1,",")+",")
+  uniqueid = Val(StringField(addln,1,","))    
+  addln = RemoveString(addln,Str(uniqueid)+",",#PB_String_NoCase,1,1)     
   addln_formated.s = ReplaceString(addln,",",Chr(10))    
   
   nitems = CountGadgetItems(gadgetid)    
@@ -128,6 +128,16 @@ Procedure Update_DefTypeList()
   Next
 EndProcedure
 
+;-----------------------------------------------------------------------------
+; User Interface Procedure Calls
+;-----------------------------------------------------------------------------
+
+;
+;
+;
+Procedure About(eventType)
+EndProcedure
+
 ;
 ;
 ;
@@ -138,7 +148,6 @@ EndProcedure
 ;
 ;
 Procedure Delete(eventType)
-  
   Select GetGadgetState(#MainPanel)
     Case #PANELTAB_PBTYPE
     Case #PANELTAB_CTYPE
@@ -152,7 +161,6 @@ Procedure Delete(eventType)
       DEBUG_Show_UserTypesDef()
       Update_DefTypeList()
   EndSelect  
-  ;
 EndProcedure
 
 ;
@@ -257,9 +265,9 @@ EndIf
 End
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 202
-; FirstLine = 149
-; Folding = +-
+; CursorPosition = 85
+; FirstLine = 45
+; Folding = +--
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

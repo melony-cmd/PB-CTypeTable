@@ -7,6 +7,8 @@
 ; Event procedures needs to be put in another source file.
 ;
 
+Global Text_2, Text_2_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Text_2_Copy1_Copy1
+
 Global Img_MainWindow_0, Img_MainWindow_1, Img_MainWindow_2, Img_MainWindow_3, Img_MainWindow_4
 
 Enumeration FormWindow
@@ -15,7 +17,6 @@ EndEnumeration
 
 Enumeration FormGadget
   #ST_TypeDef
-  #BT_Save
   #BT_Delete
   #BT_Insert
   #ST_Search
@@ -28,6 +29,9 @@ Enumeration FormGadget
   #CB_CTypes
   #ST_Min
   #ST_Max
+  #BT_Update
+  #ST_ByteSize
+  #ST_Extension
 EndEnumeration
 
 Enumeration FormMenu
@@ -48,12 +52,13 @@ Img_MainWindow_3 = LoadImage(#PB_Any,"D:\Work\Code\SDK\PureBasic-Devel\PureBasic
 Img_MainWindow_4 = LoadImage(#PB_Any,"D:\Work\Code\SDK\PureBasic-Devel\PureBasicIDE\data\SilkTheme\information.png")
 
 Declare CreateFile_Database(Event)
+Declare Save(Event)
+Declare About(Event)
 Declare Delete(EventType)
 Declare Insert(EventType)
-Declare Save(EventType)
 Declare Search(EventType)
 
-Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 500)
+Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 575)
   OpenWindow(#MainWindow, x, y, width, height, "CTypeTable", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
   CreateStatusBar(0, WindowID(#MainWindow))
   AddStatusBarField(100)
@@ -70,37 +75,46 @@ Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 500)
   MenuItem(#MenuItem_7, "About", ImageID(Img_MainWindow_4))
   MenuBar()
   MenuItem(#MenuItem_9, "Quit")
-  StringGadget(#ST_TypeDef, 5, 390, 150, 25, "")
+  StringGadget(#ST_TypeDef, 60, 390, 150, 25, "")
   GadgetToolTip(#ST_TypeDef, "TypeDef")
-  ButtonGadget(#BT_Save, 515, 425, 50, 25, "Save")
-  ButtonGadget(#BT_Delete, 465, 425, 45, 25, "Delete")
-  ButtonGadget(#BT_Insert, 415, 425, 45, 25, "Insert")
+  ButtonGadget(#BT_Delete, 505, 490, 60, 30, "Delete")
+  ButtonGadget(#BT_Insert, 440, 490, 60, 30, "Insert")
   StringGadget(#ST_Search, 5, 5, 510, 25, "")
   ButtonGadget(#BT_Search, 520, 5, 45, 25, "Search")
-  ComboBoxGadget(#CB_PureTypes, 165, 420, 150, 25)
+  ComboBoxGadget(#CB_PureTypes, 285, 450, 120, 25)
   PanelGadget(#MainPanel, 5, 35, 560, 350)
   AddGadgetItem(#MainPanel, -1, "PureBasic Types")
-  ListIconGadget(#LI_PBTypeTable, 5, 3, 550, 320, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
-  AddGadgetColumn(#LI_PBTypeTable, 1, "E", 100)
+  ListIconGadget(#LI_PBTypeTable, 5, 3, 545, 315, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  AddGadgetColumn(#LI_PBTypeTable, 1, "Extension", 100)
   AddGadgetColumn(#LI_PBTypeTable, 2, "ByteSize", 100)
   AddGadgetColumn(#LI_PBTypeTable, 3, "MinRage", 100)
   AddGadgetColumn(#LI_PBTypeTable, 4, "MaxRage", 100)
   AddGadgetItem(#MainPanel, -1, "C Types")
-  ListIconGadget(#LI_CTypeTable, 5, 3, 550, 320, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  ListIconGadget(#LI_CTypeTable, 5, 3, 545, 315, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
   AddGadgetColumn(#LI_CTypeTable, 1, "ByteSize", 100)
   AddGadgetColumn(#LI_CTypeTable, 2, "MinRange", 100)
   AddGadgetColumn(#LI_CTypeTable, 3, "MaxRange", 100)
   AddGadgetColumn(#LI_CTypeTable, 4, "PBType", 100)
   AddGadgetItem(#MainPanel, -1, "DefTypes")
-  ListIconGadget(#LI_DefTypeTable, 5, 3, 550, 320, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  ListIconGadget(#LI_DefTypeTable, 5, 3, 545, 315, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
   AddGadgetColumn(#LI_DefTypeTable, 1, "CType", 100)
   AddGadgetColumn(#LI_DefTypeTable, 2, "PBType", 100)
   CloseGadgetList()
-  ComboBoxGadget(#CB_CTypes, 5, 420, 150, 25)
-  StringGadget(#ST_Min, 165, 390, 150, 25, "")
+  ComboBoxGadget(#CB_CTypes, 60, 450, 115, 25)
+  StringGadget(#ST_Min, 285, 390, 120, 25, "")
   GadgetToolTip(#ST_Min, "Min Value")
-  StringGadget(#ST_Max, 325, 390, 150, 25, "")
+  StringGadget(#ST_Max, 285, 420, 120, 25, "")
   GadgetToolTip(#ST_Max, "Max Value")
+  ButtonGadget(#BT_Update, 375, 490, 60, 30, "Update")
+  Text_2 = TextGadget(#PB_Any, 212, 423, 70, 25, "Max Range:", #PB_Text_Right)
+  Text_2_Copy1 = TextGadget(#PB_Any, 212, 393, 70, 25, "Min Range:", #PB_Text_Right)
+  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 5, 393, 50, 25, "TypeDef:", #PB_Text_Right)
+  Text_2_Copy1 = TextGadget(#PB_Any, 212, 453, 70, 25, "PBTypes:", #PB_Text_Right)
+  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 5, 453, 50, 25, "C Types:", #PB_Text_Right)
+  StringGadget(#ST_ByteSize, 60, 420, 150, 25, "")
+  Text_2_Copy1 = TextGadget(#PB_Any, 5, 423, 50, 25, "ByteSize:", #PB_Text_Right)
+  StringGadget(#ST_Extension, 475, 390, 60, 25, "")
+  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 410, 393, 62, 25, "Extension:", #PB_Text_Right)
 EndProcedure
 
 Procedure MainWindow_Events(event)
@@ -114,15 +128,15 @@ Procedure MainWindow_Events(event)
           CreateFile_Database(EventMenu())
         Case #MenuItem_3
         Case #MenuItem_4
+          Save(EventMenu())
         Case #MenuItem_5
         Case #MenuItem_7
+          About(EventMenu())
         Case #MenuItem_9
       EndSelect
 
     Case #PB_Event_Gadget
       Select EventGadget()
-        Case #BT_Save
-          Save(EventType())          
         Case #BT_Delete
           Delete(EventType())          
         Case #BT_Insert

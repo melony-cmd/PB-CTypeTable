@@ -83,9 +83,8 @@ Procedure GetDatabaseList(dbidx.l,table.s,List thislist.s())
         For i = 0 To ncolumns-1
           output=output+GetDatabaseString(dbidx,i)+","
         Next
-        output=output+GetDatabaseString(dbidx,ncolumns)
         AddElement(thislist())
-        thislist() = output
+        thislist() = Mid(output,1,Len(output)-1)
       Wend    
       FinishDatabaseQuery(dbidx)
     EndIf
@@ -210,8 +209,8 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 207
-; FirstLine = 89
-; Folding = 5-
+; CursorPosition = 86
+; FirstLine = 73
+; Folding = 8-
 ; EnableXP
 ; DPIAware
