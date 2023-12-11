@@ -1,7 +1,24 @@
+;
+;
+;
+UseSQLiteDatabase()
+;
+; Forms
+;
 IncludeFile "form.pbf"
+IncludeFile "convert_form.pbf"
 
 ;
+; Enums
 ;
+Enumeration 
+  #PANELTAB_PBTYPE
+  #PANELTAB_CTYPE
+  #PANELTAB_DEFTYPE
+EndEnumeration
+
+;
+; Types & Lists
 ;
 Structure Type
   BasicTypeID.b
@@ -10,32 +27,20 @@ EndStructure
 
 Global NewList TypeList.Type()
 Global NewList SearchResults.s()
+
 ;
+
+Global NewList PBTypeList.s()
+Global NewList CTypeList.s()
+Global NewList DefTypeList.s()
+
+Global lnselected.s
+
 ;
+; DataBase
 ;
-#PB_MAXBASICTYPES = 13
-Global Dim PB_BasicType.s(#PB_MAXBASICTYPES)
-Global Dim ColumnNames.s(4)
-ColumnNames.s(0) = "C"
-ColumnNames.s(1) = "Name"
-ColumnNames.s(2) = "E"
-ColumnNames.s(3) = "Size"
-ColumnNames.s(4) = "Range"
-  
-PB_BasicType.s(0) = "Byte,.b,1 byte,-128 To +127"
-PB_BasicType.s(1) = "Ascii,.a,1 byte,0 To +255"
-PB_BasicType.s(2) = "Character,.c,2 bytes,0 To +65535"
-PB_BasicType.s(3) = "Word,.w,2 bytes,-32768 To +32767"
-PB_BasicType.s(4) = "Unicode,.u,2 bytes,0 To +65535" 
-PB_BasicType.s(5) = "Long,.l,4 bytes,-2147483648 To +2147483647"
-PB_BasicType.s(6) = "Integer32,.i,4 bytes (using 32-bit compiler),-2147483648 To +2147483647"
-PB_BasicType.s(7) = "Integer64,.i,8 bytes (using 64-bit compiler),-9223372036854775808 To +9223372036854775807"
-PB_BasicType.s(8) = "Float,.f,4 bytes,unlimited"
-PB_BasicType.s(9) = "Quad,.q,8 bytes,-9223372036854775808 To +9223372036854775807"
-PB_BasicType.s(10) = "Double,.d,8 bytes,unlimited" 
-PB_BasicType.s(11) = "String,.s,string length + 1,unlimited"
-PB_BasicType.s(12) = "Fixed String,.s{Length},string length,unlimited"
-PB_BasicType.s(13) = "*,*,,pointer"
+IncludeFile "DataBase.pbi"
+Global default_database.s = "default.sqlite"
 
 ;
 ; LineStart,ColumnStart,LineEnd,ColumnEnd
@@ -44,12 +49,24 @@ PB_BasicType.s(13) = "*,*,,pointer"
 Procedure.s ReadSelection(arg_input.s)
   filename.s = StringField(arg_input,1,",")
   location.s = StringField(arg_input,2,",")
-     
+    
   ls = Val(StringField(location,1,"x"))
   cs = Val(StringField(location,2,"x"))
   le = Val(StringField(location,3,"x"))
   ce = Val(StringField(location,4,"x"))
-    
+  
+  ; usage errors
+  If cs=ce
+    MessageRequester("Error","Nothing Selected!")
+    End
+  EndIf
+  
+  If ls>le Or ls<le
+    MessageRequester("Error","Only one line should be selected at a time!")
+    End
+  EndIf
+
+  ; pull the selected text
   If ReadFile(0,filename)
     Repeat
       inline.s = ReadString(0)
@@ -66,105 +83,136 @@ EndProcedure
 ;
 ;
 ;
-Procedure Add_CTypeTable(addln.s = "")
-  type.s = ""
-  If addln=""
-    type.s = GetGadgetText(#ST_Arguments)+Chr(10)
-    pbtype.s = ReplaceString(PB_BasicType(GetGadgetState(#CB_PureTypes)),",",Chr(10))
-  Else
-    pbtype.s = ReplaceString(addln,",",Chr(10))
-  EndIf
-  AddGadgetItem(#LI_CTypeTable,-1,type+pbtype)  
+Procedure Add_Table(gadgetid.l,addln.s = "") ; #LI_CTypeTable
+  uniqueid = Val(StringField(addln,1,","))  
+  addln = RemoveString(addln,StringField(addln,1,",")+",")
+  addln_formated.s = ReplaceString(addln,",",Chr(10))    
+  
+  nitems = CountGadgetItems(gadgetid)    
+  AddGadgetItem(gadgetid,nitems,addln_formated)    
+  SetGadgetItemData(gadgetid,nitems,uniqueid) 
 EndProcedure
 
 ;
 ;
 ;
-Procedure Load()
-  If OpenFile(0,"default.types")
-    While Eof(0) = 0
-      Add_CTypeTable(ReadString(0))
-    Wend    
-    CloseFile(0)
-  Else
-    MessageRequester("Error","Cannot make/load default.types")
-  EndIf  
+Procedure Update_PBTypeList()
+  ClearGadgetItems(#LI_PBTypeTable)
+  GetDatabaseList(0,"PureBasicTypes",PBTypeList())
+  ForEach PBTypeList()
+    Add_Table(#LI_PBTypeTable,PBTypeList())
+    AddGadgetItem(#CB_PureTypes,-1,StringField(PBTypeList(),2,","))
+  Next
+EndProcedure
+
+;
+;
+;
+Procedure Update_CTypeList()
+  ClearGadgetItems(#LI_CTypeTable)
+  GetDatabaseList(0,"CTypes",CTypeList())
+  ForEach CTypeList()
+    Add_Table(#LI_CTypeTable,CTypeList())
+    AddGadgetItem(#CB_CTypes,-1,StringField(CTypeList(),2,","))
+  Next
+EndProcedure
+
+;
+;
+;
+Procedure Update_DefTypeList()
+  ClearGadgetItems(#LI_DefTypeTable)
+  GetDatabaseList(0,"UserTypesDef",DefTypeList())
+  ForEach DefTypeList()
+    Add_Table(#LI_DefTypeTable,DefTypeList())
+  Next
 EndProcedure
 
 ;
 ;
 ;
 Procedure Save(eventType)   
-  If OpenFile(0,"default.types")    
-    For r = 0 To CountGadgetItems(#LI_CTypeTable)-1
-      lnout.s = ""
-      For c = 0 To GetGadgetAttribute(#LI_CTypeTable,#PB_ListIcon_ColumnCount)-1
-        lnout + GetGadgetItemText(#LI_CTypeTable,r,c) + ","
-      Next
-      WriteStringN(0,Mid(lnout,1,Len(lnout)-1))
-    Next     
-    CloseFile(0)
-  Else
-    MessageRequester("Error","Cannot make/load default.types")
-  EndIf    
 EndProcedure
 
 ;
 ;
 ;
 Procedure Delete(eventType)
-  RemoveGadgetItem(#LI_CTypeTable,GetGadgetState(#LI_CTypeTable))
+  
+  Select GetGadgetState(#MainPanel)
+    Case #PANELTAB_PBTYPE
+    Case #PANELTAB_CTYPE
+    Case #PANELTAB_DEFTYPE
+      For i=0 To CountGadgetItems(#LI_DefTypeTable)
+        ;Debug "GetGadgetItemData = "+Str(GetGadgetItemData(#LI_DefTypeTable,i))          
+        If GetGadgetItemState(#LI_DefTypeTable,i) = #PB_ListIcon_Selected 
+          DeleteDatabaseRow(0,"UserTypesDef",GetGadgetItemData(#LI_DefTypeTable,i))
+        EndIf        
+      Next      
+      DEBUG_Show_UserTypesDef()
+      Update_DefTypeList()
+  EndSelect  
+  ;
 EndProcedure
 
 ;
 ;
 ;
-Procedure Add(eventType)
-  Add_CTypeTable()
+Procedure Insert(eventType) 
+  Select GetGadgetState(#MainPanel)
+    Case #PANELTAB_PBTYPE
+    Case #PANELTAB_CTYPE
+    Case #PANELTAB_DEFTYPE
+      InsertDatabase_UserTypesDef(0,GetGadgetText(#ST_TypeDef),GetGadgetText(#CB_CTypes),GetGadgetText(#CB_PureTypes))
+      Update_DefTypeList()
+  EndSelect  
 EndProcedure
 
 ;
 ;
 ;
 Procedure Search(eventType)
-  
-  ClearList(SearchResults())
-  
-  If GetGadgetText(#ST_Search)=""
-    ClearGadgetItems(#LI_CTypeTable)
-    Load()
-    ProcedureReturn 
-  EndIf
-    
-  For r = 0 To CountGadgetItems(#LI_CTypeTable)-1
-    lnout.s = ""
-    For c = 0 To GetGadgetAttribute(#LI_CTypeTable,#PB_ListIcon_ColumnCount)-1
-      lnout + GetGadgetItemText(#LI_CTypeTable,r,c) + ","
-    Next
-    
-    fpos = FindString(lnout,GetGadgetText(#ST_Search))    
-    If fpos
-      AddElement(SearchResults())
-      SearchResults() = lnout
-    EndIf      
-  Next
-  
-  ClearGadgetItems(#LI_CTypeTable)  
-  ForEach SearchResults()
-    Add_CTypeTable(SearchResults())
-  Next
+;   
+;   ClearList(SearchResults())
+;   
+;   If GetGadgetText(#ST_Search)=""
+;     ClearGadgetItems(#LI_CTypeTable)
+;     Load()
+;     ProcedureReturn 
+;   EndIf
+;     
+;   For r = 0 To CountGadgetItems(#LI_CTypeTable)-1
+;     lnout.s = ""
+;     For c = 0 To GetGadgetAttribute(#LI_CTypeTable,#PB_ListIcon_ColumnCount)-1
+;       lnout + GetGadgetItemText(#LI_CTypeTable,r,c) + ","
+;     Next
+;     
+;     fpos = FindString(lnout,GetGadgetText(#ST_Search))    
+;     If fpos
+;       AddElement(SearchResults())
+;       SearchResults() = lnout
+;     EndIf      
+;   Next
+;   
+;   ClearGadgetItems(#LI_CTypeTable)  
+;   ForEach SearchResults()
+;     Add_CTypeTable(SearchResults())
+;   Next
   
 EndProcedure
 
 ;
 ;
 ;
-Procedure SetupMainWindow()
-  For i = 0 To #PB_MAXBASICTYPES    
-    AddGadgetItem(#CB_PureTypes,-1,PB_BasicType.s(i))
-  Next
+Procedure SetupMainWindow()   
+  Update_PBTypeList()
+  Update_CTypeList()
+  Update_DefTypeList()
+  
   SetGadgetState(#CB_PureTypes,0)
-  Load()
+  SetGadgetState(#CB_CTypes,0)
+  SetGadgetText(#ST_Search,lnselected)    
+  StatusBarText(0,1,default_database)
 EndProcedure
 
 ;
@@ -175,13 +223,9 @@ Procedure ProgArgs()
     Select ProgramParameter(i)
       Case "-ui"
       Case "-s"
-        OpenConsole()
         search.s = ProgramParameter(i+1)
-        selection.s = ReadSelection(search)
-        SetGadgetText(#ST_Search,selection)
+        lnselected.s = ReadSelection(search)
       Case "-c"
-        OpenConsole()
-
         convert.s = ProgramParameter(i+1)
         PrintN(convert)
     EndSelect
@@ -189,22 +233,33 @@ Procedure ProgArgs()
 EndProcedure
 
 ;
+; Begin
 ;
-;
-OpenMainWindow()
-SetupMainWindow()
 ProgArgs()
 
+If OpenDatabase(0,default_database,"","")
+EndIf
+
+OpenMainWindow()
+SetupMainWindow()
 
 Repeat 
   event = MainWindow_Events(WaitWindowEvent())
 Until event = #False
-CloseConsole()
-; IDE Options = PureBasic 6.03 LTS (Windows - x64)
-; CursorPosition = 178
-; FirstLine = 156
-; Folding = --
+
+;
+; Exit
+;
+If IsDatabase(0)
+  CloseDatabase(0)
+EndIf
+
+End
+
+; IDE Options = PureBasic 6.03 LTS (Windows - x86)
+; CursorPosition = 202
+; FirstLine = 149
+; Folding = +-
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe
-; CommandLine = -s "thisiswhat you want"

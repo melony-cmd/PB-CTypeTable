@@ -7,40 +7,100 @@
 ; Event procedures needs to be put in another source file.
 ;
 
+Global Img_MainWindow_0, Img_MainWindow_1, Img_MainWindow_2, Img_MainWindow_3, Img_MainWindow_4
+
 Enumeration FormWindow
   #MainWindow
 EndEnumeration
 
 Enumeration FormGadget
-  #LI_CTypeTable
-  #ST_Arguments
+  #ST_TypeDef
   #BT_Save
   #BT_Delete
-  #BT_Add
+  #BT_Insert
   #ST_Search
   #BT_Search
   #CB_PureTypes
+  #MainPanel
+  #LI_PBTypeTable
+  #LI_CTypeTable
+  #LI_DefTypeTable
+  #CB_CTypes
+  #ST_Min
+  #ST_Max
 EndEnumeration
 
+Enumeration FormMenu
+  #MenuItem_2
+  #MenuItem_3
+  #MenuItem_4
+  #MenuItem_5
+  #MenuItem_7
+  #MenuItem_9
+EndEnumeration
+
+UsePNGImageDecoder()
+
+Img_MainWindow_0 = LoadImage(#PB_Any,"D:\Work\Code\SDK\PureBasic-Devel\PureBasicIDE\data\SilkTheme\page.png")
+Img_MainWindow_1 = LoadImage(#PB_Any,"D:\Work\Code\SDK\PureBasic-Devel\PureBasicIDE\data\SilkTheme\folder_page.png")
+Img_MainWindow_2 = LoadImage(#PB_Any,"D:\Work\Code\SDK\PureBasic-Devel\PureBasicIDE\data\SilkTheme\disk.png")
+Img_MainWindow_3 = LoadImage(#PB_Any,"D:\Work\Code\SDK\PureBasic-Devel\PureBasicIDE\data\SilkTheme\page_save.png")
+Img_MainWindow_4 = LoadImage(#PB_Any,"D:\Work\Code\SDK\PureBasic-Devel\PureBasicIDE\data\SilkTheme\information.png")
+
+Declare CreateFile_Database(Event)
 Declare Delete(EventType)
-Declare Add(EventType)
+Declare Insert(EventType)
 Declare Save(EventType)
 Declare Search(EventType)
 
-Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 415)
+Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 500)
   OpenWindow(#MainWindow, x, y, width, height, "CTypeTable", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
-  ListIconGadget(#LI_CTypeTable, 5, 35, 560, 315, "C", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
-  AddGadgetColumn(#LI_CTypeTable, 1, "Name", 80)
-  AddGadgetColumn(#LI_CTypeTable, 2, "E", 70)
-  AddGadgetColumn(#LI_CTypeTable, 3, "Size", 60)
-  AddGadgetColumn(#LI_CTypeTable, 4, "Range", 200)
-  StringGadget(#ST_Arguments, 5, 355, 405, 25, "")
-  ButtonGadget(#BT_Save, 515, 355, 50, 25, "Save")
-  ButtonGadget(#BT_Delete, 465, 355, 45, 25, "Delete")
-  ButtonGadget(#BT_Add, 415, 355, 45, 25, "Add")
+  CreateStatusBar(0, WindowID(#MainWindow))
+  AddStatusBarField(100)
+  StatusBarText(0, 0, "Current Database")
+  AddStatusBarField(250)
+  StatusBarText(0, 1, "Label")
+  CreateImageMenu(0, WindowID(#MainWindow))
+  MenuTitle("File")
+  MenuItem(#MenuItem_2, "New", ImageID(Img_MainWindow_0))
+  MenuItem(#MenuItem_3, "Open", ImageID(Img_MainWindow_1))
+  MenuItem(#MenuItem_4, "Save", ImageID(Img_MainWindow_2))
+  MenuItem(#MenuItem_5, "Save As", ImageID(Img_MainWindow_3))
+  MenuBar()
+  MenuItem(#MenuItem_7, "About", ImageID(Img_MainWindow_4))
+  MenuBar()
+  MenuItem(#MenuItem_9, "Quit")
+  StringGadget(#ST_TypeDef, 5, 390, 150, 25, "")
+  GadgetToolTip(#ST_TypeDef, "TypeDef")
+  ButtonGadget(#BT_Save, 515, 425, 50, 25, "Save")
+  ButtonGadget(#BT_Delete, 465, 425, 45, 25, "Delete")
+  ButtonGadget(#BT_Insert, 415, 425, 45, 25, "Insert")
   StringGadget(#ST_Search, 5, 5, 510, 25, "")
   ButtonGadget(#BT_Search, 520, 5, 45, 25, "Search")
-  ComboBoxGadget(#CB_PureTypes, 5, 385, 560, 25)
+  ComboBoxGadget(#CB_PureTypes, 165, 420, 150, 25)
+  PanelGadget(#MainPanel, 5, 35, 560, 350)
+  AddGadgetItem(#MainPanel, -1, "PureBasic Types")
+  ListIconGadget(#LI_PBTypeTable, 5, 3, 550, 320, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  AddGadgetColumn(#LI_PBTypeTable, 1, "E", 100)
+  AddGadgetColumn(#LI_PBTypeTable, 2, "ByteSize", 100)
+  AddGadgetColumn(#LI_PBTypeTable, 3, "MinRage", 100)
+  AddGadgetColumn(#LI_PBTypeTable, 4, "MaxRage", 100)
+  AddGadgetItem(#MainPanel, -1, "C Types")
+  ListIconGadget(#LI_CTypeTable, 5, 3, 550, 320, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  AddGadgetColumn(#LI_CTypeTable, 1, "ByteSize", 100)
+  AddGadgetColumn(#LI_CTypeTable, 2, "MinRange", 100)
+  AddGadgetColumn(#LI_CTypeTable, 3, "MaxRange", 100)
+  AddGadgetColumn(#LI_CTypeTable, 4, "BPType", 100)
+  AddGadgetItem(#MainPanel, -1, "DefTypes")
+  ListIconGadget(#LI_DefTypeTable, 5, 3, 550, 320, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  AddGadgetColumn(#LI_DefTypeTable, 1, "CType", 100)
+  AddGadgetColumn(#LI_DefTypeTable, 2, "PBType", 100)
+  CloseGadgetList()
+  ComboBoxGadget(#CB_CTypes, 5, 420, 150, 25)
+  StringGadget(#ST_Min, 165, 390, 150, 25, "")
+  GadgetToolTip(#ST_Min, "Min Value")
+  StringGadget(#ST_Max, 325, 390, 150, 25, "")
+  GadgetToolTip(#ST_Max, "Max Value")
 EndProcedure
 
 Procedure MainWindow_Events(event)
@@ -50,6 +110,13 @@ Procedure MainWindow_Events(event)
 
     Case #PB_Event_Menu
       Select EventMenu()
+        Case #MenuItem_2
+          CreateFile_Database(EventMenu())
+        Case #MenuItem_3
+        Case #MenuItem_4
+        Case #MenuItem_5
+        Case #MenuItem_7
+        Case #MenuItem_9
       EndSelect
 
     Case #PB_Event_Gadget
@@ -58,8 +125,8 @@ Procedure MainWindow_Events(event)
           Save(EventType())          
         Case #BT_Delete
           Delete(EventType())          
-        Case #BT_Add
-          Add(EventType())          
+        Case #BT_Insert
+          Insert(EventType())          
         Case #BT_Search
           Search(EventType())          
       EndSelect
