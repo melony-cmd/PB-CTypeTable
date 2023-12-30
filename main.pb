@@ -375,8 +375,8 @@ Procedure Save_TaskList(eventType)
           WritePreferenceString("Pram_"+Str(column),GetGadgetItemText(#LI_TASKS, row, column))          
         Next    
       Next
-      ;PreferenceGroup("MarkedProcedures")
-      ;  WritePreferenceString("")
+      PreferenceGroup("MarkedProcedures")
+        WritePreferenceString("ProcMaker_","")
       ClosePreferences()
     EndIf    
   EndIf  
@@ -444,29 +444,52 @@ Procedure Header_Import(eventType)
   EndIf  
 EndProcedure
 
-
-;
-;
-;
-Procedure MarkProcStart(eventType)  
-  GOSCI_SetLineBookmark(#SCI_CText,GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE),#True,0)
-EndProcedure
-
-;
-;
-;
-Procedure MarkProcEnd(eventType)  
-  GOSCI_SetLineBookmark(#SCI_CText,GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE),#True,2)
-EndProcedure
-
 ;
 ;
 ;
 Procedure UnMarkProc(eventType)
   currentln = GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE)  
-  GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,0)    
-  GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,1)    
-  GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,2)    
+  lnmax = GOSCI_GetNumberOfLines(#SCI_CText)
+  Debug lnmax
+  
+  If ScintillaSendMessage(#SCI_CText, #SCI_MARKERGET, currentln ) = 1
+    For irmln=currentln+1 To lnmax      
+      currentmarker = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,irmln)
+      If (currentmarker<=1)
+        Break
+      EndIf      
+      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,0)    
+      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,1)    
+      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,2)
+    Next
+    GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,0)    
+    GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,1)    
+    GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,2)
+  EndIf  
+EndProcedure
+
+;
+;
+;
+Procedure MarkProcStart(eventType)
+  UnMarkProc(0)
+  currentln = GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE)
+  GOSCI_SetLineBookmark(#SCI_CText,currentln,#True,0)
+EndProcedure
+
+;
+;
+;
+Procedure MarkProcEnd(eventType) 
+  UnMarkProc(0)  
+  currentln = GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE)   
+  prevmarker = ScintillaSendMessage(#SCI_CText, #SCI_MARKERPREVIOUS, currentln, 1)
+  If prevmarker<>-1
+    For ln=1+prevmarker To currentln-1
+      GOSCI_SetLineBookmark(#SCI_CText,ln,#True,1)
+    Next
+    GOSCI_SetLineBookmark(#SCI_CText,currentln,#True,2)
+  EndIf  
 EndProcedure
 
 
@@ -597,7 +620,7 @@ OpenMainWindow()
 SetupMainWindow()
 
 ;GOSCI_LoadText(#SCI_CText,"D:\Work\Code\SDK\ZingZong\src\zz_private.h")
-;GOSCI_LoadText(#SCI_CText,"D:\Work\Code\SDK\ZingZong\src\zingzong.h")
+GOSCI_LoadText(#SCI_CText,"D:\Work\Code\SDK\ZingZong\src\zingzong.h")
 
 ;Debug PeekS(*textbuffer,-1,#PB_Ascii)
 
@@ -615,8 +638,8 @@ EndIf
 End
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 167
-; FirstLine = 120
+; CursorPosition = 449
+; FirstLine = 374
 ; Folding = +-8---
 ; EnableXP
 ; DPIAware
