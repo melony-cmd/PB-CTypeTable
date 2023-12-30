@@ -2,12 +2,24 @@
 ;
 ;
 UseSQLiteDatabase()
+
+;
+; Declare
+;
+Declare Callback_Scintilla_Translation(Gadget, *scinotify.SCNotification)
+
+Declare.s Get_TasksDetails(idx.l,value.l=0)
+
+;
+; Includes
+;
+IncludeFile "GoScintilla.pbi"
+
 ;
 ; Forms
 ;
 IncludeFile "form.pbf"
 IncludeFile "convert_form.pbf"
-
 ;
 ; Enums
 ;
@@ -15,6 +27,15 @@ Enumeration
   #PANELTAB_PBTYPE
   #PANELTAB_CTYPE
   #PANELTAB_DEFTYPE
+  #PANELTAB_CONVERT
+EndEnumeration
+
+Enumeration
+  #TASK_TYPE
+  #TASK_VALUEA
+  #TASK_VALUEB
+  #TASK_PARM
+  #TASK_ORDER
 EndEnumeration
 
 ;
@@ -35,11 +56,17 @@ Global NewList CTypeList.s()
 Global NewList DefTypeList.s()
 
 Global lnselected.s
+Global convdonce.b = #True
 
 ;
-; DataBase
+; My System Includes
 ;
+IncludeFile "ListIconGadgetInclude.pbi"
 IncludeFile "DataBase.pbi"
+IncludeFile "C2Tasks.pbi"
+IncludeFile "C2PureBasic.pbi"
+
+
 Global default_database.s = "default.sqlite"
 
 ;
@@ -129,13 +156,33 @@ Procedure Update_DefTypeList()
 EndProcedure
 
 ;-----------------------------------------------------------------------------
-; User Interface Procedure Calls
+;- User Interface Procedure Calls
 ;-----------------------------------------------------------------------------
 
 ;
 ;
 ;
-Procedure About(eventType)
+Procedure About(eventType)  
+  aboutmsg.s        = "Programming: T.J.Roughton"+Chr(10)
+  aboutmsg=aboutmsg + "GNU General Public License v3 (GPL-3)"+Chr(10)  
+  aboutmsg=aboutmsg + "Version: 0.0.1a"  
+  MessageRequester("About",aboutmsg)
+EndProcedure
+
+;
+;
+;
+Procedure MainPanel(eventType)
+  Select GetGadgetState(#MainPanel)
+    Case #PANELTAB_PBTYPE
+      HideGadget(#BT_Convert,#True)
+    Case #PANELTAB_CTYPE
+      HideGadget(#BT_Convert,#True)
+    Case #PANELTAB_DEFTYPE
+      HideGadget(#BT_Convert,#True)
+    Case #PANELTAB_CONVERT
+      HideGadget(#BT_Convert,#False)
+  EndSelect  
 EndProcedure
 
 ;
@@ -147,19 +194,24 @@ EndProcedure
 ;
 ;
 ;
+Procedure Open(eventType)   
+EndProcedure
+
+;
+;
+;
 Procedure Delete(eventType)
   Select GetGadgetState(#MainPanel)
     Case #PANELTAB_PBTYPE
     Case #PANELTAB_CTYPE
     Case #PANELTAB_DEFTYPE
       For i=0 To CountGadgetItems(#LI_DefTypeTable)
-        ;Debug "GetGadgetItemData = "+Str(GetGadgetItemData(#LI_DefTypeTable,i))          
         If GetGadgetItemState(#LI_DefTypeTable,i) = #PB_ListIcon_Selected 
           DeleteDatabaseRow(0,"UserTypesDef",GetGadgetItemData(#LI_DefTypeTable,i))
         EndIf        
       Next      
-      DEBUG_Show_UserTypesDef()
       Update_DefTypeList()
+    Case #PANELTAB_CONVERT
   EndSelect  
 EndProcedure
 
@@ -174,6 +226,48 @@ Procedure Insert(eventType)
       InsertDatabase_UserTypesDef(0,GetGadgetText(#ST_TypeDef),GetGadgetText(#CB_CTypes),GetGadgetText(#CB_PureTypes))
       Update_DefTypeList()
   EndSelect  
+EndProcedure
+
+;
+;
+;
+Procedure Update(eventType) 
+  Select GetGadgetState(#MainPanel)
+    Case #PANELTAB_PBTYPE
+    Case #PANELTAB_CTYPE
+    Case #PANELTAB_DEFTYPE
+  EndSelect  
+EndProcedure
+
+;-----------------------------------------------------------------------------
+;- Task Operations
+;-----------------------------------------------------------------------------
+
+;
+;
+;
+Procedure Callback_Scintilla_Translation(Gadget, *scinotify.SCNotification)
+EndProcedure
+
+;
+; Attempt to convert the lines given into something usable by PB
+;
+Procedure Convert(eventType)  
+  convdonce.b = #True
+  numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
+  
+  C2PB_GarbadgeCollection(#SCI_CText)
+  
+  ;  
+  C2PB_ProcessTasks(0)
+  
+  For i = 0 To numLines
+    C2PB_ProcessLine(#SCI_CText,i,numLines,GOSCI_GetLineText(#SCI_CText, i))
+  Next
+  
+  ;
+  C2PB_ProcessTasks(1)
+  
 EndProcedure
 
 ;
@@ -212,6 +306,178 @@ EndProcedure
 ;
 ;
 ;
+Procedure CustomLI_TaskEditCallback_ComboItem(Gadget.i, Line.i, Column.i, ComboBox.i)
+	AddGadgetItem(ComboBox, -1, "Replace A->B") 
+	AddGadgetItem(ComboBox, -1, "RegReplace") 
+	AddGadgetItem(ComboBox, -1, "Delete A") 
+	AddGadgetItem(ComboBox, -1, "Delete Line #") 
+EndProcedure
+
+;
+;
+;
+Procedure CustomLI_TaskEditCallback_SelectMode(Gadget.i, Line.i, Column.i)	
+	Select Gadget
+		Case #LI_TASKS
+			Select Column
+				Case 0 : ProcedureReturn #LIG_EditGadget_ComboBox
+				;Case 2 : ProcedureReturn #LIG_EditGadget_ComboBox_Editable
+				;Case 5 : ProcedureReturn #LIG_EditGadget_Date
+				;Case 6 : ProcedureReturn #LIG_EditGadget_DateTime
+				Default : ProcedureReturn #LIG_EditGadget_EditBox
+			EndSelect
+	EndSelect	
+EndProcedure
+
+;
+;
+;
+Procedure CustomLI_TaskEditCallback_YesNo(Gadget.i, Line.i, Column.i)
+	Debug "EditYesNoCallback >"+Str(Gadget)+"< Line >"+Str(Line)+"< Column >"+Str(Column)+"<"
+EndProcedure
+
+;
+;
+;
+Procedure Clear_Tasks(eventType)
+  ClearGadgetItems(#LI_TASKS)  
+EndProcedure
+
+;
+;
+;
+Procedure Add_TaskList(Task.s="(Select)",ValueA.s="<value a>",ValueB.s="<value b>",Parms.s="Null",Order.s = "0")
+  AddGadgetItem(#LI_TASKS, -1,Task+Chr(10)+ValueA+Chr(10)+ValueB+Chr(10)+Parms+Chr(10)+Order)
+EndProcedure
+
+Procedure Add_Task(eventType)
+  Add_TaskList()
+EndProcedure
+
+;
+;
+;
+Procedure Delete_Task(eventType)  
+  RemoveGadgetItem(#LI_TASKS,LIG_GetGadgetState(#LI_TASKS))  
+EndProcedure
+
+;
+;
+;
+Procedure Save_TaskList(eventType)   
+  pattern.s = "INI File (*.ini)|*.ini;|All files (*.*)|*.*"  
+  file.s = SaveFileRequester("Save TaskList","",pattern,0)
+  If file<>""
+    If CreatePreferences(file)  
+      For row = 0 To CountGadgetItems(#LI_TASKS)    
+        PreferenceGroup("Task_"+Str(row))
+        For column = 0 To 4
+          WritePreferenceString("Pram_"+Str(column),GetGadgetItemText(#LI_TASKS, row, column))          
+        Next    
+      Next
+      ;PreferenceGroup("MarkedProcedures")
+      ;  WritePreferenceString("")
+      ClosePreferences()
+    EndIf    
+  EndIf  
+EndProcedure
+
+;
+;
+;
+Procedure Open_TaskList(eventType)
+  pattern.s = "INI File (*.ini)|*.ini;|All files (*.*)|*.*"  
+  file.s = OpenFileRequester("Open TaskList","",pattern,0)
+  If file<>""
+    ClearGadgetItems(#LI_TASKS)
+    If OpenPreferences(file)
+      While PreferenceGroup("Task_"+Str(row)) <> 0
+        Task.s = ReadPreferenceString("Pram_0","")
+        ValueA.s = ReadPreferenceString("Pram_1","")
+        ValueB.s = ReadPreferenceString("Pram_2","")
+        Parm.s = ReadPreferenceString("Pram_3","")
+        Order.s = ReadPreferenceString("Pram_4","")
+        Add_TaskList(Task,ValueA,ValueB,Parm,Order)
+        row=row+1
+      Wend
+      ClosePreferences()
+    EndIf
+  EndIf  
+EndProcedure
+
+;
+;
+;
+Procedure.s Get_TasksDetails(idx.l,value.l=0)
+  For row = 0 To CountGadgetItems(#LI_TASKS)    
+    If row = idx 
+      ProcedureReturn GetGadgetItemText(#LI_TASKS, row, value)
+    EndIf      
+  Next  
+EndProcedure
+
+;
+;
+;
+Procedure Help_Task(eventType)
+  MessageRequester("Information","pre-Replace A->B : "+Chr(10)+
+                                 "pre-Delete A : "+Chr(10)+
+                                 
+                                 "peri-Replace A->B : "+Chr(10)+
+                                 "peri-Delete A : "+Chr(10)+
+       
+                                 "post-Replace A->B : "+Chr(10)+
+                                 "post-Delete A : ")
+EndProcedure
+
+;- Import
+
+;
+;
+;
+Procedure Header_Import(eventType)
+  pattern.s = "Header File (*.h)|*.h;|All files (*.*)|*.*"  
+  file.s = OpenFileRequester("Import Header","",pattern,0)
+  If file<>""
+    GOSCI_Clear(#SCI_CText)
+    GOSCI_LoadText(#SCI_CText,file)
+  EndIf  
+EndProcedure
+
+
+;
+;
+;
+Procedure MarkProcStart(eventType)  
+  GOSCI_SetLineBookmark(#SCI_CText,GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE),#True,0)
+EndProcedure
+
+;
+;
+;
+Procedure MarkProcEnd(eventType)  
+  GOSCI_SetLineBookmark(#SCI_CText,GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE),#True,2)
+EndProcedure
+
+;
+;
+;
+Procedure UnMarkProc(eventType)
+  currentln = GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE)  
+  GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,0)    
+  GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,1)    
+  GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,2)    
+EndProcedure
+
+
+;-----------------------------------------------------------------------------
+;- 
+;-----------------------------------------------------------------------------
+
+
+;
+;
+;
 Procedure SetupMainWindow()   
   Update_PBTypeList()
   Update_CTypeList()
@@ -221,6 +487,22 @@ Procedure SetupMainWindow()
   SetGadgetState(#CB_CTypes,0)
   SetGadgetText(#ST_Search,lnselected)    
   StatusBarText(0,1,default_database)
+  
+  ; Scintilla Setup
+  ; ScintillaSendMessage(#SCI_CText,#SCI_SETMARGINS,0)
+  GOSCI_SetColor(#SCI_CText,#GOSCI_LINENUMBERBACKCOLOR,RGB(0,0,0))
+  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,0,#SC_MARK_CIRCLEPLUS)  
+  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,1,#SC_MARK_VLINE) 
+  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,2,#SC_MARK_LCORNERCURVE) 
+  
+  ; Editable ListIconGadet Setup
+  LIG_EnableAddon(#LI_TASKS, #LIG_MouseEdit|#LIG_CursorEdit)
+  LIG_Edit_SetCallback(#LI_TASKS, #LIG_Callback_GadgetType, @CustomLI_TaskEditCallback_SelectMode())
+  LIG_Edit_SetCallback(#LI_TASKS, #LIG_Callback_ComboItem, @CustomLI_TaskEditCallback_ComboItem())  
+  ;LIG_Edit_SetCallback(#LI_TASKS, #LIG_Callback_EditYesNo, @CustomLI_TaskEditCallback_YesNo())
+  LIG_EnableEditSetting(#LI_TASKS, #LIG_EditSetting_ApplyOnExit|#LIG_EditSetting_AllowCtrlC|#LIG_EditSetting_AllowCtrlV)
+  
+  MainPanel(eventType)
 EndProcedure
 
 ;
@@ -241,6 +523,69 @@ Procedure ProgArgs()
 EndProcedure
 
 ;
+;
+;
+Procedure MainWindow_Events(event)
+  Select event
+    Case #PB_Event_CloseWindow
+      ProcedureReturn event
+
+    Case #PB_Event_Menu
+      Select EventMenu()
+        Case #MenuItem_2
+          CreateFile_Database(EventMenu())
+        Case #MenuItem_3
+          Open(EventMenu())          
+        Case #MenuItem_4
+          Save(EventMenu())
+        Case #MenuItem_5
+        Case #MenuItem_6
+          Header_Import(EventMenu())
+        Case #MenuItem_7
+          About(EventMenu())
+        Case #MenuItem_9
+      EndSelect
+
+    Case #PB_Event_Gadget
+      Select EventGadget()
+        Case #LI_TASKS
+          SetGadgetText(#ST_PRAMDETAILS,C2Tasks_GetPramDetails(Get_TasksDetails(LIG_GetGadgetState(#LI_TASKS),#TASK_TYPE)))
+        Case #BT_Delete
+          Delete(EventType())          
+        Case #BT_Insert
+          Insert(EventType())          
+        Case #BT_Search
+          Search(EventType())          
+        Case #MainPanel
+          MainPanel(EventType())          
+        Case #BT_Convert
+          Convert(EventType())          
+        Case #BTI_AddTask
+          Add_Task(EventType())          
+        Case #BTI_DeleteTask
+          Delete_Task(EventType())          
+        Case #BTI_SAVETASK
+          Save_TaskList(EventType())          
+        Case #BTI_LOADTASK
+          Open_TaskList(EventType())          
+        Case #BTI_TaskHelp
+          Help_Task(EventType())          
+        Case #BTI_ClearTasks
+          Clear_Tasks(EventType())
+        Case #BT_MARKPROCSTART
+          MarkProcStart(EventType())
+        Case #BT_MARKPROCEND
+          MarkProcEnd(EventType())
+        Case #BT_UNMARKPROC
+          UnMarkProc(EventType())        
+        Case #BT_Update
+          Update(EventType())          
+      EndSelect
+  EndSelect
+  ProcedureReturn event
+EndProcedure
+
+;
 ; Begin
 ;
 ProgArgs()
@@ -251,9 +596,14 @@ EndIf
 OpenMainWindow()
 SetupMainWindow()
 
+;GOSCI_LoadText(#SCI_CText,"D:\Work\Code\SDK\ZingZong\src\zz_private.h")
+;GOSCI_LoadText(#SCI_CText,"D:\Work\Code\SDK\ZingZong\src\zingzong.h")
+
+;Debug PeekS(*textbuffer,-1,#PB_Ascii)
+
 Repeat 
   event = MainWindow_Events(WaitWindowEvent())
-Until event = #False
+Until event = #PB_Event_CloseWindow
 
 ;
 ; Exit
@@ -265,9 +615,9 @@ EndIf
 End
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 85
-; FirstLine = 45
-; Folding = +--
+; CursorPosition = 167
+; FirstLine = 120
+; Folding = +-8---
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

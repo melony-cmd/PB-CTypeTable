@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.03 LTS (Windows - x86)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="PB-CTypeTable"/>
+  </section>
+  <section name="data">
+    <explorer view="C:\ProgramData\PureBasic\Examples\" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2023-12-18 15:11" user="Tim" host="HOLLY"/>
+  </section>
+  <section name="files">
+    <file name="main.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="1" panelstate="+"/>
+      <fingerprint md5="d1f98441db605082ba369489108997dd"/>
+    </file>
+    <file name="form.pbf">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="2" panelstate="+"/>
+      <fingerprint md5="440eb6b703267da8484aa649646a9948"/>
+    </file>
+    <file name="convert_form.pbf">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="3" panelstate="+"/>
+      <fingerprint md5="152f0c65ab08854b34443e4ea61da16f"/>
+    </file>
+    <file name="DataBase.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="4" panelstate="+"/>
+      <fingerprint md5="68f31752d475608b89106ded10b70855"/>
+    </file>
+    <file name="C2PureBasic.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="5" panelstate="+"/>
+      <fingerprint md5="de98598a7035774cae167afb6c972fda"/>
+    </file>
+    <file name="Scintilla.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="7" panelstate="+"/>
+      <fingerprint md5="c0220431202e2b9aba864cc71b08796b"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="Default Target" enabled="1" default="1">
+      <inputfile value="main.pb"/>
+      <outputfile value="CTypeTable.exe"/>
+      <options xpskin="1" dpiaware="1" debug="1" optimizer="0"/>
+    </target>
+  </section>
+</project>
