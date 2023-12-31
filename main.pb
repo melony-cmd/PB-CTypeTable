@@ -38,6 +38,11 @@ Enumeration
   #TASK_ORDER
 EndEnumeration
 
+
+#MARK_CIRCLEPLUS = %000000001
+#MARK_VLINE      = %000000010
+#MARK_CURVELINE  = %000000100
+
 ;
 ; Types & Lists
 ;
@@ -376,7 +381,14 @@ Procedure Save_TaskList(eventType)
         Next    
       Next
       PreferenceGroup("MarkedProcedures")
-        WritePreferenceString("ProcMaker_","")
+      markers.s=""
+      lnmax = GOSCI_GetNumberOfLines(#SCI_CText)
+      For iln = 0 To lnmax
+        cmarker.q = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,iln)
+        Debug Bin(cmarker << 1)
+        markers + Str(cmarker) + ","
+      Next     
+      WritePreferenceString("ProcMakers",markers)
       ClosePreferences()
     EndIf    
   EndIf  
@@ -400,6 +412,19 @@ Procedure Open_TaskList(eventType)
         Add_TaskList(Task,ValueA,ValueB,Parm,Order)
         row=row+1
       Wend
+      PreferenceGroup("MarkedProcedures")
+      markers.s = ReadPreferenceString("ProcMakers","")
+      GOSCI_DeleteBookmarksAll(#SCI_CText)
+      
+      For iln=0 To CountString(markers,",")
+        mark = Val(StringField(markers,1+iln,","))
+        If mark = 0 : mark=-1 : EndIf
+        If mark = 2 : mark=#MARK_CIRCLEPLUS : EndIf
+        If mark = 4 : mark=#MARK_VLINE : EndIf
+        If mark = 16 : mark=#MARK_CURVELINE : EndIf
+        GOSCI_SetLineBookmark(#SCI_CText,iln,#True,mark)
+      Next      
+      
       ClosePreferences()
     EndIf
   EndIf  
@@ -449,22 +474,19 @@ EndProcedure
 ;
 Procedure UnMarkProc(eventType)
   currentln = GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE)  
-  lnmax = GOSCI_GetNumberOfLines(#SCI_CText)
-  Debug lnmax
-  
-  If ScintillaSendMessage(#SCI_CText, #SCI_MARKERGET, currentln ) = 1
-    For irmln=currentln+1 To lnmax      
-      currentmarker = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,irmln)
-      If (currentmarker<=1)
-        Break
+  lnmax = GOSCI_GetNumberOfLines(#SCI_CText)  
+  If ScintillaSendMessage(#SCI_CText, #SCI_MARKERGET, currentln ) = 2
+    irmln = currentln
+    While ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,irmln)>0
+      If ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,irmln) = 2
+        cpls=cpls+1
+        If cpls = 2 : Break : EndIf
       EndIf      
-      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,0)    
-      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,1)    
-      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,2)
-    Next
-    GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,0)    
-    GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,1)    
-    GOSCI_SetLineBookmark(#SCI_CText,currentln,#False,2)
+      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,#MARK_CIRCLEPLUS)    
+      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,#MARK_VLINE)    
+      GOSCI_SetLineBookmark(#SCI_CText,irmln,#False,#MARK_CURVELINE)      
+      irmln=irmln+1      
+    Wend
   EndIf  
 EndProcedure
 
@@ -472,24 +494,27 @@ EndProcedure
 ;
 ;
 Procedure MarkProcStart(eventType)
-  UnMarkProc(0)
   currentln = GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE)
-  GOSCI_SetLineBookmark(#SCI_CText,currentln,#True,0)
+  GOSCI_SetLineBookmark(#SCI_CText,currentln,#True,#MARK_CIRCLEPLUS)
 EndProcedure
 
 ;
 ;
 ;
 Procedure MarkProcEnd(eventType) 
-  UnMarkProc(0)  
-  currentln = GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE)   
-  prevmarker = ScintillaSendMessage(#SCI_CText, #SCI_MARKERPREVIOUS, currentln, 1)
-  If prevmarker<>-1
-    For ln=1+prevmarker To currentln-1
-      GOSCI_SetLineBookmark(#SCI_CText,ln,#True,1)
-    Next
-    GOSCI_SetLineBookmark(#SCI_CText,currentln,#True,2)
-  EndIf  
+  currentln = GOSCI_GetState(#SCI_CText,#GOSCI_CURRENTLINE)
+  prevmarker = ScintillaSendMessage(#SCI_CText, #SCI_MARKERPREVIOUS, currentln, %000000001)
+  
+  If ScintillaSendMessage(#SCI_CText, #SCI_MARKERGET, currentln ) = 0 
+    prevmarker = ScintillaSendMessage(#SCI_CText, #SCI_MARKERPREVIOUS, currentln, 2 )
+    Debug prevmarker
+    If prevmarker<>-1
+      For ln=1+prevmarker To currentln-1
+        GOSCI_SetLineBookmark(#SCI_CText,ln,#True,#MARK_VLINE)
+      Next
+      GOSCI_SetLineBookmark(#SCI_CText,currentln,#True,#MARK_CURVELINE)
+    EndIf
+  EndIf
 EndProcedure
 
 
@@ -514,9 +539,10 @@ Procedure SetupMainWindow()
   ; Scintilla Setup
   ; ScintillaSendMessage(#SCI_CText,#SCI_SETMARGINS,0)
   GOSCI_SetColor(#SCI_CText,#GOSCI_LINENUMBERBACKCOLOR,RGB(0,0,0))
-  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,0,#SC_MARK_CIRCLEPLUS)  
-  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,1,#SC_MARK_VLINE) 
-  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,2,#SC_MARK_LCORNERCURVE) 
+  
+  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_CIRCLEPLUS,#SC_MARK_CIRCLEPLUS)  
+  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_VLINE,#SC_MARK_VLINE) 
+  ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_CURVELINE,#SC_MARK_LCORNERCURVE) 
   
   ; Editable ListIconGadet Setup
   LIG_EnableAddon(#LI_TASKS, #LIG_MouseEdit|#LIG_CursorEdit)
@@ -638,9 +664,10 @@ EndIf
 End
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 449
-; FirstLine = 374
+; CursorPosition = 426
+; FirstLine = 339
 ; Folding = +-8---
+; Markers = 384
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

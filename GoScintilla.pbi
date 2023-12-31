@@ -1125,6 +1125,22 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
   EndProcedure
   ;/////////////////////////////////////////////////////////////////////////////////
   
+  ;/////////////////////////////////////////////////////////////////////////////////
+  ;The following function returns #True if the specified line shows a bookmark.
+  Procedure GOSCI_DeleteBookmarksAll(id, nbmarker=-1)
+    Protected result,i
+    If IsGadget(id) And GadgetType(id) = #PB_GadgetType_Scintilla
+      If nbmarker<>-1
+        ScintillaSendMessage(id, #SCI_MARKERDELETEALL, nbmarker)
+      Else
+        For i=0 To 31
+          ScintillaSendMessage(id, #SCI_MARKERDELETEALL, i )
+        Next        
+      EndIf      
+    EndIf
+    ProcedureReturn result
+  EndProcedure
+  ;/////////////////////////////////////////////////////////////////////////////////
   
   ;/////////////////////////////////////////////////////////////////////////////////
   ;The following function retrieves a line's user data value.
@@ -2235,8 +2251,8 @@ CompilerEndIf
 DisableExplicit
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 1525
-; FirstLine = 1325
+; CursorPosition = 1130
+; FirstLine = 934
 ; Folding = -0---------
 ; EnableXP
 ; DPIAware
