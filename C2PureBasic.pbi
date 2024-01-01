@@ -1,4 +1,19 @@
 ﻿;
+;
+;
+Structure Function
+  ; C
+  c_name.s
+  c_cargname.s[127]
+  c_cargtype.s[127]
+  c_isptr.b[127]
+  c_cnbargs.b
+  ; PureBasic
+  pb_prototype.s
+  pb_argtype.s[127]
+  pb_getfunction.s
+EndStructure
+;
 ; Remove ridculus C over elite typing! congratulations you gave yourself RSI for no reason, and I'm not talking about the mega demo.
 ;
 Procedure C2PB_GarbadgeCollection(gadgetid)  
@@ -191,9 +206,88 @@ Procedure C2PB_ProcessTasks(order)
 
 EndProcedure
 
+;
+;
+;
+Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "")   
+  result.s = ""  
+  ; reduce the complexity by making a multi line string into a 1 line string
+  result = RemoveString(inputstring,Chr(10))
+  result = RemoveString(result,Chr(13))  
+  ; remove the tabs
+  result = RemoveString(result,Chr(9))  
+  ; remove the idiotic ; from the C standard.
+  result = RemoveString(result,";")   
+  ; reduce all multi-spaces to 1 space.
+  For i=31 To 2 Step -1 : result = RemoveString(result,Space(i)) : Next
+  ; now we should have a pretty cleaning c function  
+  ; find the function name.
+  fopnbrance = FindString(result,"(")
+  For i=fopnbrance To 0 Step -1 : If Mid(result,i,1)=" " : Break : EndIf : Next  
+  procname.s = Trim(Mid(result,i+1,fopnbrance-i-1))  
+  ; get the arguments chunk from ( <- to -> ) and remove the ()
+  args.s = Trim(Mid(result,fopnbrance))
+  args.s = RemoveString(args,"(")
+  args.s = RemoveString(args,")")  
+  ;get number of arguments
+  nbargs = CountString(args,",")  
+  ;get argument names
+  For i=1 To nbargs+1
+    pramname.s = Trim(StringField(args,i,","))
+    argstype.s = pramname
+    Debug Right(pramname,Len(pramname))
+    For fsr=Len(pramname) To 1 Step -1
+      ch.s = Mid(pramname,fsr,1)
+      If (ch=" ") Or (ch="*")
+        Break
+      EndIf      
+    Next
+    pramname = Trim(Mid(pramname,fsr,Len(pramname)-fsr+1))
+    argstype = RemoveString(argstype,pramname,#PB_String_CaseSensitive,fsr)
+    Debug pramname
+    Debug argstype
+    ;
+    *cFunc\c_cargname[i-1] = pramname
+    *cFunc\c_cargtype[i-1] = argstype
+    If FindString(argstype,"*")
+      *cFunc\c_isptr[i-1] = #True
+    Else
+      *cFunc\c_isptr[i-1] = #False
+    EndIf    
+  Next  
+  ;Build Structure
+  *cFunc\c_name = procname
+  *cFunc\c_cnbargs = nbargs
+  
+  ;Build ProtoType
+  ;PrototypeC SidConfig_SetDefaultC64Model(c_defaultC64Model.l) : Global SidConfig_SetDefaultC64Model.SidConfig_SetDefaultC64Model  
+  pbarguments.s = ""
+  ptr.s = ""
+  pbtype.s = ""
+  For i=0 To *cFunc\c_cnbargs    
+    If *cFunc\c_isptr[i] = #True : ptr = "*" : Else : ptr = "" : EndIf
+    If ptr = "" : pbtype = "."+"!NoDefType!" : EndIf
+    If *cFunc\c_cnbargs=i
+      pbarguments+ptr+*cFunc\c_cargname[i]+pbtype
+    Else      
+      pbarguments+ptr+*cFunc\c_cargname[i]+pbtype+","
+    EndIf    
+                                         ;^---- here is where we need to search for a definition of the type that translates to PB
+  Next
+  
+  ;Build ReturnType
+  rtstype.s = ".!NoDefType!"
+  
+  *cFunc\pb_prototype = "PrototypeC"+rtstype+" "+prefix+*cFunc\c_name+"("+pbarguments+") : Global "+prefix+*cFunc\c_name+"."+prefix+*cFunc\c_name
+  
+  ;SidConfig_SetDefaultC64Model = GetFunction(dll_plugin,"SidConfig_SetDefaultC64Model")
+  *cFunc\pb_getfunction = prefix+*cFunc\c_name+" = GetFunction(dll,"+Chr(34)+*cFunc\c_name+Chr(34)+")"
+  
+  ProcedureReturn result  
+EndProcedure
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 166
-; FirstLine = 141
+; CursorPosition = 213
+; FirstLine = 193
 ; Folding = --
 ; EnableXP
 ; DPIAware

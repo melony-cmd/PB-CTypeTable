@@ -133,7 +133,8 @@ Procedure Update_PBTypeList()
   GetDatabaseList(0,"PureBasicTypes",PBTypeList())
   ForEach PBTypeList()
     Add_Table(#LI_PBTypeTable,PBTypeList())
-    AddGadgetItem(#CB_PureTypes,-1,StringField(PBTypeList(),2,","))
+    pbtype.s = "("+StringField(PBTypeList(),3,",")+") "+StringField(PBTypeList(),2,",")
+    AddGadgetItem(#CB_PureTypes,-1,pbtype)
   Next
 EndProcedure
 
@@ -664,10 +665,9 @@ EndIf
 End
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 426
-; FirstLine = 339
-; Folding = +-8---
-; Markers = 384
+; CursorPosition = 136
+; FirstLine = 83
+; Folding = +-----
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe
