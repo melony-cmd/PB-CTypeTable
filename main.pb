@@ -7,6 +7,7 @@ UseSQLiteDatabase()
 ; Declare
 ;
 Declare Callback_Scintilla_Translation(Gadget, *scinotify.SCNotification)
+Declare DebugOut(string.s,clearlog.b = #False)
 
 Declare.s Get_TasksDetails(idx.l,value.l=0)
 
@@ -20,6 +21,7 @@ IncludeFile "GoScintilla.pbi"
 ;
 IncludeFile "form.pbf"
 IncludeFile "convert_form.pbf"
+
 ;
 ; Enums
 ;
@@ -38,7 +40,6 @@ Enumeration
   #TASK_ORDER
 EndEnumeration
 
-
 #MARK_CIRCLEPLUS = %000000001
 #MARK_VLINE      = %000000010
 #MARK_CURVELINE  = %000000100
@@ -54,8 +55,23 @@ EndStructure
 Global NewList TypeList.Type()
 Global NewList SearchResults.s()
 
-;
+Structure SearchTypeDefArgs
+  c_name.s
+  c_type.s
+  pb_type.s
+EndStructure
+Declare SearchTypeDef(*args.SearchTypeDefArgs)
 
+;
+;
+;
+Structure PrototypeList
+  proc.s
+  getproc.s
+EndStructure
+
+;
+Global NewList PTList.PrototypeList()
 Global NewList PBTypeList.s()
 Global NewList CTypeList.s()
 Global NewList DefTypeList.s()
@@ -70,7 +86,6 @@ IncludeFile "ListIconGadgetInclude.pbi"
 IncludeFile "DataBase.pbi"
 IncludeFile "C2Tasks.pbi"
 IncludeFile "C2PureBasic.pbi"
-
 
 Global default_database.s = "default.sqlite"
 
@@ -110,6 +125,24 @@ Procedure.s ReadSelection(arg_input.s)
     CloseFile(0)
   EndIf
   ProcedureReturn Mid(inline,cs,ce-cs)  
+EndProcedure
+
+;
+;
+;
+Procedure DebugOut(string.s,clearlog.b = #False)
+  If clearlog = #True
+    DeleteFile("pb-ctypetable.log")
+    ProcedureReturn 
+  EndIf
+  
+  ofh = OpenFile(#PB_Any,"pb-ctypetable.log")
+  If ofh
+    outstring.s = "["+FormatDate("%hh:%ii:%ss", Date())+"] [Debug] "+string    
+    FileSeek(ofh,Lof(ofh))
+    WriteStringN(ofh,outstring)
+    CloseFile(ofh)
+  EndIf  
 EndProcedure
 
 ;
@@ -261,16 +294,69 @@ EndProcedure
 Procedure Convert(eventType)  
   convdonce.b = #True
   numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
-  
+  cFunc.Function
+  ClearList(PTList())
+
   C2PB_GarbadgeCollection(#SCI_CText)
   
   ;  
   C2PB_ProcessTasks(0)
   
+  ; General Processing 
   For i = 0 To numLines
     C2PB_ProcessLine(#SCI_CText,i,numLines,GOSCI_GetLineText(#SCI_CText, i))
   Next
   
+  ; Function Processing
+  For icurrent = 0 To numLines
+    mark = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,icurrent)
+    If mark>0
+      func.s = ""
+      ClearStructure(cFunc,Function)
+      nextmark = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,icurrent+1)
+      AddElement(PTList())
+      If nextmark>2
+        func = GOSCI_GetLineText(#SCI_CText,icurrent)
+        Repeat
+          icurrent=icurrent+1
+          func = func + GOSCI_GetLineText(#SCI_CText,icurrent)
+        Until ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,icurrent)=16
+        ; multi line    
+        DebugOut("Multi Line Source:"+func)
+        proc.s = C2PB_FunctionToProtoType(func,cFunc)
+        DebugOut("=="+proc)
+        PTList()\proc = proc
+      Else
+        ; single line    
+        func = GOSCI_GetLineText(#SCI_CText,icurrent)
+        DebugOut("Single Line Source:"+func)
+        proc.s = C2PB_FunctionToProtoType(func,cFunc)
+        DebugOut("=="+proc) 
+        PTList()\proc = proc
+      EndIf
+      getproc.s = cFunc\pb_getfunction
+      PTList()\getproc = getproc
+      DebugOut("=="+getproc)
+      DebugOut("")        
+    EndIf
+  Next
+  
+  ForEach PTList()
+    Debug PTList()\proc
+    Debug PTList()\getproc
+  Next
+  
+  
+  ;nb: altough we've processed the functions at this point we've still not added the back to the document yet.
+  ;    The problem is the marks will move if we add/remove lines and thus paste them back in the above for..next
+  ;    loop real time will just make a mess, we can't detele the line either because of the previous forementioned
+  ;    problem. 
+  
+  ;solution ?: 
+  ;    keep the alterations as list of sources line numbers to be replaced and loop the lines again.
+  
+  
+  ClearList(PTList())
   ;
   C2PB_ProcessTasks(1)
   
@@ -306,6 +392,31 @@ Procedure Search(eventType)
 ;   ForEach SearchResults()
 ;     Add_CTypeTable(SearchResults())
 ;   Next
+  
+EndProcedure
+
+;
+; Search TypeDef
+;
+;Procedure.s SearchTypeDef(name.s,type.s)
+Procedure SearchTypeDef(*args.SearchTypeDefArgs)
+  r.s = "!"
+  
+  DebugOut("SearchTypeDef() name=["+*args\c_name+"] type=["+*args\c_type+"]")
+  
+  For i=0 To CountGadgetItems(#LI_DefTypeTable)-1
+    deftype.s = GetGadgetItemText(#LI_DefTypeTable,i,0)
+    
+    If deftype=*args\c_type
+      pbtype.s = GetGadgetItemText(#LI_DefTypeTable,i,2)
+      pbtype = Mid(pbtype,2,FindString(pbtype,")")-2)
+      *args\pb_type = pbtype
+    EndIf
+    
+    If deftype=*args\c_name
+      *args\c_name = Mid(pbtype,2,FindString(pbtype,")")-2) 
+    EndIf    
+  Next
   
 EndProcedure
 
@@ -385,8 +496,8 @@ Procedure Save_TaskList(eventType)
       markers.s=""
       lnmax = GOSCI_GetNumberOfLines(#SCI_CText)
       For iln = 0 To lnmax
-        cmarker.q = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,iln)
-        Debug Bin(cmarker << 1)
+        cmarker = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,iln)
+        If cmarker<0 : cmarker=0 : EndIf
         markers + Str(cmarker) + ","
       Next     
       WritePreferenceString("ProcMakers",markers)
@@ -398,9 +509,11 @@ EndProcedure
 ;
 ;
 ;
-Procedure Open_TaskList(eventType)
-  pattern.s = "INI File (*.ini)|*.ini;|All files (*.*)|*.*"  
-  file.s = OpenFileRequester("Open TaskList","",pattern,0)
+Procedure Open_TaskList(file.s="")
+  If file=""
+    pattern.s = "INI File (*.ini)|*.ini;|All files (*.*)|*.*"  
+    file = OpenFileRequester("Open TaskList","",pattern,0)
+  EndIf
   If file<>""
     ClearGadgetItems(#LI_TASKS)
     If OpenPreferences(file)
@@ -424,8 +537,7 @@ Procedure Open_TaskList(eventType)
         If mark = 4 : mark=#MARK_VLINE : EndIf
         If mark = 16 : mark=#MARK_CURVELINE : EndIf
         GOSCI_SetLineBookmark(#SCI_CText,iln,#True,mark)
-      Next      
-      
+      Next            
       ClosePreferences()
     EndIf
   EndIf  
@@ -461,12 +573,18 @@ EndProcedure
 ;
 ;
 ;
-Procedure Header_Import(eventType)
-  pattern.s = "Header File (*.h)|*.h;|All files (*.*)|*.*"  
-  file.s = OpenFileRequester("Import Header","",pattern,0)
+Procedure Header_Import(file.s="")
+  If file=""
+    pattern.s = "Header File (*.h)|*.h;|All files (*.*)|*.*"  
+    file.s = OpenFileRequester("Import Header","",pattern,0)
+  EndIf  
   If file<>""
     GOSCI_Clear(#SCI_CText)
     GOSCI_LoadText(#SCI_CText,file)
+    taskfile.s = "Tasks/"+GetFilePart(file)+".ini"
+    If FileSize(taskfile)
+      Open_TaskList(taskfile)  
+    EndIf    
   EndIf  
 EndProcedure
 
@@ -508,7 +626,6 @@ Procedure MarkProcEnd(eventType)
   
   If ScintillaSendMessage(#SCI_CText, #SCI_MARKERGET, currentln ) = 0 
     prevmarker = ScintillaSendMessage(#SCI_CText, #SCI_MARKERPREVIOUS, currentln, 2 )
-    Debug prevmarker
     If prevmarker<>-1
       For ln=1+prevmarker To currentln-1
         GOSCI_SetLineBookmark(#SCI_CText,ln,#True,#MARK_VLINE)
@@ -590,7 +707,7 @@ Procedure MainWindow_Events(event)
           Save(EventMenu())
         Case #MenuItem_5
         Case #MenuItem_6
-          Header_Import(EventMenu())
+          Header_Import()
         Case #MenuItem_7
           About(EventMenu())
         Case #MenuItem_9
@@ -617,7 +734,7 @@ Procedure MainWindow_Events(event)
         Case #BTI_SAVETASK
           Save_TaskList(EventType())          
         Case #BTI_LOADTASK
-          Open_TaskList(EventType())          
+          Open_TaskList()          
         Case #BTI_TaskHelp
           Help_Task(EventType())          
         Case #BTI_ClearTasks
@@ -640,14 +757,16 @@ EndProcedure
 ;
 ProgArgs()
 
+DebugOut("",#True)
+
 If OpenDatabase(0,default_database,"","")
 EndIf
 
 OpenMainWindow()
 SetupMainWindow()
 
-;GOSCI_LoadText(#SCI_CText,"D:\Work\Code\SDK\ZingZong\src\zz_private.h")
-GOSCI_LoadText(#SCI_CText,"D:\Work\Code\SDK\ZingZong\src\zingzong.h")
+;Header_Import("D:\Work\Code\SDK\ZingZong\src\zz_private.h")
+Header_Import("D:\Work\Code\SDK\ZingZong\src\zingzong.h")
 
 ;Debug PeekS(*textbuffer,-1,#PB_Ascii)
 
@@ -665,8 +784,8 @@ EndIf
 End
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 136
-; FirstLine = 83
+; CursorPosition = 500
+; FirstLine = 451
 ; Folding = +-----
 ; EnableXP
 ; DPIAware

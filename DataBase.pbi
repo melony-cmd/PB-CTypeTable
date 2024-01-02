@@ -43,6 +43,7 @@ Procedure CreateDefaultDatabase(filename.s)
       DatabaseUpdate(0, "INSERT INTO PureBasicTypes (type, extension, bytesize, minrange, maxrange) VALUES ('Double','.d','8 Byte','unlimited','unlimited')")
       DatabaseUpdate(0, "INSERT INTO PureBasicTypes (type, extension, bytesize, minrange, maxrange) VALUES ('String','.s','String Length','unlimited','unlimited')")
       DatabaseUpdate(0, "INSERT INTO PureBasicTypes (type, extension, bytesize, minrange, maxrange) VALUES ('Fixed String','.s{length}','1 Byte','unlimited','unlimited')")
+      DatabaseUpdate(0, "INSERT INTO PureBasicTypes (type, extension, bytesize, minrange, maxrange) VALUES ('Null','','','','')")
       DatabaseUpdate(0, "INSERT INTO PureBasicTypes (type, extension, bytesize, minrange, maxrange) VALUES ('*','*','','pointer','pointer')")
     EndIf
   
@@ -60,6 +61,7 @@ Procedure CreateDefaultDatabase(filename.s)
       DatabaseUpdate(0, "INSERT INTO CTypes (type, bytesize,minrange, maxrange, pbisequal) VALUES ('float',             '4 Byte', '','',                      'Float')")
       DatabaseUpdate(0, "INSERT INTO CTypes (type, bytesize,minrange, maxrange, pbisequal) VALUES ('double',            '8 Byte', '','',                      'Double')")
       DatabaseUpdate(0, "INSERT INTO CTypes (type, bytesize,minrange, maxrange, pbisequal) VALUES ('long double',       '16 Byte','','',                      '')")
+      DatabaseUpdate(0, "INSERT INTO CTypes (type, bytesize,minrange, maxrange, pbisequal) VALUES ('void',              '0 Byte' ,'','',                      '')")
     EndIf
   
     If DatabaseUpdate(0, "CREATE TABLE UserTypesDef(unqueid INTEGER PRIMARY KEY ASC,typedef VARCHAR(255),ctype VARCHAR(255),pbtype VARCHAR(255));")    
@@ -209,8 +211,8 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 86
-; FirstLine = 73
+; CursorPosition = 47
+; FirstLine = 26
 ; Folding = 8-
 ; EnableXP
 ; DPIAware

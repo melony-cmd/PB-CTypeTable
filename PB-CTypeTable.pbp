@@ -7,16 +7,16 @@
   <section name="data">
     <explorer view="C:\ProgramData\PureBasic\Examples\" pattern="0"/>
     <log show="1"/>
-    <lastopen date="2023-12-18 15:11" user="Tim" host="HOLLY"/>
+    <lastopen date="2024-01-02 17:37" user="Tim" host="HOLLY"/>
   </section>
   <section name="files">
     <file name="main.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="1" panelstate="+"/>
-      <fingerprint md5="d1f98441db605082ba369489108997dd"/>
+      <fingerprint md5="89cbb786c66014e77bae7a119aa4c935"/>
     </file>
     <file name="form.pbf">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="2" panelstate="+"/>
-      <fingerprint md5="440eb6b703267da8484aa649646a9948"/>
+      <fingerprint md5="42ae56da2d6f2b414d61af4f5caa42b5"/>
     </file>
     <file name="convert_form.pbf">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="3" panelstate="+"/>
@@ -24,15 +24,15 @@
     </file>
     <file name="DataBase.pbi">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="4" panelstate="+"/>
-      <fingerprint md5="68f31752d475608b89106ded10b70855"/>
+      <fingerprint md5="9c012be55d822c0dd9c2de3f93a0edf7"/>
     </file>
     <file name="C2PureBasic.pbi">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="5" panelstate="+"/>
-      <fingerprint md5="de98598a7035774cae167afb6c972fda"/>
+      <fingerprint md5="8092d0a665359e17b73bb72be59c73ae"/>
     </file>
     <file name="Scintilla.pbi">
-      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="7" panelstate="+"/>
-      <fingerprint md5="c0220431202e2b9aba864cc71b08796b"/>
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="6" panelstate="+"/>
+      <fingerprint md5="087d9585e54723258907c361610bdecd"/>
     </file>
   </section>
   <section name="targets">

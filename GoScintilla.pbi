@@ -716,7 +716,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
   ;The following internal function is called in order to force a restyling of a range of lines.
   ;The #SCI_COLOURISE message doesn't appear to work! Set 'endLine' to -1 to restyle up to the end of the document.
   ;No return.
-  Procedure GOSCI_RestyleLinesXXX(id, startLine, endLine, finalByteToStyle = -1)
+  Procedure nline(id, startLine, endLine, finalByteToStyle = -1)
     Protected i, lineLength, utf8Buffer, startPos, *this._GoScintilla, blnApplyCodeFolding, t1
     Protected resultFromUserLineStylingFunction, numLines, originalEndLine, numBytesToStyle
     *this = GetGadgetData(id)
@@ -857,7 +857,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
           startLine = endLine
           endLine = t1+1
         EndIf
-        GOSCI_RestyleLinesXXX(id, startLine, endLine, *scinotify\position)
+        ;-GOSCI_RestyleLinesXXX(id, startLine, endLine, *scinotify\position)
       Case #SCN_CHARADDED
         If *scinotify\ch = 10 And *this And *this\state&#GOSCI_LEXERSTATE_ENABLEAUTOINDENTATION
           ;Process auto-indent.
@@ -1335,7 +1335,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
         ScintillaSendMessage(id, #SCI_INSERTTEXT, pos, utf8Buffer)
         FreeMemory(utf8Buffer)
         If restyle
-          GOSCI_RestyleLinesXXX(id, lineIndex, lineIndex)  
+          ;-GOSCI_RestyleLinesXXX(id, lineIndex, lineIndex)  
         EndIf
       EndIf
     EndIf
@@ -1367,7 +1367,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
         EndIf
         FreeMemory(utf8Buffer)
         If restyle
-          GOSCI_RestyleLinesXXX(id, 0, -1)  
+          ;-GOSCI_RestyleLinesXXX(id, 0, -1)  
         EndIf
       EndIf
     EndIf
@@ -1605,7 +1605,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
           ScintillaSendMessage(id, #SCI_REPLACETARGET, -1, utf8Buffer)
           FreeMemory(utf8Buffer)
           If restyle
-            GOSCI_RestyleLinesXXX(id, 0, -1)  
+            ;-GOSCI_RestyleLinesXXX(id, 0, -1)  
           EndIf
         EndIf
       EndIf
@@ -1660,7 +1660,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
         Case #GOSCI_CLEARALLERRORS ;Value is ignored.
           ScintillaSendMessage(id, #SCI_MARKERDELETEALL, #GOSCI_ERRORMARKERNUM)
         Case #GOSCI_RESTYLEDOCUMENT
-          GOSCI_RestyleLinesXXX(id, 0, -1)
+          ;-GOSCI_RestyleLinesXXX(id, 0, -1)
       EndSelect
     EndIf
   EndProcedure
@@ -1697,7 +1697,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
           ScintillaSendMessage(id, #SCI_EMPTYUNDOBUFFER)
         EndIf
         ;BUG: here it crashes immedately.
-        ;-BUGGED:: GOSCI_RestyleLinesXXX(id, 0, -1)  
+        ;-BUGGED:: ;-GOSCI_RestyleLinesXXX(id, 0, -1)  
       EndIf
     EndIf
   EndProcedure
@@ -1762,7 +1762,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
         EndIf
       EndIf
       If restyle
-        GOSCI_RestyleLinesXXX(id, 0, -1)
+        ;-GOSCI_RestyleLinesXXX(id, 0, -1)
       EndIf
     EndIf
   EndProcedure
@@ -1827,7 +1827,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
         EndIf
       EndIf
       If restyle
-        GOSCI_RestyleLinesXXX(id, 0, -1)
+        ;-GOSCI_RestyleLinesXXX(id, 0, -1)
       EndIf
     EndIf
   EndProcedure
@@ -1892,7 +1892,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
           SortStructuredList(*this\Keywords(), #PB_Sort_Ascending|t1, OffsetOf(GoScintillaKeyword\keyWord$), #PB_String)
         EndIf
         If restyle
-          GOSCI_RestyleLinesXXX(id, 0, -1)
+          ;-GOSCI_RestyleLinesXXX(id, 0, -1)
         EndIf
       EndIf
     EndIf
@@ -1954,7 +1954,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
         SetGadgetData(ID, *ptr)
         ;Repaint.
         GOSCI_AutosizeLineNumberMarginXXX(id)
-        GOSCI_RestyleLinesXXX(ID, 0, -1)
+        ;-GOSCI_RestyleLinesXXX(ID, 0, -1)
       EndIf
     EndIf
     ProcedureReturn *ptr
@@ -2088,7 +2088,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
         EndIf
       Next
       If restyle
-        GOSCI_RestyleLinesXXX(id, 0, -1)
+        ;-GOSCI_RestyleLinesXXX(id, 0, -1)
       EndIf
     EndIf
   EndProcedure
@@ -2109,12 +2109,12 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
             EndIf
             If *this\lexerSeparators$ <> text$
               *this\lexerSeparators$ = text$
-              GOSCI_RestyleLinesXXX(id, 0, -1)
+              ;-GOSCI_RestyleLinesXXX(id, 0, -1)
             EndIf
           Case #GOSCI_LEXEROPTION_NUMBERSSTYLEINDEX
             If *this\lexerNumbersStyleIndex <> value
               *this\lexerNumbersStyleIndex = value
-              GOSCI_RestyleLinesXXX(id, 0, -1)
+              ;-GOSCI_RestyleLinesXXX(id, 0, -1)
             EndIf
         EndSelect
       EndIf
@@ -2137,7 +2137,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
         EndIf
         *this\state = state
         If blnNeedRestyle
-          GOSCI_RestyleLinesXXX(id, 0, -1)
+          ;-GOSCI_RestyleLinesXXX(id, 0, -1)
         EndIf 
       EndIf
     EndIf
@@ -2217,7 +2217,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
       If *this
         result = *this\stylingFunction
         *this\stylingFunction = addressOfFunction
-        GOSCI_RestyleLinesXXX(id, 0, -1)
+        ;-GOSCI_RestyleLinesXXX(id, 0, -1)
       EndIf
     EndIf
     ProcedureReturn result
@@ -2251,8 +2251,8 @@ CompilerEndIf
 DisableExplicit
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 1130
-; FirstLine = 934
+; CursorPosition = 701
+; FirstLine = 512
 ; Folding = -0---------
 ; EnableXP
 ; DPIAware

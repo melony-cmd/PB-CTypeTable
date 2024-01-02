@@ -4,6 +4,7 @@
 Structure Function
   ; C
   c_name.s
+  c_rtstype.s
   c_cargname.s[127]
   c_cargtype.s[127]
   c_isptr.b[127]
@@ -13,6 +14,7 @@ Structure Function
   pb_argtype.s[127]
   pb_getfunction.s
 EndStructure
+
 ;
 ; Remove ridculus C over elite typing! congratulations you gave yourself RSI for no reason, and I'm not talking about the mega demo.
 ;
@@ -149,7 +151,7 @@ Procedure C2PB_ProcessLine(gadgetid,nline,maxlines,linein.s)
       EndIf    
     Next
   EndIf
-  
+      
   ;GOSCI_SetLineText(gadgetid, nline,linein)
   ;Debug linein
 EndProcedure  
@@ -220,6 +222,10 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   result = RemoveString(result,";")   
   ; reduce all multi-spaces to 1 space.
   For i=31 To 2 Step -1 : result = RemoveString(result,Space(i)) : Next
+  
+  DebugOut("C2PB_FunctionToProtoType() inputstring = ["+inputstring+"]")
+  DebugOut("C2PB_FunctionToProtoType() result = ["+result+"]")
+  
   ; now we should have a pretty cleaning c function  
   ; find the function name.
   fopnbrance = FindString(result,"(")
@@ -231,11 +237,13 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   args.s = RemoveString(args,")")  
   ;get number of arguments
   nbargs = CountString(args,",")  
+  
+  DebugOut("C2PB_FunctionToProtoType() args = ["+args+"]")
   ;get argument names
   For i=1 To nbargs+1
     pramname.s = Trim(StringField(args,i,","))
     argstype.s = pramname
-    Debug Right(pramname,Len(pramname))
+    ;Debug Right(pramname,Len(pramname))
     For fsr=Len(pramname) To 1 Step -1
       ch.s = Mid(pramname,fsr,1)
       If (ch=" ") Or (ch="*")
@@ -244,8 +252,10 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
     Next
     pramname = Trim(Mid(pramname,fsr,Len(pramname)-fsr+1))
     argstype = RemoveString(argstype,pramname,#PB_String_CaseSensitive,fsr)
-    Debug pramname
-    Debug argstype
+    
+    DebugOut("C2PB_FunctionToProtoType() pramname = ["+pramname+"]")
+    DebugOut("C2PB_FunctionToProtoType() argstype = ["+argstype+"]")
+    
     ;
     *cFunc\c_cargname[i-1] = pramname
     *cFunc\c_cargtype[i-1] = argstype
@@ -263,31 +273,49 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   ;PrototypeC SidConfig_SetDefaultC64Model(c_defaultC64Model.l) : Global SidConfig_SetDefaultC64Model.SidConfig_SetDefaultC64Model  
   pbarguments.s = ""
   ptr.s = ""
-  pbtype.s = ""
-  For i=0 To *cFunc\c_cnbargs    
-    If *cFunc\c_isptr[i] = #True : ptr = "*" : Else : ptr = "" : EndIf
-    If ptr = "" : pbtype = "."+"!NoDefType!" : EndIf
+  For i=0 To *cFunc\c_cnbargs
+    ; Set pointer or not
+    If *cFunc\c_isptr[i] = #True : ptr = "*" : Else : ptr = "" : EndIf 
+    
+    ; Convert the arguments to PB veriable types
+    std.SearchTypeDefArgs : ClearStructure(std,SearchTypeDefArgs)
+    std\c_name = Trim(*cFunc\c_cargname[i])
+    std\c_type = Trim(*cFunc\c_cargtype[i])
+      
+    DebugOut("C2PB_FunctionToProtoType() (A) std\c_name = ["+std\c_name+"]")
+    DebugOut("C2PB_FunctionToProtoType() (A) std\c_type = ["+std\c_type+"]")      
+    DebugOut("C2PB_FunctionToProtoType() (A) std\pb_type = ["+std\pb_type+"]")      
+      
+    SearchTypeDef(std)
+      
+    DebugOut("C2PB_FunctionToProtoType() (B) std\c_name = ["+std\c_name+"]")
+    DebugOut("C2PB_FunctionToProtoType() (B) std\c_type = ["+std\c_type+"]")            
+    DebugOut("C2PB_FunctionToProtoType() (B) std\pb_type = ["+std\pb_type+"]")      
+    
+    ; Add the arguments to the 'pbarguments' stack string
     If *cFunc\c_cnbargs=i
-      pbarguments+ptr+*cFunc\c_cargname[i]+pbtype
+      pbarguments+ptr+std\c_name+std\pb_type
     Else      
-      pbarguments+ptr+*cFunc\c_cargname[i]+pbtype+","
-    EndIf    
-                                         ;^---- here is where we need to search for a definition of the type that translates to PB
+      pbarguments+ptr+std\c_name+std\pb_type+","
+    EndIf
   Next
   
   ;Build ReturnType
-  rtstype.s = ".!NoDefType!"
-  
-  *cFunc\pb_prototype = "PrototypeC"+rtstype+" "+prefix+*cFunc\c_name+"("+pbarguments+") : Global "+prefix+*cFunc\c_name+"."+prefix+*cFunc\c_name
-  
-  ;SidConfig_SetDefaultC64Model = GetFunction(dll_plugin,"SidConfig_SetDefaultC64Model")
+  std.SearchTypeDefArgs
+  std\c_name = ""
+  std\c_type = Trim(Mid(result,1,FindString(result,*cFunc\c_name)-1))
+  SearchTypeDef(std)
+  *cFunc\c_rtstype = std\pb_type
+    
+  *cFunc\pb_prototype = "PrototypeC"+*cFunc\c_rtstype+" "+prefix+*cFunc\c_name+"("+pbarguments+") : Global "+prefix+*cFunc\c_name+"."+prefix+*cFunc\c_name  
   *cFunc\pb_getfunction = prefix+*cFunc\c_name+" = GetFunction(dll,"+Chr(34)+*cFunc\c_name+Chr(34)+")"
   
-  ProcedureReturn result  
+  ClearStructure(std,SearchTypeDefArgs)
+  ProcedureReturn *cFunc\pb_prototype  
 EndProcedure
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 213
-; FirstLine = 193
+; CursorPosition = 250
+; FirstLine = 228
 ; Folding = --
 ; EnableXP
 ; DPIAware
