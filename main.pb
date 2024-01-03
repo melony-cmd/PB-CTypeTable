@@ -138,11 +138,19 @@ Procedure DebugOut(string.s,clearlog.b = #False)
   
   ofh = OpenFile(#PB_Any,"pb-ctypetable.log")
   If ofh
+    WindowEvent()
     outstring.s = "["+FormatDate("%hh:%ii:%ss", Date())+"] [Debug] "+string    
     FileSeek(ofh,Lof(ofh))
     WriteStringN(ofh,outstring)
     CloseFile(ofh)
   EndIf  
+EndProcedure
+
+;
+;
+;
+Procedure StatusUpdate(string.s)
+  StatusBarText(0,2,string)
 EndProcedure
 
 ;
@@ -291,23 +299,29 @@ EndProcedure
 ;
 ; Attempt to convert the lines given into something usable by PB
 ;
-Procedure Convert(eventType)  
+Procedure Convert(eventType)
+  StatusUpdate("Converting..")
+  DisableGadget(#BT_Convert,#True)
   convdonce.b = #True
   numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   cFunc.Function
   ClearList(PTList())
 
+  StatusUpdate("Garbadge Collection..")
   C2PB_GarbadgeCollection(#SCI_CText)
   
   ;  
+  StatusUpdate("C2PB_ProcessTasks Level 0")
   C2PB_ProcessTasks(0)
   
-  ; General Processing 
+  ; General Processing
+  StatusUpdate("C2PB_ProcessLines")
   For i = 0 To numLines
     C2PB_ProcessLine(#SCI_CText,i,numLines,GOSCI_GetLineText(#SCI_CText, i))
   Next
   
   ; Function Processing
+  StatusUpdate("Function Processing")
   For icurrent = 0 To numLines
     mark = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,icurrent)
     If mark>0
@@ -358,7 +372,10 @@ Procedure Convert(eventType)
   
   ClearList(PTList())
   ;
+  StatusUpdate("C2PB_ProcessTasks Level 1")
   C2PB_ProcessTasks(1)
+  StatusUpdate("Complete!")
+  DisableGadget(#BT_Convert,#False)
   
 EndProcedure
 
@@ -784,9 +801,9 @@ EndIf
 End
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 500
-; FirstLine = 451
-; Folding = +-----
+; CursorPosition = 378
+; FirstLine = 315
+; Folding = +------
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

@@ -161,9 +161,9 @@ EndProcedure
 ;
 Procedure C2PB_ProcessTasks(order)
   
-  Debug "---------------------------------------------"        
-  Debug "Process Tasks Order = "+Str(Order)
-  Debug "CountGadgetItems = "+Str(CountGadgetItems(#LI_TASKS))
+  DebugOut("---------------------------------------------")
+  DebugOut("Process Tasks Order = "+Str(Order))
+  DebugOut("CountGadgetItems = "+Str(CountGadgetItems(#LI_TASKS)))
  
   maxlines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   
@@ -171,13 +171,13 @@ Procedure C2PB_ProcessTasks(order)
     linein.s = GOSCI_GetLineText(#SCI_CText, i_ln)
     For i=0 To CountGadgetItems(#LI_TASKS)-1
       If Get_TasksDetails(i,#TASK_ORDER)=Str(order)
-        Debug("Str(order) = "+Str(order))
+        DebugOut("Str(order) = "+Str(order))
         task.s = Get_TasksDetails(i,#TASK_TYPE)
-        Debug("task = "+task)        
+        DebugOut("task = "+task)        
         Select task
             
           Case "Replace A->B"
-            Debug "***** Case Replace A->B"
+            DebugOut("***** Case Replace A->B")
             StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
             StrValueB.s = Get_TasksDetails(i,#TASK_VALUEB)
             Param.s = Get_TasksDetails(i,#TASK_PARM)
@@ -189,7 +189,7 @@ Procedure C2PB_ProcessTasks(order)
           Case "RegReplace"
             
           Case "Delete A"
-            Debug "***** Case Delete A"            
+            DebugOut("***** Case Delete A")
             StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
             Param.s = Get_TasksDetails(i,#TASK_PARM)
             outline.s = C2Tasks_RemoveString(linein,StrValueA,Param)
@@ -204,7 +204,7 @@ Procedure C2PB_ProcessTasks(order)
       EndIf    
     Next    
   Next  
-  Debug "Lines Dones = "+Str(i_ln)
+  DebugOut("Lines Dones = "+Str(i_ln))
 
 EndProcedure
 
@@ -314,8 +314,8 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   ProcedureReturn *cFunc\pb_prototype  
 EndProcedure
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 250
-; FirstLine = 228
+; CursorPosition = 167
+; FirstLine = 155
 ; Folding = --
 ; EnableXP
 ; DPIAware

@@ -23,8 +23,8 @@ Procedure.s C2Tasks_Replace(inline.s,va.s,vb.s,parms.s)
   ;#PB_String_NoCase        :: NoCase,#,#
   ;#PB_String_InPlace       :: InPlace,#,#  
   
-  Debug "-------------------------------------- C2Tasks_Replace() = "+parms
-  Debug "IN:"+inline
+  DebugOut("-------------------------------------- C2Tasks_Replace() = "+parms)
+  DebugOut("IN:"+inline)
   
   p_sensitivity.s = StringField(parms,1," ")
   p_nb.s = StringField(parms,2," ")
@@ -33,10 +33,10 @@ Procedure.s C2Tasks_Replace(inline.s,va.s,vb.s,parms.s)
   p_nboccurrences = Val(StringField(p_nb,2,","))
   p_forcecolumnposition = Val(StringField(p_nb,3,","))
   
-  Debug "sensitivity:"+p_sensitivity
-  Debug "startpos:"+Str(p_startpos)
-  Debug "nboccurrences:"+Str(p_nboccurrences)
-  Debug "forcecolumnposition:"+Str(p_forcecolumnposition)  
+  DebugOut("sensitivity:"+p_sensitivity)
+  DebugOut("startpos:"+Str(p_startpos))
+  DebugOut("nboccurrences:"+Str(p_nboccurrences))
+  DebugOut("forcecolumnposition:"+Str(p_forcecolumnposition))
   
   If p_forcecolumnposition<>0    
     findpos = FindString(inline,va)
@@ -47,16 +47,16 @@ Procedure.s C2Tasks_Replace(inline.s,va.s,vb.s,parms.s)
   
   Select p_sensitivity
     Case "CaseSensitive"
-      Debug "CaseSensitive"
+      DebugOut("CaseSensitive")
       outline.s = ReplaceString(inline,va,vb,#PB_String_CaseSensitive,p_startpos,p_nboccurrences)
     Case "NoCase"
-      Debug "NoCase"
+      DebugOut("NoCase")
       outline.s = ReplaceString(inline,va,vb,#PB_String_NoCase,p_startpos,p_nboccurrences)
     Case "InPlace"
-      Debug "InPlace"
+      DebugOut("InPlace")
       outline.s = ReplaceString(inline,va,vb,#PB_String_InPlace,p_startpos,p_nboccurrences)
     Default
-      Debug "Defaulting"
+      DebugOut("Defaulting")
       outline.s = ReplaceString(inline,va,vb)
   EndSelect
   
@@ -97,8 +97,8 @@ Procedure.s C2Tasks_RemoveString(inline.s,va.s,parms.s)
   ;#PB_String_CaseSensitive: Case sensitive remove (a=a) (Default)
   ;#PB_String_NoCase       : Case insensitive remove (A=a)
   
-  Debug "-------------------------------------- C2Tasks_Delete() = "+parms
-  Debug "IN:"+inline
+  DebugOut("-------------------------------------- C2Tasks_Delete() = "+parms)
+  DebugOut("IN:"+inline)
   
   p_sensitivity.s = StringField(parms,1," ")
   p_nb.s = StringField(parms,2," ")
@@ -107,10 +107,10 @@ Procedure.s C2Tasks_RemoveString(inline.s,va.s,parms.s)
   p_nboccurrences = Val(StringField(p_nb,2,","))
   p_forcecolumnposition = Val(StringField(p_nb,3,","))
   
-  Debug "sensitivity:"+p_sensitivity
-  Debug "startpos:"+Str(p_startpos)
-  Debug "nboccurrences:"+Str(p_nboccurrences)
-  Debug "forcecolumnposition:"+Str(p_forcecolumnposition)  
+  DebugOut("sensitivity:"+p_sensitivity)
+  DebugOut("startpos:"+Str(p_startpos))
+  DebugOut("nboccurrences:"+Str(p_nboccurrences))
+  DebugOut("forcecolumnposition:"+Str(p_forcecolumnposition))
   
   If p_forcecolumnposition<>0    
     findpos = FindString(inline,va)
@@ -121,17 +121,17 @@ Procedure.s C2Tasks_RemoveString(inline.s,va.s,parms.s)
          
   Select p_sensitivity
     Case "CaseSensitive"
-      Debug "CaseSensitive"
+      DebugOut("CaseSensitive")
       outline.s = RemoveString(inline,va,#PB_String_CaseSensitive,p_startpos,p_nboccurrences)
     Case "NoCase"
-      Debug "NoCase"
+      DebugOut("NoCase")
       outline.s = RemoveString(inline,va,#PB_String_NoCase,p_startpos,p_nboccurrences)
     Default
-      Debug "Defaulting"
+      DebugOut("Defaulting")
       outline.s = RemoveString(inline,va)
   EndSelect
   
-  Debug "OUT:"+outline
+  DebugOut("OUT:"+outline)
 
   ProcedureReturn outline  
 EndProcedure
@@ -143,8 +143,8 @@ Procedure C2Tasks_DeleteLine()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 62
-; FirstLine = 29
+; CursorPosition = 38
+; FirstLine = 32
 ; Folding = -
 ; EnableXP
 ; DPIAware
