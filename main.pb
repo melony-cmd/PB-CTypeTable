@@ -7,7 +7,7 @@ UseSQLiteDatabase()
 ; Declare
 ;
 Declare Callback_Scintilla_Translation(Gadget, *scinotify.SCNotification)
-Declare DebugOut(string.s,clearlog.b = #False)
+Declare DebugOut(string.s,clearlog.b=#False,loglevel.s="")
 
 Declare.s Get_TasksDetails(idx.l,value.l=0)
 
@@ -127,22 +127,46 @@ Procedure.s ReadSelection(arg_input.s)
   ProcedureReturn Mid(inline,cs,ce-cs)  
 EndProcedure
 
+;  6 Data.s "All Debug Log"                ,"Enable/Disable all log file output (overrides)"
+;  7 Data.s "Log Garbage Collector"        ,"Enable/Disable Garbage Collector log file output"
+;  8 Data.s "Log C2PB_ProcessTasks Level 0","Enable/Disable C2PB_ProcessTasks Level 0 log file output"
+;  9 Data.s "Log C2PB_ProcessTasks Level 1","Enable/Disable C2PB_ProcessTasks Level 1 log file output"
+; 10 Data.s "Log Process Lines"            ,"Enable/Disable Process Lines log file output"
+; 11 Data.s "Log Functions"                ,"Enable/Disable Functions log file output"
+; 12 Data.s "Log Struct"                   ,"Enable/Disable Struct log file output"
+; 13 Data.s "Log Define"                   ,"Enable/Disable Define log file output"
 ;
-;
-;
-Procedure DebugOut(string.s,clearlog.b = #False)
+Procedure DebugOut(string.s,clearlog.b = #False,loglevel.s="")
+  debugenable = #False
+  
   If clearlog = #True
     DeleteFile("pb-ctypetable.log")
     ProcedureReturn 
   EndIf
   
-  ofh = OpenFile(#PB_Any,"pb-ctypetable.log")
-  If ofh
-    WindowEvent()
-    outstring.s = "["+FormatDate("%hh:%ii:%ss", Date())+"] [Debug] "+string    
-    FileSeek(ofh,Lof(ofh))
-    WriteStringN(ofh,outstring)
-    CloseFile(ofh)
+  Select loglevel
+    Case "GarbageCollector" : If GetGadgetItemState(#LI_HASETTINGS,7) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "C2PB_ProcessTasksLevel0" : If GetGadgetItemState(#LI_HASETTINGS,8) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "C2PB_ProcessTasksLevel1" : If GetGadgetItemState(#LI_HASETTINGS,9) = #PB_ListIcon_Checked : debugenable = #True :  EndIf      
+    Case "ProcessLines" : If GetGadgetItemState(#LI_HASETTINGS,10) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "Functions" : If GetGadgetItemState(#LI_HASETTINGS,11) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "Struct" : If GetGadgetItemState(#LI_HASETTINGS,12) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "Define" : If GetGadgetItemState(#LI_HASETTINGS,13) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+  EndSelect
+    
+  If GetGadgetItemState(#LI_HASETTINGS,6) = #PB_ListIcon_Checked                ;"All Debug Log"
+    debugenable = #True
+  EndIf
+  
+  If debugenable = #True
+    ofh = OpenFile(#PB_Any,"pb-ctypetable.log")
+    If ofh
+      WindowEvent()
+      outstring.s = "["+FormatDate("%hh:%ii:%ss", Date())+"] [Debug] "+string    
+      FileSeek(ofh,Lof(ofh))
+      WriteStringN(ofh,outstring)
+      CloseFile(ofh)
+    EndIf  
   EndIf  
 EndProcedure
 
@@ -306,21 +330,22 @@ Procedure Convert(eventType)
   numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   cFunc.Function
   ClearList(PTList())
-
+  
+  ;-Garbadge Collection
   StatusUpdate("Garbadge Collection..")
   C2PB_GarbadgeCollection(#SCI_CText)
   
-  ;  
+  ;-Process Tasks Level 0 
   StatusUpdate("C2PB_ProcessTasks Level 0")
   C2PB_ProcessTasks(0)
   
-  ; General Processing
+  ;-General Processing
   StatusUpdate("C2PB_ProcessLines")
   For i = 0 To numLines
     C2PB_ProcessLine(#SCI_CText,i,numLines,GOSCI_GetLineText(#SCI_CText, i))
   Next
   
-  ; Function Processing
+  ;-Function Processing
   StatusUpdate("Function Processing")
   For icurrent = 0 To numLines
     mark = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,icurrent)
@@ -355,12 +380,6 @@ Procedure Convert(eventType)
     EndIf
   Next
   
-  ForEach PTList()
-    Debug PTList()\proc
-    Debug PTList()\getproc
-  Next
-  
-  
   ;nb: altough we've processed the functions at this point we've still not added the back to the document yet.
   ;    The problem is the marks will move if we add/remove lines and thus paste them back in the above for..next
   ;    loop real time will just make a mess, we can't detele the line either because of the previous forementioned
@@ -368,12 +387,24 @@ Procedure Convert(eventType)
   
   ;solution ?: 
   ;    keep the alterations as list of sources line numbers to be replaced and loop the lines again.
-  
-  
+  ForEach PTList()
+    Debug PTList()\proc
+    Debug PTList()\getproc
+  Next
   ClearList(PTList())
-  ;
+  
+  ;-Structure Processing
+  StatusUpdate("Structure Processing")
+  
+  
+  
+  
+  ;-Process Tasks Level 1
   StatusUpdate("C2PB_ProcessTasks Level 1")
   C2PB_ProcessTasks(1)
+  
+  
+  ;-Complete
   StatusUpdate("Complete!")
   DisableGadget(#BT_Convert,#False)
   
@@ -415,7 +446,6 @@ EndProcedure
 ;
 ; Search TypeDef
 ;
-;Procedure.s SearchTypeDef(name.s,type.s)
 Procedure SearchTypeDef(*args.SearchTypeDefArgs)
   r.s = "!"
   
@@ -686,6 +716,16 @@ Procedure SetupMainWindow()
   ;LIG_Edit_SetCallback(#LI_TASKS, #LIG_Callback_EditYesNo, @CustomLI_TaskEditCallback_YesNo())
   LIG_EnableEditSetting(#LI_TASKS, #LIG_EditSetting_ApplyOnExit|#LIG_EditSetting_AllowCtrlC|#LIG_EditSetting_AllowCtrlV)
   
+  Restore headerass_settings
+  Read.s name.s
+  Read.s desc.s
+  While name<>"--"
+    AddGadgetItem(#LI_HASETTINGS,-1,name+Chr(10)+desc)
+    Read.s name.s
+    Read.s desc.s
+  Wend
+  
+  
   MainPanel(eventType)
 EndProcedure
 
@@ -800,9 +840,52 @@ EndIf
 
 End
 
+DataSection
+  headerass_settings:
+  Data.s "Garbage Collector"            ,"Removes C pre-processor statements & deletes ;"
+  Data.s "C2PB_ProcessTasks Level 0"    ,"Enable/Disable Tasks Level 0"
+  Data.s "C2PB_ProcessTasks Level 1"    ,"Enable/Disable Tasks Level 1"
+  Data.s "Process Lines"                ,"?"
+  Data.s "C Functions to PB"            ,"?"
+  Data.s "C Struct to PB"               ,"?"
+  Data.s "All Debug Log"                ,"Enable/Disable all log file output (overrides)"
+  Data.s "Log Garbage Collector"        ,"Enable/Disable Garbage Collector log file output"
+  Data.s "Log C2PB_ProcessTasks Level 0","Enable/Disable C2PB_ProcessTasks Level 0 log file output"
+  Data.s "Log C2PB_ProcessTasks Level 1","Enable/Disable C2PB_ProcessTasks Level 1 log file output"
+  Data.s "Log Process Lines"            ,"Enable/Disable Process Lines log file output"
+  Data.s "Log Functions"                ,"Enable/Disable Functions log file output"
+  Data.s "Log Struct"                   ,"Enable/Disable Struct log file output"
+  Data.s "Log Define"                   ,"Enable/Disable Define log file output"
+  Data.s "AutoDoc Header"               ,"Enable/Disable Basic Documenation"  
+  Data.s "AutoDoc Procedure"            ,"Enable/Disable Basic Documenation"  
+  Data.s "--","--"
+  autodoc_header:
+  Data.s "--"
+  autodoc_procedure:
+  Data.s ";/****** <name>.dll/<procedurename> *******************************"
+  Data.s ";*" 
+  Data.s ";*   NAME"
+  Data.s ";* 	 <procedurename> -- <Description>"
+  Data.s ";*"
+  Data.s ";*   SYNOPSIS"
+  Data.s ";*	 int8 error = <procedurename>(<arguments>)"
+  Data.s ";*"
+  Data.s ";*   FUNCTION"
+  Data.s ";*"
+  Data.s ";*   INPUTS"
+  Data.s ";* 	 name -"
+  Data.s ";*"	
+  Data.s ";*   RESULT"
+  Data.s ";* 	 result -" 
+  Data.s ";*" 
+  Data.s ";*/"
+  Data.s "--"
+     
+EndDataSection
+
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 378
-; FirstLine = 315
+; CursorPosition = 153
+; FirstLine = 104
 ; Folding = +------
 ; EnableXP
 ; DPIAware

@@ -72,7 +72,7 @@ Procedure C2PB_Enumations(gadgetid,linein.s,nline,maxlines)
   While FindString(linein,"}") = 0
     linein = GOSCI_GetLineText(#SCI_CText,i) 
     linein = RemoveString(linein,",")
-    Debug linein
+    DebugOut(linein)
     GOSCI_SetLineText(gadgetid, i,Chr(9)+"#"+LTrim(linein))
     i=i+1
   Wend
@@ -83,17 +83,18 @@ EndProcedure
 ; Convert Define
 ;
 Procedure C2PB_Defines(gadgetid,linein.s,nline,maxlines)
+  ;-Incomplete
   GOSCI_SetLineText(gadgetid, nline,">>"+linein)
   For i = 1 To CountString(linein," ")+1
     Debug StringField(linein,i," ")
-  Next
-  
+  Next  
 EndProcedure
 
 ;
 ; Convert Structure
 ;
 Procedure C2PB_Structures(gadgetid,linein.s,nline,maxlines)
+  ;-Incomplete
 EndProcedure
 
 
@@ -122,17 +123,17 @@ Procedure C2PB_ProcessLine(gadgetid,nline,maxlines,linein.s)
   ;
   ;  
   If FindString(linein,"enum") And FindString(linein,"{")
-    Debug("---> ENUM")
+    DebugOut("---> ENUM")
     C2PB_Enumations(gadgetid,linein,nline,maxlines)
   EndIf
     
   If FindString(linein,"#define")    
-    Debug("---> #define")
+    DebugOut("---> #define")
     C2PB_Defines(gadgetid,linein.s,nline,maxlines)
   EndIf
   
   If FindString(linein,"struct")
-    Debug("---> Struct")
+    DebugOut("---> Struct")
     C2PB_Structures(gadgetid,linein.s,nline,maxlines)    
   EndIf
   
@@ -159,8 +160,7 @@ EndProcedure
 ;
 ;
 ;
-Procedure C2PB_ProcessTasks(order)
-  
+Procedure C2PB_ProcessTasks(order)  
   DebugOut("---------------------------------------------")
   DebugOut("Process Tasks Order = "+Str(Order))
   DebugOut("CountGadgetItems = "+Str(CountGadgetItems(#LI_TASKS)))
@@ -314,8 +314,8 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   ProcedureReturn *cFunc\pb_prototype  
 EndProcedure
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 167
-; FirstLine = 155
+; CursorPosition = 48
+; FirstLine = 204
 ; Folding = --
 ; EnableXP
 ; DPIAware

@@ -41,6 +41,7 @@ Enumeration FormGadget
   #BTI_TaskHelp
   #BTI_ClearTasks
   #ST_PRAMDETAILS
+  #LI_HASETTINGS
   #CB_CTypes
   #ST_Min
   #ST_Max
@@ -138,6 +139,9 @@ Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 664)
   ButtonImageGadget(#BTI_TaskHelp, 515, 6, 30, 25, ImageID(Img_MainWindow_0))
   ButtonImageGadget(#BTI_ClearTasks, 140, 6, 30, 25, ImageID(Img_MainWindow_9))
   StringGadget(#ST_PRAMDETAILS, 5, 346, 540, 55, "", #PB_String_ReadOnly | #PB_String_BorderLess)
+  AddGadgetItem(Panel_2, -1, "Settings")
+  ListIconGadget(#LI_HASETTINGS, 5, 4, 540, 386, "S", 180, #PB_ListIcon_CheckBoxes | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
+  AddGadgetColumn(#LI_HASETTINGS, 1, "Description", 350)
   CloseGadgetList()
   CloseGadgetList()
   ComboBoxGadget(#CB_CTypes, 60, 555, 115, 25)
