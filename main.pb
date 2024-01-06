@@ -127,6 +127,7 @@ Procedure.s ReadSelection(arg_input.s)
   ProcedureReturn Mid(inline,cs,ce-cs)  
 EndProcedure
 
+;
 ;  6 Data.s "All Debug Log"                ,"Enable/Disable all log file output (overrides)"
 ;  7 Data.s "Log Garbage Collector"        ,"Enable/Disable Garbage Collector log file output"
 ;  8 Data.s "Log C2PB_ProcessTasks Level 0","Enable/Disable C2PB_ProcessTasks Level 0 log file output"
@@ -135,6 +136,9 @@ EndProcedure
 ; 11 Data.s "Log Functions"                ,"Enable/Disable Functions log file output"
 ; 12 Data.s "Log Struct"                   ,"Enable/Disable Struct log file output"
 ; 13 Data.s "Log Define"                   ,"Enable/Disable Define log file output"
+; 14 Data.s "Log Enumeration"              ,"Enable/Disable Enumeration log file output"
+; 15 Data.s "Log Comments"                 ,"Enable/Disable Comments log file output"
+; 16 Data.s "Log Tasks"                    ,"Enable/Disable Tasks log file output"
 ;
 Procedure DebugOut(string.s,clearlog.b = #False,loglevel.s="")
   debugenable = #False
@@ -152,6 +156,9 @@ Procedure DebugOut(string.s,clearlog.b = #False,loglevel.s="")
     Case "Functions" : If GetGadgetItemState(#LI_HASETTINGS,11) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
     Case "Struct" : If GetGadgetItemState(#LI_HASETTINGS,12) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
     Case "Define" : If GetGadgetItemState(#LI_HASETTINGS,13) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "Enumeration" : If GetGadgetItemState(#LI_HASETTINGS,14) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "Comments" : If GetGadgetItemState(#LI_HASETTINGS,15) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "Tasks" : If GetGadgetItemState(#LI_HASETTINGS,16) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
   EndSelect
     
   If GetGadgetItemState(#LI_HASETTINGS,6) = #PB_ListIcon_Checked                ;"All Debug Log"
@@ -361,22 +368,22 @@ Procedure Convert(eventType)
           func = func + GOSCI_GetLineText(#SCI_CText,icurrent)
         Until ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,icurrent)=16
         ; multi line    
-        DebugOut("Multi Line Source:"+func)
+        DebugOut("Multi Line Source:"+func,#False,"Functions")
         proc.s = C2PB_FunctionToProtoType(func,cFunc)
-        DebugOut("=="+proc)
+        DebugOut("=="+proc,#False,"Functions")
         PTList()\proc = proc
       Else
         ; single line    
         func = GOSCI_GetLineText(#SCI_CText,icurrent)
-        DebugOut("Single Line Source:"+func)
+        DebugOut("Single Line Source:"+func,#False,"Functions")
         proc.s = C2PB_FunctionToProtoType(func,cFunc)
-        DebugOut("=="+proc) 
+        DebugOut("=="+proc,#False,"Functions") 
         PTList()\proc = proc
       EndIf
       getproc.s = cFunc\pb_getfunction
       PTList()\getproc = getproc
-      DebugOut("=="+getproc)
-      DebugOut("")        
+      DebugOut("=="+getproc,#False,"Functions")
+      DebugOut("",#False,"Functions")        
     EndIf
   Next
   
@@ -387,9 +394,10 @@ Procedure Convert(eventType)
   
   ;solution ?: 
   ;    keep the alterations as list of sources line numbers to be replaced and loop the lines again.
+  DebugOut("--- PTList()",#False,"Functions")
   ForEach PTList()
-    Debug PTList()\proc
-    Debug PTList()\getproc
+    DebugOut(PTList()\proc,#False,"Functions")
+    DebugOut(PTList()\getproc,#False,"Functions")
   Next
   ClearList(PTList())
   
@@ -856,6 +864,9 @@ DataSection
   Data.s "Log Functions"                ,"Enable/Disable Functions log file output"
   Data.s "Log Struct"                   ,"Enable/Disable Struct log file output"
   Data.s "Log Define"                   ,"Enable/Disable Define log file output"
+  Data.s "Log Enumeration"              ,"Enable/Disable Enumeration log file output"
+  Data.s "Log Comments"                 ,"Enable/Disable Comments log file output"
+  Data.s "Log Task"                     ,"Enable/Disable Task log file output"
   Data.s "AutoDoc Header"               ,"Enable/Disable Basic Documenation"  
   Data.s "AutoDoc Procedure"            ,"Enable/Disable Basic Documenation"  
   Data.s "--","--"
@@ -884,8 +895,8 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 153
-; FirstLine = 104
+; CursorPosition = 130
+; FirstLine = 98
 ; Folding = +------
 ; EnableXP
 ; DPIAware

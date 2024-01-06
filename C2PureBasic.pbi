@@ -18,8 +18,10 @@ EndStructure
 ;
 ; Remove ridculus C over elite typing! congratulations you gave yourself RSI for no reason, and I'm not talking about the mega demo.
 ;
-Procedure C2PB_GarbadgeCollection(gadgetid)  
-  ; remove all worthless ";"
+Procedure C2PB_GarbadgeCollection(gadgetid) ; GarbageCollector
+  DebugOut("C2PB_GarbadgeCollection()",#False,"ProcessLines")
+  ; remove all worthless ";" 
+  DebugOut("Remove all worthless ;",#False,"GarbageCollector")
   maxlns = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)  
   For i = 0 To maxlns
     linein.s = GOSCI_GetLineText(#SCI_CText, i)  
@@ -28,6 +30,7 @@ Procedure C2PB_GarbadgeCollection(gadgetid)
   Next
   
   ; remove all lines that contain # where define is not stated
+  DebugOut("Remove C Compiler Preprocessor Statements",#False,"GarbageCollector")
   maxlns = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)  
   For i = 0 To maxlns
     linein.s = GOSCI_GetLineText(#SCI_CText, i)  
@@ -40,13 +43,14 @@ Procedure C2PB_GarbadgeCollection(gadgetid)
       maxlns = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
     EndIf
   Next
-    
+  
 EndProcedure
 
 ;
 ; Convert Comments
 ;
-Procedure C2PB_Comments(gadgetid,linein.s,nline,maxlines)
+Procedure C2PB_Comments(gadgetid,linein.s,nline,maxlines) ; ProcessLines
+  DebugOut("C2PB_Comments()",#False,"Comments")
   If FindString(linein,"*/")
     linein = ReplaceString(linein,"/*",";/*")
     GOSCI_SetLineText(gadgetid, nline,linein)
@@ -67,6 +71,7 @@ EndProcedure
 ; Convert Comments
 ;
 Procedure C2PB_Enumations(gadgetid,linein.s,nline,maxlines)
+  DebugOut("C2PB_Enumations()",#False,"Enumeration")
   i=1+nline 
   GOSCI_SetLineText(gadgetid, nline,"Enumeration")
   While FindString(linein,"}") = 0
@@ -84,9 +89,10 @@ EndProcedure
 ;
 Procedure C2PB_Defines(gadgetid,linein.s,nline,maxlines)
   ;-Incomplete
+  DebugOut("C2PB_Defines()",#False,"Define")
   GOSCI_SetLineText(gadgetid, nline,">>"+linein)
   For i = 1 To CountString(linein," ")+1
-    Debug StringField(linein,i," ")
+    DebugOut(StringField(linein,i," "),#False,"Define")
   Next  
 EndProcedure
 
@@ -95,6 +101,7 @@ EndProcedure
 ;
 Procedure C2PB_Structures(gadgetid,linein.s,nline,maxlines)
   ;-Incomplete
+  DebugOut("C2PB_Structures()",#False,"Struct")
 EndProcedure
 
 
@@ -123,17 +130,17 @@ Procedure C2PB_ProcessLine(gadgetid,nline,maxlines,linein.s)
   ;
   ;  
   If FindString(linein,"enum") And FindString(linein,"{")
-    DebugOut("---> ENUM")
+    DebugOut("---> ENUM",#False,"ProcessLines")
     C2PB_Enumations(gadgetid,linein,nline,maxlines)
   EndIf
     
-  If FindString(linein,"#define")    
+  If FindString(linein,"#define")
     DebugOut("---> #define")
     C2PB_Defines(gadgetid,linein.s,nline,maxlines)
   EndIf
   
   If FindString(linein,"struct")
-    DebugOut("---> Struct")
+    DebugOut("---> Struct",#False,"ProcessLines")
     C2PB_Structures(gadgetid,linein.s,nline,maxlines)    
   EndIf
   
@@ -161,9 +168,9 @@ EndProcedure
 ;
 ;
 Procedure C2PB_ProcessTasks(order)  
-  DebugOut("---------------------------------------------")
-  DebugOut("Process Tasks Order = "+Str(Order))
-  DebugOut("CountGadgetItems = "+Str(CountGadgetItems(#LI_TASKS)))
+  DebugOut("---------------------------------------------",#False,"C2PB_ProcessTasksLevel"+Str(Order))
+  DebugOut("Process Tasks Order = "+Str(Order),#False,"C2PB_ProcessTasksLevel"+Str(Order))
+  DebugOut("CountGadgetItems = "+Str(CountGadgetItems(#LI_TASKS)),#False,"C2PB_ProcessTasksLevel"+Str(Order))
  
   maxlines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   
@@ -171,13 +178,13 @@ Procedure C2PB_ProcessTasks(order)
     linein.s = GOSCI_GetLineText(#SCI_CText, i_ln)
     For i=0 To CountGadgetItems(#LI_TASKS)-1
       If Get_TasksDetails(i,#TASK_ORDER)=Str(order)
-        DebugOut("Str(order) = "+Str(order))
+        DebugOut("Str(order) = "+Str(order),#False,"C2PB_ProcessTasksLevel"+Str(Order))
         task.s = Get_TasksDetails(i,#TASK_TYPE)
-        DebugOut("task = "+task)        
+        DebugOut("task = "+task,#False,"C2PB_ProcessTasksLevel"+Str(Order))     
         Select task
             
           Case "Replace A->B"
-            DebugOut("***** Case Replace A->B")
+            DebugOut("***** Case Replace A->B",#False,"C2PB_ProcessTasksLevel"+Str(Order))
             StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
             StrValueB.s = Get_TasksDetails(i,#TASK_VALUEB)
             Param.s = Get_TasksDetails(i,#TASK_PARM)
@@ -187,25 +194,24 @@ Procedure C2PB_ProcessTasks(order)
             EndIf
             
           Case "RegReplace"
+            DebugOut("***** RegReplace",#False,"C2PB_ProcessTasksLevel"+Str(Order))
             
           Case "Delete A"
-            DebugOut("***** Case Delete A")
+            DebugOut("***** Case Delete A",#False,"C2PB_ProcessTasksLevel"+Str(Order))
             StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
             Param.s = Get_TasksDetails(i,#TASK_PARM)
             outline.s = C2Tasks_RemoveString(linein,StrValueA,Param)
             If outline<>linein
               GOSCI_SetLineText(#SCI_CText,i_ln,outline)
-            EndIf
-            
+            EndIf            
           Case "Delete Line #"
-            ValueA = Val(Get_TasksDetails(i,#TASK_VALUEA))
-            
+            DebugOut("***** Delete Line #",#False,"C2PB_ProcessTasksLevel"+Str(Order))
+            ValueA = Val(Get_TasksDetails(i,#TASK_VALUEA))            
          EndSelect
       EndIf    
     Next    
   Next  
-  DebugOut("Lines Dones = "+Str(i_ln))
-
+  DebugOut("Lines Dones = "+Str(i_ln),#False,"C2PB_ProcessTasksLevel"+Str(Order))
 EndProcedure
 
 ;
@@ -223,8 +229,8 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   ; reduce all multi-spaces to 1 space.
   For i=31 To 2 Step -1 : result = RemoveString(result,Space(i)) : Next
   
-  DebugOut("C2PB_FunctionToProtoType() inputstring = ["+inputstring+"]")
-  DebugOut("C2PB_FunctionToProtoType() result = ["+result+"]")
+  DebugOut("C2PB_FunctionToProtoType() inputstring = ["+inputstring+"]",#False,"Functions")
+  DebugOut("C2PB_FunctionToProtoType() result = ["+result+"]",#False,"Functions")
   
   ; now we should have a pretty cleaning c function  
   ; find the function name.
@@ -238,7 +244,7 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   ;get number of arguments
   nbargs = CountString(args,",")  
   
-  DebugOut("C2PB_FunctionToProtoType() args = ["+args+"]")
+  DebugOut("C2PB_FunctionToProtoType() args = ["+args+"]",#False,"Functions")
   ;get argument names
   For i=1 To nbargs+1
     pramname.s = Trim(StringField(args,i,","))
@@ -253,8 +259,8 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
     pramname = Trim(Mid(pramname,fsr,Len(pramname)-fsr+1))
     argstype = RemoveString(argstype,pramname,#PB_String_CaseSensitive,fsr)
     
-    DebugOut("C2PB_FunctionToProtoType() pramname = ["+pramname+"]")
-    DebugOut("C2PB_FunctionToProtoType() argstype = ["+argstype+"]")
+    DebugOut("C2PB_FunctionToProtoType() pramname = ["+pramname+"]",#False,"Functions")
+    DebugOut("C2PB_FunctionToProtoType() argstype = ["+argstype+"]",#False,"Functions")
     
     ;
     *cFunc\c_cargname[i-1] = pramname
@@ -282,15 +288,15 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
     std\c_name = Trim(*cFunc\c_cargname[i])
     std\c_type = Trim(*cFunc\c_cargtype[i])
       
-    DebugOut("C2PB_FunctionToProtoType() (A) std\c_name = ["+std\c_name+"]")
-    DebugOut("C2PB_FunctionToProtoType() (A) std\c_type = ["+std\c_type+"]")      
-    DebugOut("C2PB_FunctionToProtoType() (A) std\pb_type = ["+std\pb_type+"]")      
+    DebugOut("C2PB_FunctionToProtoType() (A) std\c_name = ["+std\c_name+"]",#False,"Functions")
+    DebugOut("C2PB_FunctionToProtoType() (A) std\c_type = ["+std\c_type+"]",#False,"Functions")      
+    DebugOut("C2PB_FunctionToProtoType() (A) std\pb_type = ["+std\pb_type+"]",#False,"Functions")     
       
     SearchTypeDef(std)
       
-    DebugOut("C2PB_FunctionToProtoType() (B) std\c_name = ["+std\c_name+"]")
-    DebugOut("C2PB_FunctionToProtoType() (B) std\c_type = ["+std\c_type+"]")            
-    DebugOut("C2PB_FunctionToProtoType() (B) std\pb_type = ["+std\pb_type+"]")      
+    DebugOut("C2PB_FunctionToProtoType() (B) std\c_name = ["+std\c_name+"]",#False,"Functions")
+    DebugOut("C2PB_FunctionToProtoType() (B) std\c_type = ["+std\c_type+"]",#False,"Functions")            
+    DebugOut("C2PB_FunctionToProtoType() (B) std\pb_type = ["+std\pb_type+"]",#False,"Functions")      
     
     ; Add the arguments to the 'pbarguments' stack string
     If *cFunc\c_cnbargs=i
@@ -314,8 +320,8 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   ProcedureReturn *cFunc\pb_prototype  
 EndProcedure
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 48
-; FirstLine = 204
+; CursorPosition = 52
+; FirstLine = 29
 ; Folding = --
 ; EnableXP
 ; DPIAware
