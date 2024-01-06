@@ -266,7 +266,7 @@ EndProcedure
 ;
 ;
 ;
-Procedure Save(eventType)   
+Procedure Save(eventType)
 EndProcedure
 
 ;
@@ -315,6 +315,34 @@ Procedure Update(eventType)
     Case #PANELTAB_CTYPE
     Case #PANELTAB_DEFTYPE
   EndSelect  
+EndProcedure
+
+;
+;
+;
+Procedure SaveConfig()
+  If CreatePreferences("CTypeTable.cfg")
+    PreferenceGroup("HeaderAssistant")
+    For li=0 To CountGadgetItems(#LI_HASETTINGS)-1
+      hasettings.s + Str(GetGadgetItemState(#LI_HASETTINGS, li))
+    Next    
+    WritePreferenceString("Settings",hasettings)
+    ClosePreferences()
+  EndIf  
+EndProcedure
+
+;
+;
+;
+Procedure LoadConfig()
+  If OpenPreferences("CTypeTable.cfg")
+    PreferenceGroup("HeaderAssistant")
+    hasettings.s = ReadPreferenceString("Settings","")
+    For li=0 To Len(hasettings)-1
+      SetGadgetItemState(#LI_HASETTINGS,li,Val(Mid(hasettings,1+li,1)))
+    Next    
+    ClosePreferences()
+  EndIf  
 EndProcedure
 
 ;-----------------------------------------------------------------------------
@@ -829,6 +857,7 @@ EndIf
 
 OpenMainWindow()
 SetupMainWindow()
+LoadConfig()
 
 ;Header_Import("D:\Work\Code\SDK\ZingZong\src\zz_private.h")
 Header_Import("D:\Work\Code\SDK\ZingZong\src\zingzong.h")
@@ -845,6 +874,8 @@ Until event = #PB_Event_CloseWindow
 If IsDatabase(0)
   CloseDatabase(0)
 EndIf
+
+SaveConfig()
 
 End
 
@@ -895,8 +926,8 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 130
-; FirstLine = 98
+; CursorPosition = 331
+; FirstLine = 286
 ; Folding = +------
 ; EnableXP
 ; DPIAware
