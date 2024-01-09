@@ -333,8 +333,41 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
 EndProcedure
 
 ;
+; Attempts to Clean up empty lines in structures.
+;
+Procedure C2PB_CleanStructures()
+  Debug "C2PB_CleanStructures()"
+  numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
+  enable=#False
+  For li = 0 To numLines
+    cline.s = GOSCI_GetLineText(#SCI_CText, li)
+    If FindString(cline,"Structure")
+      If StringField(cline,1," ")<>"" And StringField(cline,2," ")<>""
+        enable=#True
+      EndIf
+    EndIf
+    
+    If enable=#True
+      If cline="" 
+        ScintillaSendMessage(#SCI_CText,#SCI_GOTOLINE,li,0)
+        ScintillaSendMessage(#SCI_CText,#SCI_LINEDELETE,0,0)
+        li=li-1 : numLines = numLines - 1
+      EndIf      
+    EndIf
+    
+    If FindString(cline,"EndStructure")
+      enable=#False
+    EndIf  
+  Next
+  
+EndProcedure
+
+;
 ; Convert Structres Phase 2
 ;
+
+; Only deals with the first acurrance of a nested struct struct..
+
 Procedure C2PB_ConvertSubStructures(startln = 0)
   numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   
@@ -387,9 +420,11 @@ Procedure C2PB_ConvertSubStructures(startln = 0)
   ForEach substructbuf()        
     GOSCI_InsertLineOfText(#SCI_CText,structheadln+ListIndex(substructbuf()),substructbuf())
   Next   
-  
-    
+      
+  ClearList(rootstructptr())
   ClearList(substructbuf())
+  
+  ; the state of the file is now what I call in flux, e.g I don't know where anything is now.
   
 EndProcedure
 
@@ -458,11 +493,12 @@ Procedure C2PB_StructToPB()
     EndIf    
   Next
   C2PB_ConvertSubStructures()
+  C2PB_CleanStructures()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 384
-; FirstLine = 352
+; CursorPosition = 353
+; FirstLine = 328
 ; Folding = ---
 ; EnableXP
 ; DPIAware
