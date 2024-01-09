@@ -1017,8 +1017,7 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
     EndIf
   EndProcedure
   ;/////////////////////////////////////////////////////////////////////////////////
-  
-  
+    
   ;/////////////////////////////////////////////////////////////////////////////////
   ;The following function searches for a bookmarked line starting from the given line.
   ;Set direction < 0 for a backwards search.
@@ -1722,6 +1721,8 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
   EndProcedure
   ;/////////////////////////////////////////////////////////////////////////////////
   
+  ;- CUSTOMIZED FUNCTIONALITY
+  
   ;/////////////////////////////////////////////////////////////////////////////////
   ; Load Text
   ;
@@ -1737,6 +1738,15 @@ CompilerIf Defined(INCLUDE_GOSCINTILLA, #PB_Constant)=0
     EndIf      
   EndProcedure
   
+  ;/////////////////////////////////////////////////////////////////////////////////
+  ; Move Line  
+  Procedure GOSCI_CopyLine(id,fromline,toline)
+    Protected line.s
+    line.s = GOSCI_GetLineText(id, fromline)
+    GOSCI_InsertLineOfText(id,toline,">>>"+line)    
+  EndProcedure
+  ;/////////////////////////////////////////////////////////////////////////////////
+
   ;-PUBLIC FUNCTIONS - Functions to assist with the syntax highlighting lexer.
   ;-============================================================
   
@@ -2251,8 +2261,8 @@ CompilerEndIf
 DisableExplicit
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 701
-; FirstLine = 512
+; CursorPosition = 1745
+; FirstLine = 1550
 ; Folding = -0---------
 ; EnableXP
 ; DPIAware

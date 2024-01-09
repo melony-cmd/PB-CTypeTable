@@ -1,5 +1,5 @@
 ﻿;
-;
+; Function -> Procedure Structure
 ;
 Structure Function
   ; C
@@ -16,19 +16,10 @@ Structure Function
 EndStructure
 
 ;
-; Remove ridculus C over elite typing! congratulations you gave yourself RSI for no reason, and I'm not talking about the mega demo.
+; Remove C PreProcessore Statements which are often not required in PB
 ;
-Procedure C2PB_GarbadgeCollection(gadgetid) ; GarbageCollector
-  DebugOut("C2PB_GarbadgeCollection()",#False,"ProcessLines")
-  ; remove all worthless ";" 
-  DebugOut("Remove all worthless ;",#False,"GarbageCollector")
-  maxlns = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)  
-  For i = 0 To maxlns
-    linein.s = GOSCI_GetLineText(#SCI_CText, i)  
-    linein = ReplaceString(linein,";","")    
-    GOSCI_SetLineText(gadgetid,i,linein)
-  Next
-  
+Procedure C2PB_RemoveCPreProcessor(gadgetid) ; GarbageCollector
+  DebugOut("C2PB_RemoveCPreProcessor()",#False,"GarbageCollector") 
   ; remove all lines that contain # where define is not stated
   DebugOut("Remove C Compiler Preprocessor Statements",#False,"GarbageCollector")
   maxlns = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)  
@@ -42,8 +33,22 @@ Procedure C2PB_GarbadgeCollection(gadgetid) ; GarbageCollector
       GOSCI_DeleteLine(gadgetid,i) : i=i-1
       maxlns = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
     EndIf
+  Next  
+EndProcedure
+
+;
+; Remove C ;
+;
+Procedure C2PB_RemoveSemiColon(gadgetid)
+  DebugOut("C2PB_RemoveSemiColon()",#False,"GarbageCollector") 
+  ; remove all worthless ";"   
+  DebugOut("Remove all worthless ;",#False,"GarbageCollector")
+  maxlns = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)  
+  For i = 0 To maxlns
+    linein.s = GOSCI_GetLineText(#SCI_CText, i)  
+    linein = ReplaceString(linein,";","")    
+    GOSCI_SetLineText(gadgetid,i,linein)
   Next
-  
 EndProcedure
 
 ;
@@ -68,7 +73,31 @@ Procedure C2PB_Comments(gadgetid,linein.s,nline,maxlines) ; ProcessLines
 EndProcedure
 
 ;
-; Convert Comments
+; Strip Comments
+;
+Procedure.s C2PB_StripComment(instring.s)
+  outstring.s = instring
+  fpos = FindString(instring,";/*")
+  If fpos
+    outstring = RemoveString(Trim(Mid(outstring,1,fpos-1)),Chr(9))
+  EndIf
+  ProcedureReturn outstring
+EndProcedure
+
+;
+; Strip Comments
+;
+Procedure.s C2PB_GetComment(instring.s)
+  outstring.s = instring
+  fpos = FindString(instring,";/*")
+  If fpos
+    outstring = Str(fpos)+":"+Mid(outstring,fpos)
+  EndIf
+  ProcedureReturn outstring
+EndProcedure
+
+;
+; Convert Enumation
 ;
 Procedure C2PB_Enumations(gadgetid,linein.s,nline,maxlines)
   DebugOut("C2PB_Enumations()",#False,"Enumeration")
@@ -97,22 +126,10 @@ Procedure C2PB_Defines(gadgetid,linein.s,nline,maxlines)
 EndProcedure
 
 ;
-; Convert Structure
-;
-Procedure C2PB_Structures(gadgetid,linein.s,nline,maxlines)
-  ;-Incomplete
-  DebugOut("C2PB_Structures()",#False,"Struct")
-EndProcedure
-
-
-;
 ; Converts C variables into PB types
 ;
 Procedure C2PB_ProcessLine(gadgetid,nline,maxlines,linein.s)
-  
   skip=#False     ; skip all following phases if #True
-  
-    
   ; language restructure mainly looking for comment/enums/struct/#defines
   
   ;
@@ -138,12 +155,7 @@ Procedure C2PB_ProcessLine(gadgetid,nline,maxlines,linein.s)
     DebugOut("---> #define")
     C2PB_Defines(gadgetid,linein.s,nline,maxlines)
   EndIf
-  
-  If FindString(linein,"struct")
-    DebugOut("---> Struct",#False,"ProcessLines")
-    C2PB_Structures(gadgetid,linein.s,nline,maxlines)    
-  EndIf
-  
+    
   ; Phase 1 (Generic C Types)
   ForEach CTypeList()
     If FindString(linein,StringField(CTypeList(),2,","))
@@ -165,7 +177,7 @@ Procedure C2PB_ProcessLine(gadgetid,nline,maxlines,linein.s)
 EndProcedure  
 
 ;
-;
+; C2PB_ProcessTasks()
 ;
 Procedure C2PB_ProcessTasks(order)  
   DebugOut("---------------------------------------------",#False,"C2PB_ProcessTasksLevel"+Str(Order))
@@ -215,7 +227,7 @@ Procedure C2PB_ProcessTasks(order)
 EndProcedure
 
 ;
-;
+; C2PB_FunctionToProtoType()
 ;
 Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "")   
   result.s = ""  
@@ -319,9 +331,138 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   ClearStructure(std,SearchTypeDefArgs)
   ProcedureReturn *cFunc\pb_prototype  
 EndProcedure
+
+;
+; Convert Structres Phase 2
+;
+Procedure C2PB_ConvertSubStructures(startln = 0)
+  numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
+  
+  NewList substructbuf.s()
+  NewList rootstructptr.s()
+  
+  ; Convert struct -> Structure
+  For i = startln To numLines
+    cline.s = GOSCI_GetLineText(#SCI_CText, i)
+    If StringField(cline,1," ") = "Structure"
+      If nstruct = 0 : structheadln = i : EndIf
+      nstruct=nstruct+1
+    EndIf
+    
+    If nstruct>1 
+      AddElement(substructbuf())
+      If StringField(cline,1," ") = "Structure"
+        AddElement(rootstructptr())
+        bufptr.s = RemoveString(Trim(RemoveString(C2PB_StripComment(cline),"Structure")),";")
+        If FindString(bufptr,",")=0
+          ptr.s = "*"+bufptr+"."+bufptr
+          rootstructptr() = ptr
+        Else
+          For imptr=0 To CountString(bufptr,",")
+            ptr.s = "*"+StringField(bufptr,1+imptr,",")+"."+StringField(bufptr,1+imptr,",")
+            Debug "///" + ptr
+            rootstructptr() = ptr
+            AddElement(rootstructptr())
+          Next          
+        EndIf
+      EndIf      
+      substructbuf() = cline
+      GOSCI_SetLineText(#SCI_CText,i,"")
+    EndIf
+    
+    If FindString(cline,"EndStructure")
+      nstruct=nstruct-1 : structfootln = i
+      If nstruct = 0 : structfootln = i : Break : EndIf
+    EndIf    
+  Next
+  
+  Debug "%%% HEAD %%%"+Str(structheadln)
+  Debug "%%% FOOT %%%"+Str(structfootln)
+  
+  ForEach rootstructptr()
+    Debug "\\\ [" + rootstructptr() + "]"
+    GOSCI_InsertLineOfText(#SCI_CText,structheadln+ListIndex(rootstructptr())+1,rootstructptr())
+  Next
+  
+  ForEach substructbuf()        
+    GOSCI_InsertLineOfText(#SCI_CText,structheadln+ListIndex(substructbuf()),substructbuf())
+  Next   
+  
+    
+  ClearList(substructbuf())
+  
+EndProcedure
+
+;
+; Struct to PB Structure Phase 1 -> Phase 2
+;
+Procedure C2PB_StructToPB()
+  numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
+  
+  ; Convert struct -> Structure
+  For i = 0 To numLines
+    cline.s = GOSCI_GetLineText(#SCI_CText, i)    
+    ; Root Stucture
+    If FindString(cline,"struct")<>0 And FindString(cline,"{")<>0
+      structhead.s = ReplaceString(cline,"struct","Structure")
+      structhead = Trim(RemoveString(structhead,"{"))
+      GOSCI_SetLineText(#SCI_CText,i,structhead)
+      structheadln = i
+    EndIf
+    
+    If FindString(cline,"};")<>0
+      GOSCI_SetLineText(#SCI_CText,i,Trim(ReplaceString(cline,"};","EndStructure")))
+    EndIf
+    
+    If FindString(cline,"}")<>0
+      GOSCI_SetLineText(#SCI_CText,i,Trim(ReplaceString(cline,"}","EndStructure")))
+      semipos = FindString(cline,";")
+      cbracepos = FindString(cline,"}")
+      substructname.s = RemoveString(Trim(Mid(cline,cbracepos+1,semipos)),";")
+      If substructname<>""
+        subcline.s = GOSCI_GetLineText(#SCI_CText, i)
+        DebugOut("["+substructname+"]",#False,"Struct")
+        substructname = RemoveString(subcline,"EndStructure")
+        GOSCI_SetLineText(#SCI_CText,structheadln,"Structure "+substructname)
+        GOSCI_SetLineText(#SCI_CText,i,"EndStructure")
+      Else
+        ; no name! maybe it's beyond the struct as many names? 
+        ; nb: I can already see a bug here if the struct has been improperly closed without a terminating ;
+        ; that would also break a c compiler too however, in this situation offset is bound to a limit of (1-7)           
+        ; as 0 is already is already handled above. - I highly doubt anyone would be a thick headed to put that
+        ; many an alias on a struct and if you DO you should be shot in the head.
+        ; It will also break if cline is equal to nothing, but that's more of what I call natural loop exit,
+        ; as it falls out the bottom of the repeat/until loop, unnatural would be 'break'
+        If cline<>"};"
+          offseti = 1
+          obuf.s = ""
+          Repeat            
+            cline.s = C2PB_StripComment(GOSCI_GetLineText(#SCI_CText, i + offseti))
+            cline = Mid(cline,1,Len(cline)-1)
+            If cline<>""
+              ; Problem here of cause is PB only has 1 name thus the structure must be copied twice with each name
+              ; however in this chunck of code we're not ready to do that yet as we're still processing the basics
+              ; not moving structs out.              
+              DebugOut("[NO SINGLE NAME]! = [" + cline + "]",#False,"Struct")
+              obuf = obuf + cline + ","
+            EndIf
+            GOSCI_SetLineText(#SCI_CText,i + offseti,"") ; the sad consequence of the sitation is any comments are oblitorated.
+            offseti=offseti+1 : If offseti>=7 : Break : EndIf
+          Until FindString(cline,";")<>0 Or cline=""
+          ; Solution therefore is;
+          obuf = Mid(obuf,1,Len(obuf)-1)
+          DebugOut("[SOLUTION]! = [" + obuf + "]",#False,"Struct")
+          GOSCI_SetLineText(#SCI_CText,structheadln,"Structure "+obuf)          
+        EndIf        
+      EndIf      
+    EndIf    
+  Next
+  C2PB_ConvertSubStructures()
+EndProcedure
+
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 52
-; FirstLine = 29
-; Folding = --
+; CursorPosition = 384
+; FirstLine = 352
+; Folding = ---
 ; EnableXP
 ; DPIAware

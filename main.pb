@@ -365,15 +365,15 @@ Procedure Convert(eventType)
   numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   cFunc.Function
   ClearList(PTList())
-  
-  ;-Garbadge Collection
-  StatusUpdate("Garbadge Collection..")
-  C2PB_GarbadgeCollection(#SCI_CText)
-  
-  ;-Process Tasks Level 0 
+    
+  ;-Remove C PreProcessor
+  StatusUpdate("C2PB_RemoveCPreProcessor")
+  C2PB_RemoveCPreProcessor(#SCI_CText)
+    
+  ;-Enter Process Tasks Level 0 
   StatusUpdate("C2PB_ProcessTasks Level 0")
   C2PB_ProcessTasks(0)
-  
+    
   ;-General Processing
   StatusUpdate("C2PB_ProcessLines")
   For i = 0 To numLines
@@ -430,15 +430,12 @@ Procedure Convert(eventType)
   ClearList(PTList())
   
   ;-Structure Processing
-  StatusUpdate("Structure Processing")
+  ; StatusUpdate("Structure Processing")
+  C2PB_StructToPB()
   
-  
-  
-  
-  ;-Process Tasks Level 1
+  ;-Exit Process Tasks Level 1
   StatusUpdate("C2PB_ProcessTasks Level 1")
   C2PB_ProcessTasks(1)
-  
   
   ;-Complete
   StatusUpdate("Complete!")
@@ -926,8 +923,8 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 331
-; FirstLine = 286
+; CursorPosition = 433
+; FirstLine = 372
 ; Folding = +------
 ; EnableXP
 ; DPIAware
