@@ -320,6 +320,17 @@ EndProcedure
 ;
 ;
 ;
+Procedure BlockUser(enable.b)
+  For id=0 To 500
+    If IsGadget(id)<>0
+      DisableGadget(id,enable)
+    EndIf    
+  Next
+EndProcedure
+
+;
+;
+;
 Procedure SaveConfig()
   If CreatePreferences("CTypeTable.cfg")
     PreferenceGroup("HeaderAssistant")
@@ -346,6 +357,39 @@ Procedure LoadConfig()
 EndProcedure
 
 ;-----------------------------------------------------------------------------
+;- Insert Code Blocks
+;-----------------------------------------------------------------------------
+
+;
+;
+;
+Procedure Insert_AutoDllProcedureHeader(insline)
+  ;<%PRJ>
+  Restore autodll_procedure_header:
+  rdline.s = ""
+  Repeat
+    Read.s rdline
+    If rdline<>"--" : GOSCI_InsertLineOfText(#SCI_CText,insline+i,rdline) : EndIf
+    i=i+1
+    Debug rdline
+  Until rdline = "--"
+EndProcedure
+
+;
+;
+;
+Procedure Insert_AutoDllProcedureFooter(insline)
+  Restore autodll_procedure_footer
+  rdline.s = ""
+  Repeat
+    Read.s rdline
+    If rdline<>"--" : GOSCI_InsertLineOfText(#SCI_CText,insline+i,rdline) : EndIf
+    i=i+1
+    Debug rdline
+  Until rdline = "--"
+EndProcedure
+
+;-----------------------------------------------------------------------------
 ;- Task Operations
 ;-----------------------------------------------------------------------------
 
@@ -360,7 +404,7 @@ EndProcedure
 ;
 Procedure Convert(eventType)
   StatusUpdate("Converting..")
-  DisableGadget(#BT_Convert,#True)
+  BlockUser(#True)
   convdonce.b = #True
   numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   cFunc.Function
@@ -411,7 +455,8 @@ Procedure Convert(eventType)
       getproc.s = cFunc\pb_getfunction
       PTList()\getproc = getproc
       DebugOut("=="+getproc,#False,"Functions")
-      DebugOut("",#False,"Functions")        
+      DebugOut("",#False,"Functions")
+      GOSCI_SetLineText(#SCI_CText,icurrent,";"+func)
     EndIf
   Next
   
@@ -423,12 +468,26 @@ Procedure Convert(eventType)
   ;solution ?: 
   ;    keep the alterations as list of sources line numbers to be replaced and loop the lines again.
   DebugOut("--- PTList()",#False,"Functions")
+  numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   ForEach PTList()
     DebugOut(PTList()\proc,#False,"Functions")
-    DebugOut(PTList()\getproc,#False,"Functions")
+    GOSCI_InsertLineOfText(#SCI_CText,numLines+ListIndex(PTList()),PTList()\proc)
   Next
+  
+  numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
+  GOSCI_InsertLineOfText(#SCI_CText,numLines,"")
+  
+  Insert_AutoDllProcedureHeader(ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT))
+  
+  numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
+  ForEach PTList()
+    DebugOut(PTList()\getproc,#False,"Functions")
+    GOSCI_InsertLineOfText(#SCI_CText,numLines+ListIndex(PTList()),Chr(9)+PTList()\getproc)
+  Next  
   ClearList(PTList())
   
+  Insert_AutoDllProcedureFooter(ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT))
+
   ;-Structure Processing
   ; StatusUpdate("Structure Processing")
   C2PB_StructToPB()
@@ -439,8 +498,7 @@ Procedure Convert(eventType)
   
   ;-Complete
   StatusUpdate("Complete!")
-  DisableGadget(#BT_Convert,#False)
-  
+  BlockUser(#False)
 EndProcedure
 
 ;
@@ -919,13 +977,25 @@ DataSection
   Data.s ";*" 
   Data.s ";*/"
   Data.s "--"
-     
+  autodll_procedure_header:
+  Data.s "Procedure <%PRJ>_OpenLibrary(library.s)"
+  Data.s "  dll = OpenLibrary(#PB_Any,library)"
+  Data.s "  If dll_plugin"
+  Data.s "--"
+  autodll_procedure_footer:
+  Data.s "  Else"
+  Data.s "    ProcedureReturn #False"
+  Data.s "  EndIf"
+  Data.s "  ProcedureReturn dll_plugin"
+  Data.s "EndProcedure"
+  Data.s "--"     
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 433
-; FirstLine = 372
+; CursorPosition = 385
+; FirstLine = 327
 ; Folding = +------
+; Markers = 459
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

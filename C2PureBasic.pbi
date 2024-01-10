@@ -358,8 +358,13 @@ Procedure C2PB_CleanStructures()
     If FindString(cline,"EndStructure")
       enable=#False
     EndIf  
-  Next
-  
+  Next  
+EndProcedure
+
+;
+; Convert the Veriable of the Structures
+;
+Procedure C2PB_ValueStructure()
 EndProcedure
 
 ;
@@ -388,11 +393,11 @@ Procedure C2PB_ConvertSubStructures(startln = 0)
         AddElement(rootstructptr())
         bufptr.s = RemoveString(Trim(RemoveString(C2PB_StripComment(cline),"Structure")),";")
         If FindString(bufptr,",")=0
-          ptr.s = "*"+bufptr+"."+bufptr
+          ptr.s = Chr(9)+"*"+bufptr+"."+bufptr
           rootstructptr() = ptr
         Else
           For imptr=0 To CountString(bufptr,",")
-            ptr.s = "*"+StringField(bufptr,1+imptr,",")+"."+StringField(bufptr,1+imptr,",")
+            ptr.s = Chr(9)+"*"+StringField(bufptr,1+imptr,",")+"."+StringField(bufptr,1+imptr,",")
             Debug "///" + ptr
             rootstructptr() = ptr
             AddElement(rootstructptr())
@@ -497,8 +502,8 @@ Procedure C2PB_StructToPB()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 353
-; FirstLine = 328
+; CursorPosition = 399
+; FirstLine = 372
 ; Folding = ---
 ; EnableXP
 ; DPIAware
