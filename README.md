@@ -1,6 +1,6 @@
 #PureBasic Tool for the Tools Menu
 
-It's intended use is a reference of PureBasic Variable Types and a reference for how C type variables convert to PureBasic, additionally when I write the code it may convert 'a' C type veriable into a PureBasic one
+It's intended use is a reference of PureBasic variable types and a reference for how C type variables convert to PureBasic, additionally when I write the code it may convert 'a' C type variable into a PureBasic one
 
 PureBasic Variable Types<br>
 ![image](https://github.com/melony-cmd/PB-CTypeTable/assets/66537589/3eb47af6-1ff8-4ab3-bd3c-bc20df1347c9)
