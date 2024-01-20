@@ -15,7 +15,7 @@ Declare.s Get_TasksDetails(idx.l,value.l=0)
 ; Includes
 ;
 IncludeFile "GoScintilla.pbi"
-
+IncludeFile "String.pbi"
 ;
 ; Forms
 ;
@@ -40,6 +40,11 @@ Enumeration
   #TASK_ORDER
 EndEnumeration
 
+Enumeration
+  #STD_PROCEDURE
+  #STD_STRUCTURE
+EndEnumeration
+
 #MARK_CIRCLEPLUS = %000000001
 #MARK_VLINE      = %000000010
 #MARK_CURVELINE  = %000000100
@@ -60,7 +65,7 @@ Structure SearchTypeDefArgs
   c_type.s
   pb_type.s
 EndStructure
-Declare SearchTypeDef(*args.SearchTypeDefArgs)
+Declare SearchTypeDef(*args.SearchTypeDefArgs,srctype.l)
 
 ;
 ;
@@ -139,11 +144,12 @@ EndProcedure
 ; 14 Data.s "Log Enumeration"              ,"Enable/Disable Enumeration log file output"
 ; 15 Data.s "Log Comments"                 ,"Enable/Disable Comments log file output"
 ; 16 Data.s "Log Tasks"                    ,"Enable/Disable Tasks log file output"
-;
+
 Procedure DebugOut(string.s,clearlog.b = #False,loglevel.s="")
   debugenable = #False
   
   If clearlog = #True
+    Debug("DeleteFile(pb-ctypetable.log)")
     DeleteFile("pb-ctypetable.log")
     ProcedureReturn 
   EndIf
@@ -159,20 +165,28 @@ Procedure DebugOut(string.s,clearlog.b = #False,loglevel.s="")
     Case "Enumeration" : If GetGadgetItemState(#LI_HASETTINGS,14) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
     Case "Comments" : If GetGadgetItemState(#LI_HASETTINGS,15) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
     Case "Tasks" : If GetGadgetItemState(#LI_HASETTINGS,16) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
+    Case "" : debugenable = #True
+  Default
+    Debug "Unhandled Loglevel State: ["+loglevel+"]"
+    debugenable = #True
   EndSelect
     
   If GetGadgetItemState(#LI_HASETTINGS,6) = #PB_ListIcon_Checked                ;"All Debug Log"
     debugenable = #True
   EndIf
   
+  ;If loglevel = "Struct" : Debug Str(debugenable) + "--" + loglevel + "--" + Str(#True) : EndIf
+  
   If debugenable = #True
     ofh = OpenFile(#PB_Any,"pb-ctypetable.log")
     If ofh
       WindowEvent()
-      outstring.s = "["+FormatDate("%hh:%ii:%ss", Date())+"] [Debug] "+string    
+      outstring.s = "["+FormatDate("%hh:%ii:%ss", Date())+"] ["+loglevel+"] "+string    
       FileSeek(ofh,Lof(ofh))
       WriteStringN(ofh,outstring)
       CloseFile(ofh)
+    Else
+      Debug("Failed to create logfile")
     EndIf  
   EndIf  
 EndProcedure
@@ -537,25 +551,35 @@ EndProcedure
 ;
 ; Search TypeDef
 ;
-Procedure SearchTypeDef(*args.SearchTypeDefArgs)
-  r.s = "!"
+Procedure SearchTypeDef(*args.SearchTypeDefArgs,srctype.l)
+   
+  If srctype = #STD_PROCEDURE
+    DebugOut("#STD_PROCEDURE / SearchTypeDef() name=["+*args\c_name+"] type=["+*args\c_type+"]")
+    For i=0 To CountGadgetItems(#LI_DefTypeTable)-1
+      deftype.s = GetGadgetItemText(#LI_DefTypeTable,i,0)    
+      If deftype=*args\c_type
+        pbtype.s = GetGadgetItemText(#LI_DefTypeTable,i,2)
+        pbtype = Mid(pbtype,2,FindString(pbtype,")")-2)
+        *args\pb_type = pbtype
+      EndIf    
+      If deftype=*args\c_name
+        *args\c_name = Mid(pbtype,2,FindString(pbtype,")")-2) 
+      EndIf    
+    Next
+  EndIf
   
-  DebugOut("SearchTypeDef() name=["+*args\c_name+"] type=["+*args\c_type+"]")
-  
-  For i=0 To CountGadgetItems(#LI_DefTypeTable)-1
-    deftype.s = GetGadgetItemText(#LI_DefTypeTable,i,0)
-    
-    If deftype=*args\c_type
-      pbtype.s = GetGadgetItemText(#LI_DefTypeTable,i,2)
-      pbtype = Mid(pbtype,2,FindString(pbtype,")")-2)
-      *args\pb_type = pbtype
-    EndIf
-    
-    If deftype=*args\c_name
-      *args\c_name = Mid(pbtype,2,FindString(pbtype,")")-2) 
-    EndIf    
-  Next
-  
+  If srctype = #STD_STRUCTURE
+    ;DebugOut("#STD_STRUCTURE / SearchTypeDef() name=["+*args\c_name+"] type=["+*args\c_type+"]",#False,"Struct")
+    For i=0 To CountGadgetItems(#LI_DefTypeTable)-1
+      deftype.s = GetGadgetItemText(#LI_DefTypeTable,i,0)    
+      If deftype=*args\c_type
+        pbtype.s = GetGadgetItemText(#LI_DefTypeTable,i,2)
+        pbtype = Mid(pbtype,2,FindString(pbtype,")")-2)
+        *args\pb_type = pbtype
+      EndIf    
+    Next
+    ;DebugOut("#STD_STRUCTURE / SearchTypeDef() name=["+*args\c_name+"] type=["+*args\c_type+"] pbtype="+*args\pb_type,#False,"Struct")
+  EndIf  
 EndProcedure
 
 ;
@@ -914,6 +938,17 @@ OpenMainWindow()
 SetupMainWindow()
 LoadConfig()
 
+DebugOut("TEST",#False,"GarbageCollector")
+DebugOut("TEST",#False,"C2PB_ProcessTasksLevel0")
+DebugOut("TEST",#False,"C2PB_ProcessTasksLevel1")
+DebugOut("TEST",#False,"ProcessLines")
+DebugOut("TEST",#False,"Functions")
+DebugOut("TEST",#False,"Struct")
+DebugOut("TEST",#False,"Define")
+DebugOut("TEST",#False,"Enumeration")
+DebugOut("TEST",#False,"Comments")
+DebugOut("TEST",#False,"Tasks")
+
 ;Header_Import("D:\Work\Code\SDK\ZingZong\src\zz_private.h")
 Header_Import("D:\Work\Code\SDK\ZingZong\src\zingzong.h")
 
@@ -978,7 +1013,7 @@ DataSection
   Data.s ";*/"
   Data.s "--"
   autodll_procedure_header:
-  Data.s "Procedure <%PRJ>_OpenLibrary(library.s)"
+  Data.s "Procedure.l <%PRJ>_OpenLibrary(library.s)"
   Data.s "  dll = OpenLibrary(#PB_Any,library)"
   Data.s "  If dll_plugin"
   Data.s "--"
@@ -992,10 +1027,10 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 385
-; FirstLine = 327
+; CursorPosition = 169
+; FirstLine = 106
 ; Folding = +------
-; Markers = 459
+; Markers = 473
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

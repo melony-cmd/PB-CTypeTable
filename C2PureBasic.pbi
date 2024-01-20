@@ -73,30 +73,6 @@ Procedure C2PB_Comments(gadgetid,linein.s,nline,maxlines) ; ProcessLines
 EndProcedure
 
 ;
-; Strip Comments
-;
-Procedure.s C2PB_StripComment(instring.s)
-  outstring.s = instring
-  fpos = FindString(instring,";/*")
-  If fpos
-    outstring = RemoveString(Trim(Mid(outstring,1,fpos-1)),Chr(9))
-  EndIf
-  ProcedureReturn outstring
-EndProcedure
-
-;
-; Strip Comments
-;
-Procedure.s C2PB_GetComment(instring.s)
-  outstring.s = instring
-  fpos = FindString(instring,";/*")
-  If fpos
-    outstring = Str(fpos)+":"+Mid(outstring,fpos)
-  EndIf
-  ProcedureReturn outstring
-EndProcedure
-
-;
 ; Convert Enumation
 ;
 Procedure C2PB_Enumations(gadgetid,linein.s,nline,maxlines)
@@ -304,7 +280,7 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
     DebugOut("C2PB_FunctionToProtoType() (A) std\c_type = ["+std\c_type+"]",#False,"Functions")      
     DebugOut("C2PB_FunctionToProtoType() (A) std\pb_type = ["+std\pb_type+"]",#False,"Functions")     
       
-    SearchTypeDef(std)
+    SearchTypeDef(std,#STD_PROCEDURE)
       
     DebugOut("C2PB_FunctionToProtoType() (B) std\c_name = ["+std\c_name+"]",#False,"Functions")
     DebugOut("C2PB_FunctionToProtoType() (B) std\c_type = ["+std\c_type+"]",#False,"Functions")            
@@ -322,7 +298,7 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   std.SearchTypeDefArgs
   std\c_name = ""
   std\c_type = Trim(Mid(result,1,FindString(result,*cFunc\c_name)-1))
-  SearchTypeDef(std)
+  SearchTypeDef(std,#STD_PROCEDURE)
   *cFunc\c_rtstype = std\pb_type
     
   *cFunc\pb_prototype = "PrototypeC"+*cFunc\c_rtstype+" "+prefix+*cFunc\c_name+"("+pbarguments+") : Global "+prefix+*cFunc\c_name+"."+prefix+*cFunc\c_name  
@@ -391,7 +367,7 @@ Procedure C2PB_ConvertSubStructures(startln = 0)
       AddElement(substructbuf())
       If StringField(cline,1," ") = "Structure"
         AddElement(rootstructptr())
-        bufptr.s = RemoveString(Trim(RemoveString(C2PB_StripComment(cline),"Structure")),";")
+        bufptr.s = RemoveString(Trim(RemoveString(StripComment(cline),"Structure")),";")
         If FindString(bufptr,",")=0
           ptr.s = Chr(9)+"*"+bufptr+"."+bufptr
           rootstructptr() = ptr
@@ -438,6 +414,9 @@ EndProcedure
 ;
 Procedure C2PB_StructToPB()
   numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
+  withinstruct.b = #False
+  parmdefargs.s = "abcdefghijklmnopqrstuvwxyz"
+  Dim ProtoList.s(512)
   
   ; Convert struct -> Structure
   For i = 0 To numLines
@@ -447,15 +426,76 @@ Procedure C2PB_StructToPB()
       structhead.s = ReplaceString(cline,"struct","Structure")
       structhead = Trim(RemoveString(structhead,"{"))
       GOSCI_SetLineText(#SCI_CText,i,structhead)
-      structheadln = i
+      structheadln = i      
+      DebugOut("Struct Found... ["+structhead+"]",#False,"Struct")
+      withinstruct.b = #True
+      finalizestruct.b = #False
+      iproto = 0 
     EndIf
     
+    ;
+    ; Convert the internal data of the struct to PB veriable types.
+    ;
+    If withinstruct.b = #True And FindString(cline,"struct")=0 And FindString(cline,"};")=0 And FindString(cline,"}")=0      
+      varstruct.s = Trim(RemoveString(Mid(cline,1,FindString(cline,";")),";"))
+      DebugOut("varstruct = ["+varstruct+"]",#False,"Struct")      
+      std.SearchTypeDefArgs : ClearStructure(std,SearchTypeDefArgs)
+      noremcline.s = Trim(StripStringRight(cline,";/*"))
+      
+      std\c_name = RemoveString(LastWordByTerminator(noremcline,"* "),";")
+      std\c_type = GetTypeFromString(noremcline)
+      SearchTypeDef(std,#STD_STRUCTURE)
+      
+      If FindString(std\c_type,"Prototype")
+        DebugOut("- Prototype ------------------------------------------------",#False,"Struct")
+        ;  we need to build an empty stub some place (user has to write internal code for that one, but we can do some work still.)
+        args.s = RemoveStringList(GetStringBetween(noremcline,"(",")",2),"()")
+        protoname.s = RemoveString(GetStringHeadBetween(noremcline,"(",")",#True),"*")
+        rtsctype.s = RemoveString(noremcline,args)
+        newargs.s = ""
+        ;  and finally we can resolve what types these arguments actually are.
+        For ia=0 To CountString(args,",")
+          cvartype.s = Trim(StringField(args,1+ia,","))
+          std\c_name = "" ; we don't have a name just a var type.
+          std\c_type = cvartype
+          SearchTypeDef(std,#STD_STRUCTURE)
+          If CountString(args,",")=0
+            newargs = "pram_a" + std\pb_type
+          Else
+            If ia<CountString(args,",") : cma.s="," : Else : cma.s="" : EndIf
+            newargs = newargs + "pram_" +Mid(parmdefargs,1+ia,1) + std\pb_type + cma;","
+          EndIf          
+        Next
+
+        DebugOut("noremcline = {"+noremcline+"}",#False,"Struct")
+        DebugOut("Args = {"+Str(ia-1)+"} {"+cvartype+"} \pb_type = {"+std\pb_type+"}",#False,"Struct")
+        DebugOut("NewArgs = {"+Str(ia-1)+"} {"+newargs+"}",#False,"Struct")
+        
+        std\c_name = "" ; we don't have a name just a var type.
+        std\c_type = rtsctype
+        SearchTypeDef(std,#STD_STRUCTURE)        
+               
+        ; we should insert this ahead of the the 'Structure'
+        DebugOut("Prototype"+std\pb_type+" Prototype_"+protoname+"("+newargs+") ",#False,"Struct")
+        ProtoList(iproto) = Str(structheadln)+"::Prototype"+std\pb_type+" Prototype_"+protoname+"("+newargs+") "
+        iproto = iproto +1
+        
+        ; this belongs in the structure
+        DebugOut("Struct Replace : "+cline,#False,"Struct")        
+        DebugOut("Insert Into Structure At Line ("+Str(i)+"):= _"+protoname+".Prototype_"+protoname+InsertTabs(4)+GetComment(cline),#False,"Struct")
+        GOSCI_SetLineText(#SCI_CText,i,InsertTabs(0)+"_"+protoname+".Prototype_"+protoname+InsertTabs(4)+GetComment(cline))
+      EndIf                 
+    EndIf
+       
     If FindString(cline,"};")<>0
       GOSCI_SetLineText(#SCI_CText,i,Trim(ReplaceString(cline,"};","EndStructure")))
-    EndIf
+      withinstruct.b = #False
+      finalizestruct = #True
+    EndIf       
     
     If FindString(cline,"}")<>0
       GOSCI_SetLineText(#SCI_CText,i,Trim(ReplaceString(cline,"}","EndStructure")))
+      withinstruct.b = #False
       semipos = FindString(cline,";")
       cbracepos = FindString(cline,"}")
       substructname.s = RemoveString(Trim(Mid(cline,cbracepos+1,semipos)),";")
@@ -465,6 +505,7 @@ Procedure C2PB_StructToPB()
         substructname = RemoveString(subcline,"EndStructure")
         GOSCI_SetLineText(#SCI_CText,structheadln,"Structure "+substructname)
         GOSCI_SetLineText(#SCI_CText,i,"EndStructure")
+        finalizestruct = #True
       Else
         ; no name! maybe it's beyond the struct as many names? 
         ; nb: I can already see a bug here if the struct has been improperly closed without a terminating ;
@@ -477,7 +518,7 @@ Procedure C2PB_StructToPB()
           offseti = 1
           obuf.s = ""
           Repeat            
-            cline.s = C2PB_StripComment(GOSCI_GetLineText(#SCI_CText, i + offseti))
+            cline.s = StripComment(GOSCI_GetLineText(#SCI_CText, i + offseti))
             cline = Mid(cline,1,Len(cline)-1)
             If cline<>""
               ; Problem here of cause is PB only has 1 name thus the structure must be copied twice with each name
@@ -495,15 +536,27 @@ Procedure C2PB_StructToPB()
           GOSCI_SetLineText(#SCI_CText,structheadln,"Structure "+obuf)          
         EndIf        
       EndIf      
+    EndIf
+    
+    ; Insert the Prototype list above the structure that constains reference.
+    ;
+        
+    If finalizestruct = #True And iproto>0
+      For cp=0 To iproto-1
+        Debug "Must Process Prototypes "+Str(iproto)+" "+ProtoList(cp)               
+        GOSCI_InsertLineOfText(#SCI_CText,Val(StringField(ProtoList(cp),1,"::"))+cp,StringField(ProtoList(cp),2,"::"))
+      Next       
+      iproto = 0 
     EndIf    
   Next
+  
   C2PB_ConvertSubStructures()
   C2PB_CleanStructures()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 399
-; FirstLine = 372
+; CursorPosition = 546
+; FirstLine = 514
 ; Folding = ---
 ; EnableXP
 ; DPIAware
