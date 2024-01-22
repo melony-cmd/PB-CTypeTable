@@ -128,16 +128,33 @@ Procedure.s StripComment(instring.s)
   ProcedureReturn outstring
 EndProcedure
 
+;
+; Is String Reserved (eg. a PureBasic Function Name) (oh dear!)
+;
+
+;
+; Okay this needs to manual as -ls / -lf / -li no longer seems to exist anymore.
+; bad news for people that don't want to use the PureBasic IDE and use their own.. hmm FRED?
+;
+Procedure.s IsPBReserved(string.s)
+  ForEach ResWords()
+    Debug string
+    If LCase(Trim(string))=LCase(ResWords()\pbword)
+      ProcedureReturn ResWords()\reword
+    EndIf    
+  Next      
+  ProcedureReturn string
+EndProcedure
+
 
 ;Debug "["+GetStringBetween("  zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	/**< offset,whence. */","(",")",2)+"]"
 ;Debug "["+RemoveStringList("  zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	/**< offset,whence. */","()")+"]"
-
 ;Debug "["+GetStringHeadBetween("  zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	/**< offset,whence. */","(",")",#True)+"]"
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 113
-; FirstLine = 84
+; CursorPosition = 140
+; FirstLine = 111
 ; Folding = --
 ; EnableXP
 ; DPIAware

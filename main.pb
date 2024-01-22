@@ -15,7 +15,7 @@ Declare.s Get_TasksDetails(idx.l,value.l=0)
 ; Includes
 ;
 IncludeFile "GoScintilla.pbi"
-IncludeFile "String.pbi"
+
 ;
 ; Forms
 ;
@@ -67,6 +67,11 @@ Structure SearchTypeDefArgs
 EndStructure
 Declare SearchTypeDef(*args.SearchTypeDefArgs,srctype.l)
 
+Structure ReservedWords
+  pbword.s
+  reword.s
+EndStructure
+
 ;
 ;
 ;
@@ -80,13 +85,14 @@ Global NewList PTList.PrototypeList()
 Global NewList PBTypeList.s()
 Global NewList CTypeList.s()
 Global NewList DefTypeList.s()
-
+Global NewList ResWords.ReservedWords()
 Global lnselected.s
 Global convdonce.b = #True
 
 ;
 ; My System Includes
 ;
+IncludeFile "String.pbi"
 IncludeFile "ListIconGadgetInclude.pbi"
 IncludeFile "DataBase.pbi"
 IncludeFile "C2Tasks.pbi"
@@ -352,6 +358,12 @@ Procedure SaveConfig()
       hasettings.s + Str(GetGadgetItemState(#LI_HASETTINGS, li))
     Next    
     WritePreferenceString("Settings",hasettings)
+    
+    PreferenceGroup("ReservedWord")
+    ForEach ResWords()
+      WritePreferenceString("rword_"+Str(i),ResWords()\pbword+","+ResWords()\reword)
+      i=i+1
+    Next    
     ClosePreferences()
   EndIf  
 EndProcedure
@@ -365,7 +377,17 @@ Procedure LoadConfig()
     hasettings.s = ReadPreferenceString("Settings","")
     For li=0 To Len(hasettings)-1
       SetGadgetItemState(#LI_HASETTINGS,li,Val(Mid(hasettings,1+li,1)))
-    Next    
+    Next
+    PreferenceGroup("ReservedWord")    
+    Repeat      
+      wrd.s = ReadPreferenceString("rword_"+Str(i),"-1")
+      i=i+1
+      If wrd<>"-1"
+        AddElement(ResWords())
+        ResWords()\pbword=StringField(wrd,1,",")
+        ResWords()\reword=StringField(wrd,2,",")
+      EndIf      
+    Until wrd="-1"        
     ClosePreferences()
   EndIf  
 EndProcedure
@@ -572,10 +594,12 @@ Procedure SearchTypeDef(*args.SearchTypeDefArgs,srctype.l)
     ;DebugOut("#STD_STRUCTURE / SearchTypeDef() name=["+*args\c_name+"] type=["+*args\c_type+"]",#False,"Struct")
     For i=0 To CountGadgetItems(#LI_DefTypeTable)-1
       deftype.s = GetGadgetItemText(#LI_DefTypeTable,i,0)    
+      ;DebugOut("#STD_STRUCTURE / SearchTypeDef() Compare=["+deftype+"] with ["+*args\c_type+"]",#False,"Struct")
       If deftype=*args\c_type
         pbtype.s = GetGadgetItemText(#LI_DefTypeTable,i,2)
         pbtype = Mid(pbtype,2,FindString(pbtype,")")-2)
         *args\pb_type = pbtype
+        Break
       EndIf    
     Next
     ;DebugOut("#STD_STRUCTURE / SearchTypeDef() name=["+*args\c_name+"] type=["+*args\c_type+"] pbtype="+*args\pb_type,#False,"Struct")
@@ -1027,10 +1051,10 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 169
-; FirstLine = 106
+; CursorPosition = 597
+; FirstLine = 543
 ; Folding = +------
-; Markers = 473
+; Markers = 495
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

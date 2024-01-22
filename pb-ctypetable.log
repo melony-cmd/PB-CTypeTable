@@ -1,279 +1,279 @@
-[05:06:53] [Struct] TEST
-[05:06:55] [] ---> #define
-[05:06:55] []   ZZ_OK		   /**< (0) No error.                       */
-[05:06:55] []   ZZ_ERR		   /**< (1) Unspecified error.              */
-[05:06:55] []   ZZ_EARG		   /**< (2) Argument error.                 */
-[05:06:55] []   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
-[05:06:55] []   ZZ_EINP		   /**< (4) Problem with input.             */
-[05:06:55] []   ZZ_EOUT		   /**< (5) Problem with output.            */
-[05:06:55] []   ZZ_ESNG		   /**< (6) Song error.                     */
-[05:06:55] []   ZZ_ESET		   /**< (7) Voice set error                 */
-[05:06:55] []   ZZ_EPLA		   /**< (8) Player error.                   */
-[05:06:55] []   ZZ_EMIX		   /**< (9) Mixer error.                    */
-[05:06:55] []   ZZ_666 = 66		   /**< Internal error.                     */
-[05:06:55] [] };
-[05:06:55] []   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
-[05:06:55] []   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
-[05:06:55] []   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
-[05:06:55] []   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
-[05:06:55] []   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
-[05:06:55] [] };
-[05:06:55] []   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
-[05:06:55] []   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
-[05:06:55] []   ZZ_MIXER_ERR = ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
-[05:06:55] [] };
-[05:06:55] []   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
-[05:06:55] []   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
-[05:06:55] []   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
-[05:06:55] [] };
-[05:06:55] []   ZZ_FQ = 1				/**< (1) Fastest quality. */
-[05:06:55] []   ZZ_LQ				/**< (2) Low quality.     */
-[05:06:55] []   ZZ_MQ				/**< (3) Medium quality.  */
-[05:06:55] []   ZZ_HQ					/**< (4) High quality.    */
-[05:06:55] [] };
-[05:06:55] []   ZZ_LOG_ERR				/**< Log error.   */
-[05:06:55] []   ZZ_LOG_WRN				/**< Log warning. */
-[05:06:55] []   ZZ_LOG_INF				/**< Log info.    */
-[05:06:55] []   ZZ_LOG_DBG				/**< Log debug.   */
-[05:06:55] [] };
-[05:06:55] []   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
-[05:06:55] [] };
-[05:06:55] [] ---> #define
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[map] type=[zz_u8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char *]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
-[05:06:55] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
-[05:06:55] [Struct] Struct Found... [Structure zz_info_s]
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] Struct Found... [Structure]
-[05:06:55] [Struct] varstruct = [zz_u8_t	 num]
-[05:06:55] [Struct] varstruct = [const char * str]
-[05:06:55] [Struct] [fmt			]
-[05:06:55] [Struct] Struct Found... [Structure]
-[05:06:55] [Struct] varstruct = [zz_u16_t	 rate]
-[05:06:55] [Struct] varstruct = [zz_u32_t	 ms]
-[05:06:55] [Struct] [len			]
-[05:06:55] [Struct] Struct Found... [Structure]
-[05:06:55] [Struct] varstruct = [zz_u32_t	 spr]
-[05:06:55] [Struct] varstruct = [zz_u8_t	 num]
-[05:06:55] [Struct] varstruct = [zz_u8_t	 map]
-[05:06:55] [Struct] varstruct = [zz_u16_t	 lr8]
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] varstruct = [const char * name]
-[05:06:55] [Struct] varstruct = [const char * desc]
-[05:06:55] [Struct] [mix		]
-[05:06:55] [Struct] Struct Found... [Structure]
-[05:06:55] [Struct] varstruct = [const char * uri]
-[05:06:55] [Struct] varstruct = [zz_u32_t	 khz]
-[05:06:55] [Struct] [NO SINGLE NAME]! = [set]
-[05:06:55] [Struct] [NO SINGLE NAME]! = [sng]
-[05:06:55] [Struct] [SOLUTION]! = [set,sng]
-[05:06:55] [Struct] Struct Found... [Structure]
-[05:06:55] [Struct] varstruct = [const char * album]
-[05:06:55] [Struct] varstruct = [const char * title]
-[05:06:55] [Struct] varstruct = [const char * artist]
-[05:06:55] [Struct] varstruct = [const char * ripper]
-[05:06:55] [Struct] [tag			]
-[05:06:55] [Struct] Struct Found... [Structure mixer_s]
-[05:06:55] [Struct] varstruct = [const char * name]
-[05:06:55] [Struct] varstruct = [const char * desc]
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] varstruct = [zz_err_t (*init)(zz_core_t const, zz_u32_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_err_t (*init)(zz_core_t const, zz_u32_t);}
-[05:06:55] [Struct] Args = {1} {zz_u32_t} \pb_type = {.i}
-[05:06:55] [Struct] NewArgs = {1} {pram_a,pram_b.i}
-[05:06:55] [Struct] Prototype.i Prototype_init(pram_a,pram_b.i) 
-[05:06:55] [Struct] Struct Replace :   zz_err_t (*init)(zz_core_t const, zz_u32_t);
-[05:06:55] [Struct] Insert Into Structure At Line (387):= _init.Prototype_init					
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] varstruct = [void (*free)(zz_core_t const)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {void (*free)(zz_core_t const);}
-[05:06:55] [Struct] Args = {0} {zz_core_t const} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_free(pram_a) 
-[05:06:55] [Struct] Struct Replace :   void (*free)(zz_core_t const);
-[05:06:55] [Struct] Insert Into Structure At Line (390):= _free.Prototype_free					
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] varstruct = [zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t);}
-[05:06:55] [Struct] Args = {2} {zz_i16_t} \pb_type = {.l}
-[05:06:55] [Struct] NewArgs = {2} {pram_a,pram_b,pram_c.l}
-[05:06:55] [Struct] Prototype.l Prototype_push(pram_a,pram_b,pram_c.l) 
-[05:06:55] [Struct] Struct Replace :   zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t);
-[05:06:55] [Struct] Insert Into Structure At Line (393):= _push.Prototype_push					
-[05:06:55] [Struct] Struct Found... [Structure zz_vfs_dri_s]
-[05:06:55] [Struct] varstruct = [const char * name]
-[05:06:55] [Struct] varstruct = [zz_err_t (*reg)(zz_vfs_dri_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_err_t (*reg)(zz_vfs_dri_t);}
-[05:06:55] [Struct] Args = {0} {zz_vfs_dri_t} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_reg(pram_a) 
-[05:06:55] [Struct] Struct Replace :   zz_err_t (*reg)(zz_vfs_dri_t);	  ;/**< register driver.    */
-[05:06:55] [Struct] Insert Into Structure At Line (416):= _reg.Prototype_reg					;/**< register driver.    */
-[05:06:55] [Struct] varstruct = [zz_err_t (*unreg)(zz_vfs_dri_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_err_t (*unreg)(zz_vfs_dri_t);}
-[05:06:55] [Struct] Args = {0} {zz_vfs_dri_t} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_unreg(pram_a) 
-[05:06:55] [Struct] Struct Replace :   zz_err_t (*unreg)(zz_vfs_dri_t);	  ;/**< un-register driver. */
-[05:06:55] [Struct] Insert Into Structure At Line (417):= _unreg.Prototype_unreg					;/**< un-register driver. */
-[05:06:55] [Struct] varstruct = [zz_u16_t (*ismine)(const char *)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_u16_t (*ismine)(const char *);}
-[05:06:55] [Struct] Args = {0} {const char *} \pb_type = {.l}
-[05:06:55] [Struct] NewArgs = {0} {pram_a.l}
-[05:06:55] [Struct] Prototype.l Prototype_ismine(pram_a.l) 
-[05:06:55] [Struct] Struct Replace :   zz_u16_t (*ismine)(const char *);	  ;/**< is mine.            */
-[05:06:55] [Struct] Insert Into Structure At Line (418):= _ismine.Prototype_ismine					;/**< is mine.            */
-[05:06:55] [Struct] varstruct = [zz_vfs_t (*new)(const char *, va_list)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_vfs_t (*new)(const char *, va_list);}
-[05:06:55] [Struct] Args = {1} {va_list} \pb_type = {.l}
-[05:06:55] [Struct] NewArgs = {1} {pram_a.l,pram_b.l}
-[05:06:55] [Struct] Prototype.l Prototype_new(pram_a.l,pram_b.l) 
-[05:06:55] [Struct] Struct Replace :   zz_vfs_t (*new)(const char *, va_list); ;/**< create VFS.         */
-[05:06:55] [Struct] Insert Into Structure At Line (419):= _new.Prototype_new					;/**< create VFS.         */
-[05:06:55] [Struct] varstruct = [void	   (*del)(zz_vfs_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {void   (*del)(zz_vfs_t);}
-[05:06:55] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_del(pram_a) 
-[05:06:55] [Struct] Struct Replace :   void	   (*del)(zz_vfs_t);		  ;/**< destroy VFS.        */
-[05:06:55] [Struct] Insert Into Structure At Line (420):= _del.Prototype_del					;/**< destroy VFS.        */
-[05:06:55] [Struct] varstruct = []
-[05:06:55] [Struct] varstruct = [char *   (*uri)(zz_vfs_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {char *   (*uri)(zz_vfs_t);}
-[05:06:55] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_uri(pram_a) 
-[05:06:55] [Struct] Struct Replace :   char *   (*uri)(zz_vfs_t);			;/**< get URI.       */
-[05:06:55] [Struct] Insert Into Structure At Line (422):= _uri.Prototype_uri					;/**< get URI.       */
-[05:06:55] [Struct] varstruct = [zz_err_t (*open)(zz_vfs_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_err_t (*open)(zz_vfs_t);}
-[05:06:55] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_open(pram_a) 
-[05:06:55] [Struct] Struct Replace :   zz_err_t (*open)(zz_vfs_t);			;/**< open.          */
-[05:06:55] [Struct] Insert Into Structure At Line (423):= _open.Prototype_open					;/**< open.          */
-[05:06:55] [Struct] varstruct = [zz_err_t (*close)(zz_vfs_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_err_t (*close)(zz_vfs_t);}
-[05:06:55] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_close(pram_a) 
-[05:06:55] [Struct] Struct Replace :   zz_err_t (*close)(zz_vfs_t);			;/**< close.         */
-[05:06:55] [Struct] Insert Into Structure At Line (424):= _close.Prototype_close					;/**< close.         */
-[05:06:55] [Struct] varstruct = [zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t);}
-[05:06:55] [Struct] Args = {2} {zz_u32_t} \pb_type = {.i}
-[05:06:55] [Struct] NewArgs = {2} {pram_a,pram_b,pram_c.i}
-[05:06:55] [Struct] Prototype.i Prototype_read(pram_a,pram_b,pram_c.i) 
-[05:06:55] [Struct] Struct Replace :   zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t); ;/**< read.          */
-[05:06:55] [Struct] Insert Into Structure At Line (425):= _read.Prototype_read					;/**< read.          */
-[05:06:55] [Struct] varstruct = [zz_u32_t (*tell)(zz_vfs_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_u32_t (*tell)(zz_vfs_t);}
-[05:06:55] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_tell(pram_a) 
-[05:06:55] [Struct] Struct Replace :   zz_u32_t (*tell)(zz_vfs_t);			;/**< get position.  */
-[05:06:55] [Struct] Insert Into Structure At Line (426):= _tell.Prototype_tell					;/**< get position.  */
-[05:06:55] [Struct] varstruct = [zz_u32_t (*size)(zz_vfs_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_u32_t (*size)(zz_vfs_t);}
-[05:06:55] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
-[05:06:55] [Struct] NewArgs = {0} {pram_a}
-[05:06:55] [Struct] Prototype Prototype_size(pram_a) 
-[05:06:55] [Struct] Struct Replace :   zz_u32_t (*size)(zz_vfs_t);			;/**< get size.      */
-[05:06:55] [Struct] Insert Into Structure At Line (427):= _size.Prototype_size					;/**< get size.      */
-[05:06:55] [Struct] varstruct = [zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t)]
-[05:06:55] [Struct] - Prototype ------------------------------------------------
-[05:06:55] [Struct] noremcline = {zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);}
-[05:06:55] [Struct] Args = {2} {zz_u8_t} \pb_type = {.a}
-[05:06:55] [Struct] NewArgs = {2} {pram_a,pram_b.i,pram_c.a}
-[05:06:55] [Struct] Prototype.a Prototype_seek(pram_a,pram_b.i,pram_c.a) 
-[05:06:55] [Struct] Struct Replace :   zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	;/**< offset,whence. */
-[05:06:55] [Struct] Insert Into Structure At Line (428):= _seek.Prototype_seek					;/**< offset,whence. */
-[05:06:55] [Struct] Struct Found... [Structure vfs_s]
-[05:06:55] [Struct] varstruct = [zz_vfs_dri_t dri]
-[05:06:55] [Struct] varstruct = [int err]
-[05:06:55] [Struct] varstruct = [int pb_pos]
-[05:06:55] [Struct] varstruct = [int pb_len]
-[05:06:55] [Struct] varstruct = [uint8_t pb_buf[16]]
+[02:40:27] [Struct] TEST
+[02:40:28] [] ---> #define
+[02:40:28] []   ZZ_OK		   /**< (0) No error.                       */
+[02:40:28] []   ZZ_ERR		   /**< (1) Unspecified error.              */
+[02:40:28] []   ZZ_EARG		   /**< (2) Argument error.                 */
+[02:40:28] []   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[02:40:28] []   ZZ_EINP		   /**< (4) Problem with input.             */
+[02:40:28] []   ZZ_EOUT		   /**< (5) Problem with output.            */
+[02:40:28] []   ZZ_ESNG		   /**< (6) Song error.                     */
+[02:40:28] []   ZZ_ESET		   /**< (7) Voice set error                 */
+[02:40:28] []   ZZ_EPLA		   /**< (8) Player error.                   */
+[02:40:28] []   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[02:40:28] []   ZZ_666 = 66		   /**< Internal error.                     */
+[02:40:28] [] };
+[02:40:28] []   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[02:40:28] []   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[02:40:28] []   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[02:40:28] []   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[02:40:28] []   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[02:40:28] [] };
+[02:40:28] []   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[02:40:28] []   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[02:40:28] []   ZZ_MIXER_ERR = ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[02:40:28] [] };
+[02:40:28] []   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[02:40:28] []   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[02:40:28] []   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[02:40:28] [] };
+[02:40:28] []   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[02:40:28] []   ZZ_LQ				/**< (2) Low quality.     */
+[02:40:28] []   ZZ_MQ				/**< (3) Medium quality.  */
+[02:40:28] []   ZZ_HQ					/**< (4) High quality.    */
+[02:40:28] [] };
+[02:40:28] []   ZZ_LOG_ERR				/**< Log error.   */
+[02:40:28] []   ZZ_LOG_WRN				/**< Log warning. */
+[02:40:28] []   ZZ_LOG_INF				/**< Log info.    */
+[02:40:28] []   ZZ_LOG_DBG				/**< Log debug.   */
+[02:40:28] [] };
+[02:40:28] []   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[02:40:28] [] };
+[02:40:28] [] ---> #define
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[map] type=[zz_u8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char *]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[02:40:28] [] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[02:40:28] [Struct] Struct Found... [Structure zz_info_s]
+[02:40:28] [Struct] varstruct = [] ()
+[02:40:28] [Struct] Struct Found... [Structure]
+[02:40:28] [Struct] varstruct = [zz_u8_t	 num] (num.a)
+[02:40:28] [Struct] varstruct = [const char * str] (str.l)
+[02:40:28] [Struct] [fmt			]
+[02:40:28] [Struct] Struct Found... [Structure]
+[02:40:28] [Struct] varstruct = [zz_u16_t	 rate] (rate.i)
+[02:40:28] [Struct] varstruct = [zz_u32_t	 ms] (ms.i)
+[02:40:28] [Struct] [len			]
+[02:40:28] [Struct] Struct Found... [Structure]
+[02:40:28] [Struct] varstruct = [zz_u32_t	 spr] (spr.i)
+[02:40:28] [Struct] varstruct = [zz_u8_t	 num] (num.a)
+[02:40:28] [Struct] varstruct = [zz_u8_t	 map] (_Map.a)
+[02:40:28] [Struct] varstruct = [zz_u16_t	 lr8] (lr8.i)
+[02:40:28] [Struct] varstruct = [] ()
+[02:40:28] [Struct] varstruct = [const char * name] (name.l)
+[02:40:28] [Struct] varstruct = [const char * desc] (desc.l)
+[02:40:28] [Struct] [mix		]
+[02:40:28] [Struct] Struct Found... [Structure]
+[02:40:28] [Struct] varstruct = [const char * uri] (uri.l)
+[02:40:28] [Struct] varstruct = [zz_u32_t	 khz] (khz.i)
+[02:40:28] [Struct] [NO SINGLE NAME]! = [set]
+[02:40:28] [Struct] [NO SINGLE NAME]! = [sng]
+[02:40:28] [Struct] [SOLUTION]! = [set,sng]
+[02:40:28] [Struct] Struct Found... [Structure]
+[02:40:28] [Struct] varstruct = [const char * album] (album.l)
+[02:40:28] [Struct] varstruct = [const char * title] (title.l)
+[02:40:28] [Struct] varstruct = [const char * artist] (artist.l)
+[02:40:28] [Struct] varstruct = [const char * ripper] (ripper.l)
+[02:40:28] [Struct] [tag			]
+[02:40:28] [Struct] Struct Found... [Structure mixer_s]
+[02:40:28] [Struct] varstruct = [const char * name] (name.l)
+[02:40:28] [Struct] varstruct = [const char * desc] (desc.l)
+[02:40:28] [Struct] varstruct = [] ()
+[02:40:28] [Struct] varstruct = [] ()
+[02:40:28] [Struct] varstruct = [zz_err_t (*init)(zz_core_t const, zz_u32_t)] (zz_u32_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_err_t (*init)(zz_core_t const, zz_u32_t);}
+[02:40:28] [Struct] Args = {1} {zz_u32_t} \pb_type = {.i}
+[02:40:28] [Struct] NewArgs = {1} {pram_a,pram_b.i}
+[02:40:28] [Struct] Prototype.i Prototype_init(pram_a,pram_b.i) 
+[02:40:28] [Struct] Struct Replace :   zz_err_t (*init)(zz_core_t const, zz_u32_t);
+[02:40:28] [Struct] Insert Into Structure At Line (387):= _init.Prototype_init					
+[02:40:28] [Struct] varstruct = [] ()
+[02:40:28] [Struct] varstruct = [] ()
+[02:40:28] [Struct] varstruct = [void (*free)(zz_core_t const)] (const))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {void (*free)(zz_core_t const);}
+[02:40:28] [Struct] Args = {0} {zz_core_t const} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_free(pram_a) 
+[02:40:28] [Struct] Struct Replace :   void (*free)(zz_core_t const);
+[02:40:28] [Struct] Insert Into Structure At Line (390):= _free.Prototype_free					
+[02:40:28] [Struct] varstruct = [] ()
+[02:40:28] [Struct] varstruct = [] ()
+[02:40:28] [Struct] varstruct = [zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t)] (zz_i16_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t);}
+[02:40:28] [Struct] Args = {2} {zz_i16_t} \pb_type = {.l}
+[02:40:28] [Struct] NewArgs = {2} {pram_a,pram_b,pram_c.l}
+[02:40:28] [Struct] Prototype.l Prototype_push(pram_a,pram_b,pram_c.l) 
+[02:40:28] [Struct] Struct Replace :   zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t);
+[02:40:28] [Struct] Insert Into Structure At Line (393):= _push.Prototype_push					
+[02:40:28] [Struct] Struct Found... [Structure zz_vfs_dri_s]
+[02:40:28] [Struct] varstruct = [const char * name] (name.l)
+[02:40:28] [Struct] varstruct = [zz_err_t (*reg)(zz_vfs_dri_t)] (reg)(zz_vfs_dri_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_err_t (*reg)(zz_vfs_dri_t);}
+[02:40:28] [Struct] Args = {0} {zz_vfs_dri_t} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_reg(pram_a) 
+[02:40:28] [Struct] Struct Replace :   zz_err_t (*reg)(zz_vfs_dri_t);	  ;/**< register driver.    */
+[02:40:28] [Struct] Insert Into Structure At Line (416):= _reg.Prototype_reg					;/**< register driver.    */
+[02:40:28] [Struct] varstruct = [zz_err_t (*unreg)(zz_vfs_dri_t)] (unreg)(zz_vfs_dri_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_err_t (*unreg)(zz_vfs_dri_t);}
+[02:40:28] [Struct] Args = {0} {zz_vfs_dri_t} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_unreg(pram_a) 
+[02:40:28] [Struct] Struct Replace :   zz_err_t (*unreg)(zz_vfs_dri_t);	  ;/**< un-register driver. */
+[02:40:28] [Struct] Insert Into Structure At Line (417):= _unreg.Prototype_unreg					;/**< un-register driver. */
+[02:40:28] [Struct] varstruct = [zz_u16_t (*ismine)(const char *)] ())
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_u16_t (*ismine)(const char *);}
+[02:40:28] [Struct] Args = {0} {const char *} \pb_type = {.l}
+[02:40:28] [Struct] NewArgs = {0} {pram_a.l}
+[02:40:28] [Struct] Prototype.l Prototype_ismine(pram_a.l) 
+[02:40:28] [Struct] Struct Replace :   zz_u16_t (*ismine)(const char *);	  ;/**< is mine.            */
+[02:40:28] [Struct] Insert Into Structure At Line (418):= _ismine.Prototype_ismine					;/**< is mine.            */
+[02:40:28] [Struct] varstruct = [zz_vfs_t (*new)(const char *, va_list)] (va_list))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_vfs_t (*new)(const char *, va_list);}
+[02:40:28] [Struct] Args = {1} {va_list} \pb_type = {.l}
+[02:40:28] [Struct] NewArgs = {1} {pram_a.l,pram_b.l}
+[02:40:28] [Struct] Prototype.l Prototype_new(pram_a.l,pram_b.l) 
+[02:40:28] [Struct] Struct Replace :   zz_vfs_t (*new)(const char *, va_list); ;/**< create VFS.         */
+[02:40:28] [Struct] Insert Into Structure At Line (419):= _new.Prototype_new					;/**< create VFS.         */
+[02:40:28] [Struct] varstruct = [void	   (*del)(zz_vfs_t)] (del)(zz_vfs_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {void   (*del)(zz_vfs_t);}
+[02:40:28] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_del(pram_a) 
+[02:40:28] [Struct] Struct Replace :   void	   (*del)(zz_vfs_t);		  ;/**< destroy VFS.        */
+[02:40:28] [Struct] Insert Into Structure At Line (420):= _del.Prototype_del					;/**< destroy VFS.        */
+[02:40:28] [Struct] varstruct = [] (const)
+[02:40:28] [Struct] varstruct = [char *   (*uri)(zz_vfs_t)] (uri)(zz_vfs_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {char *   (*uri)(zz_vfs_t);}
+[02:40:28] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_uri(pram_a) 
+[02:40:28] [Struct] Struct Replace :   char *   (*uri)(zz_vfs_t);			;/**< get URI.       */
+[02:40:28] [Struct] Insert Into Structure At Line (422):= _uri.Prototype_uri					;/**< get URI.       */
+[02:40:28] [Struct] varstruct = [zz_err_t (*open)(zz_vfs_t)] (open)(zz_vfs_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_err_t (*open)(zz_vfs_t);}
+[02:40:28] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_open(pram_a) 
+[02:40:28] [Struct] Struct Replace :   zz_err_t (*open)(zz_vfs_t);			;/**< open.          */
+[02:40:28] [Struct] Insert Into Structure At Line (423):= _open.Prototype_open					;/**< open.          */
+[02:40:28] [Struct] varstruct = [zz_err_t (*close)(zz_vfs_t)] (close)(zz_vfs_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_err_t (*close)(zz_vfs_t);}
+[02:40:28] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_close(pram_a) 
+[02:40:28] [Struct] Struct Replace :   zz_err_t (*close)(zz_vfs_t);			;/**< close.         */
+[02:40:28] [Struct] Insert Into Structure At Line (424):= _close.Prototype_close					;/**< close.         */
+[02:40:28] [Struct] varstruct = [zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t)] (zz_u32_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t);}
+[02:40:28] [Struct] Args = {2} {zz_u32_t} \pb_type = {.i}
+[02:40:28] [Struct] NewArgs = {2} {pram_a,pram_b,pram_c.i}
+[02:40:28] [Struct] Prototype.i Prototype_read(pram_a,pram_b,pram_c.i) 
+[02:40:28] [Struct] Struct Replace :   zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t); ;/**< read.          */
+[02:40:28] [Struct] Insert Into Structure At Line (425):= _read.Prototype_read					;/**< read.          */
+[02:40:28] [Struct] varstruct = [zz_u32_t (*tell)(zz_vfs_t)] (tell)(zz_vfs_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_u32_t (*tell)(zz_vfs_t);}
+[02:40:28] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_tell(pram_a) 
+[02:40:28] [Struct] Struct Replace :   zz_u32_t (*tell)(zz_vfs_t);			;/**< get position.  */
+[02:40:28] [Struct] Insert Into Structure At Line (426):= _tell.Prototype_tell					;/**< get position.  */
+[02:40:28] [Struct] varstruct = [zz_u32_t (*size)(zz_vfs_t)] (size)(zz_vfs_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_u32_t (*size)(zz_vfs_t);}
+[02:40:28] [Struct] Args = {0} {zz_vfs_t} \pb_type = {}
+[02:40:28] [Struct] NewArgs = {0} {pram_a}
+[02:40:28] [Struct] Prototype Prototype_size(pram_a) 
+[02:40:28] [Struct] Struct Replace :   zz_u32_t (*size)(zz_vfs_t);			;/**< get size.      */
+[02:40:28] [Struct] Insert Into Structure At Line (427):= _size.Prototype_size					;/**< get size.      */
+[02:40:28] [Struct] varstruct = [zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t)] (seek)(zz_vfs_t,zz_u32_t,zz_u8_t))
+[02:40:28] [Struct] - Prototype ------------------------------------------------
+[02:40:28] [Struct] noremcline = {zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);}
+[02:40:28] [Struct] Args = {2} {zz_u8_t} \pb_type = {.a}
+[02:40:28] [Struct] NewArgs = {2} {pram_a,pram_b.i,pram_c.a}
+[02:40:28] [Struct] Prototype.a Prototype_seek(pram_a,pram_b.i,pram_c.a) 
+[02:40:28] [Struct] Struct Replace :   zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	;/**< offset,whence. */
+[02:40:28] [Struct] Insert Into Structure At Line (428):= _seek.Prototype_seek					;/**< offset,whence. */
+[02:40:28] [Struct] Struct Found... [Structure vfs_s]
+[02:40:28] [Struct] varstruct = [zz_vfs_dri_t dri] (dri)
+[02:40:28] [Struct] varstruct = [int err] (err.i)
+[02:40:28] [Struct] varstruct = [int pb_pos] (pb_pos.i)
+[02:40:28] [Struct] varstruct = [int pb_len] (pb_len.i)
+[02:40:28] [Struct] varstruct = [uint8_t pb_buf[16]] (pb_buf[16].i)

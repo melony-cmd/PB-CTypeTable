@@ -438,13 +438,23 @@ Procedure C2PB_StructToPB()
     ;
     If withinstruct.b = #True And FindString(cline,"struct")=0 And FindString(cline,"};")=0 And FindString(cline,"}")=0      
       varstruct.s = Trim(RemoveString(Mid(cline,1,FindString(cline,";")),";"))
-      DebugOut("varstruct = ["+varstruct+"]",#False,"Struct")      
       std.SearchTypeDefArgs : ClearStructure(std,SearchTypeDefArgs)
       noremcline.s = Trim(StripStringRight(cline,";/*"))
       
       std\c_name = RemoveString(LastWordByTerminator(noremcline,"* "),";")
       std\c_type = GetTypeFromString(noremcline)
       SearchTypeDef(std,#STD_STRUCTURE)
+      
+      DebugOut("varstruct = ["+varstruct+"] ("+IsPBReserved(std\c_name)+std\pb_type+")",#False,"Struct")      
+      
+      ; Array! involves [#].? to .?[#]
+      If FindString(std\c_name,"[")        
+        carray.s = GetStringBetween(std\c_name,"[","]")
+        std\c_name = RemoveString(std\c_name,carray)        
+        GOSCI_SetLineText(#SCI_CText,i,InsertTabs(0)+IsPBReserved(std\c_name)+std\pb_type+carray+InsertTabs(4)+GetComment(cline))        
+      Else
+        GOSCI_SetLineText(#SCI_CText,i,InsertTabs(0)+IsPBReserved(std\c_name)+std\pb_type+InsertTabs(4)+GetComment(cline))
+      EndIf      
       
       If FindString(std\c_type,"Prototype")
         DebugOut("- Prototype ------------------------------------------------",#False,"Struct")
@@ -555,8 +565,8 @@ Procedure C2PB_StructToPB()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 546
-; FirstLine = 514
+; CursorPosition = 452
+; FirstLine = 435
 ; Folding = ---
 ; EnableXP
 ; DPIAware
