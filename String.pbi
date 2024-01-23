@@ -138,7 +138,6 @@ EndProcedure
 ;
 Procedure.s IsPBReserved(string.s)
   ForEach ResWords()
-    Debug string
     If LCase(Trim(string))=LCase(ResWords()\pbword)
       ProcedureReturn ResWords()\reword
     EndIf    
@@ -153,8 +152,9 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 140
-; FirstLine = 111
+; CursorPosition = 148
+; FirstLine = 113
 ; Folding = --
 ; EnableXP
 ; DPIAware
+; CompileSourceDirectory

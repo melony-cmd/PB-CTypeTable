@@ -8,7 +8,7 @@ UseSQLiteDatabase()
 ;
 Declare Callback_Scintilla_Translation(Gadget, *scinotify.SCNotification)
 Declare DebugOut(string.s,clearlog.b=#False,loglevel.s="")
-
+Declare Header_Import(file.s="")
 Declare.s Get_TasksDetails(idx.l,value.l=0)
 
 ;
@@ -99,6 +99,7 @@ IncludeFile "C2Tasks.pbi"
 IncludeFile "C2PureBasic.pbi"
 
 Global default_database.s = "default.sqlite"
+Global current_hsourcefile.s = ""
 
 ;
 ; LineStart,ColumnStart,LineEnd,ColumnEnd
@@ -286,13 +287,27 @@ EndProcedure
 ;
 ;
 ;
-Procedure Save(eventType)
+Procedure Save(filename.s="")
+  ;
+  If filename=""
+    pattern.s = "Include File (*.pbi)|*.pbi;|All files (*.*)|*.*"  
+    filename.s = SaveFileRequester("Import Header","",pattern,0)
+  EndIf  
+  ;
+  If CreateFile(0,filename)
+    lnmax = GOSCI_GetNumberOfLines(#SCI_CText)
+    For i=0 To lnmax
+      WriteStringN(0,GOSCI_GetLineText(#SCI_CText,i))
+    Next
+    CloseFile(0)
+  EndIf  
 EndProcedure
 
 ;
 ;
 ;
-Procedure Open(eventType)   
+Procedure Open(filename.s="")
+  Header_Import(filename)
 EndProcedure
 
 ;
@@ -407,7 +422,6 @@ Procedure Insert_AutoDllProcedureHeader(insline)
     Read.s rdline
     If rdline<>"--" : GOSCI_InsertLineOfText(#SCI_CText,insline+i,rdline) : EndIf
     i=i+1
-    Debug rdline
   Until rdline = "--"
 EndProcedure
 
@@ -421,7 +435,6 @@ Procedure Insert_AutoDllProcedureFooter(insline)
     Read.s rdline
     If rdline<>"--" : GOSCI_InsertLineOfText(#SCI_CText,insline+i,rdline) : EndIf
     i=i+1
-    Debug rdline
   Until rdline = "--"
 EndProcedure
 
@@ -532,7 +545,9 @@ Procedure Convert(eventType)
   StatusUpdate("C2PB_ProcessTasks Level 1")
   C2PB_ProcessTasks(1)
   
+  
   ;-Complete
+  Save("Tasks/"+current_hsourcefile+".pbi")
   StatusUpdate("Complete!")
   BlockUser(#False)
 EndProcedure
@@ -636,7 +651,7 @@ EndProcedure
 ;
 ;
 Procedure CustomLI_TaskEditCallback_YesNo(Gadget.i, Line.i, Column.i)
-	Debug "EditYesNoCallback >"+Str(Gadget)+"< Line >"+Str(Line)+"< Column >"+Str(Column)+"<"
+	;Debug "EditYesNoCallback >"+Str(Gadget)+"< Line >"+Str(Line)+"< Column >"+Str(Column)+"<"
 EndProcedure
 
 ;
@@ -765,6 +780,7 @@ Procedure Header_Import(file.s="")
     file.s = OpenFileRequester("Import Header","",pattern,0)
   EndIf  
   If file<>""
+    current_hsourcefile = GetFilePart(file)
     GOSCI_Clear(#SCI_CText)
     GOSCI_LoadText(#SCI_CText,file)
     taskfile.s = "Tasks/"+GetFilePart(file)+".ini"
@@ -898,9 +914,9 @@ Procedure MainWindow_Events(event)
         Case #MenuItem_2
           CreateFile_Database(EventMenu())
         Case #MenuItem_3
-          Open(EventMenu())          
+          Open()          
         Case #MenuItem_4
-          Save(EventMenu())
+          Save()
         Case #MenuItem_5
         Case #MenuItem_6
           Header_Import()
@@ -974,9 +990,7 @@ DebugOut("TEST",#False,"Comments")
 DebugOut("TEST",#False,"Tasks")
 
 ;Header_Import("D:\Work\Code\SDK\ZingZong\src\zz_private.h")
-Header_Import("D:\Work\Code\SDK\ZingZong\src\zingzong.h")
-
-;Debug PeekS(*textbuffer,-1,#PB_Ascii)
+Open("D:\Work\Code\SDK\ZingZong\src\zingzong.h")
 
 Repeat 
   event = MainWindow_Events(WaitWindowEvent())
@@ -1051,10 +1065,11 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 597
-; FirstLine = 543
+; CursorPosition = 436
+; FirstLine = 404
 ; Folding = +------
-; Markers = 495
+; Markers = 508
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe
+; CompileSourceDirectory

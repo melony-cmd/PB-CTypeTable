@@ -95,7 +95,7 @@ EndProcedure
 Procedure C2PB_Defines(gadgetid,linein.s,nline,maxlines)
   ;-Incomplete
   DebugOut("C2PB_Defines()",#False,"Define")
-  GOSCI_SetLineText(gadgetid, nline,">>"+linein)
+  GOSCI_SetLineText(gadgetid, nline,";"+linein)
   For i = 1 To CountString(linein," ")+1
     DebugOut(StringField(linein,i," "),#False,"Define")
   Next  
@@ -312,7 +312,6 @@ EndProcedure
 ; Attempts to Clean up empty lines in structures.
 ;
 Procedure C2PB_CleanStructures()
-  Debug "C2PB_CleanStructures()"
   numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
   enable=#False
   For li = 0 To numLines
@@ -338,9 +337,34 @@ Procedure C2PB_CleanStructures()
 EndProcedure
 
 ;
-; Convert the Veriable of the Structures
 ;
-Procedure C2PB_ValueStructure()
+;
+Procedure C2PB_DuplicateStructures()
+  numLines = ScintillaSendMessage(#SCI_CText,#SCI_GETLINECOUNT)
+  ; duplicates Structures between beginln & endln placing the duplicated structure below the current one.
+  For i=0 To numLines
+    cline.s = GOSCI_GetLineText(#SCI_CText, i)
+    If FindString(cline,"Structure") And FindString(cline,",")
+      bufstructname.s = RemoveString(cline,"Structure ")
+      GOSCI_SetLineText(#SCI_CText,i,"Structure "+StringField(bufstructname,1,","))
+      beginln = i
+    EndIf    
+    If FindString(cline,"EndStructure") And beginln<>0
+      endln = i : iins=0 
+      Debug Str(beginln)+" to "+Str(endln)      
+      For ilnbuf = beginln To endln
+        iins=iins+1
+        If iins=1
+          idxbufstructname=idxbufstructname+1
+          dupstructln.s = "Structure "+StringField(bufstructname,1+idxbufstructname,",")
+        Else
+          dupstructln.s = GOSCI_GetLineText(#SCI_CText, ilnbuf)
+        EndIf        
+        GOSCI_InsertLineOfText(#SCI_CText,endln+iins,dupstructln)
+      Next      
+      beginln = 0 : i=endln+iins
+    EndIf    
+  Next
 EndProcedure
 
 ;
@@ -374,7 +398,6 @@ Procedure C2PB_ConvertSubStructures(startln = 0)
         Else
           For imptr=0 To CountString(bufptr,",")
             ptr.s = Chr(9)+"*"+StringField(bufptr,1+imptr,",")+"."+StringField(bufptr,1+imptr,",")
-            Debug "///" + ptr
             rootstructptr() = ptr
             AddElement(rootstructptr())
           Next          
@@ -389,12 +412,8 @@ Procedure C2PB_ConvertSubStructures(startln = 0)
       If nstruct = 0 : structfootln = i : Break : EndIf
     EndIf    
   Next
-  
-  Debug "%%% HEAD %%%"+Str(structheadln)
-  Debug "%%% FOOT %%%"+Str(structfootln)
-  
+    
   ForEach rootstructptr()
-    Debug "\\\ [" + rootstructptr() + "]"
     GOSCI_InsertLineOfText(#SCI_CText,structheadln+ListIndex(rootstructptr())+1,rootstructptr())
   Next
   
@@ -524,6 +543,11 @@ Procedure C2PB_StructToPB()
         ; many an alias on a struct and if you DO you should be shot in the head.
         ; It will also break if cline is equal to nothing, but that's more of what I call natural loop exit,
         ; as it falls out the bottom of the repeat/until loop, unnatural would be 'break'
+        
+        ;
+        ; BUG: outputs structure with a,b,c... instead of duplicated each structure name a b or c...
+        ; or maybe I just never wrote the duplication code yet?!
+        ;
         If cline<>"};"
           offseti = 1
           obuf.s = ""
@@ -543,7 +567,7 @@ Procedure C2PB_StructToPB()
           ; Solution therefore is;
           obuf = Mid(obuf,1,Len(obuf)-1)
           DebugOut("[SOLUTION]! = [" + obuf + "]",#False,"Struct")
-          GOSCI_SetLineText(#SCI_CText,structheadln,"Structure "+obuf)          
+          GOSCI_SetLineText(#SCI_CText,structheadln,"Structure "+obuf)
         EndIf        
       EndIf      
     EndIf
@@ -553,7 +577,6 @@ Procedure C2PB_StructToPB()
         
     If finalizestruct = #True And iproto>0
       For cp=0 To iproto-1
-        Debug "Must Process Prototypes "+Str(iproto)+" "+ProtoList(cp)               
         GOSCI_InsertLineOfText(#SCI_CText,Val(StringField(ProtoList(cp),1,"::"))+cp,StringField(ProtoList(cp),2,"::"))
       Next       
       iproto = 0 
@@ -561,12 +584,14 @@ Procedure C2PB_StructToPB()
   Next
   
   C2PB_ConvertSubStructures()
+  C2PB_DuplicateStructures()
   C2PB_CleanStructures()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 452
-; FirstLine = 435
+; CursorPosition = 87
+; FirstLine = 68
 ; Folding = ---
 ; EnableXP
 ; DPIAware
+; CompileSourceDirectory
