@@ -233,6 +233,9 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
   nbargs = CountString(args,",")  
   
   DebugOut("C2PB_FunctionToProtoType() args = ["+args+"]",#False,"Functions")
+  ;- check args for anomalies
+  args = CheckVariablesAnomalies(args)
+  DebugOut("C2PB_FunctionToProtoType() -> CheckVariablesAnomalies() args = ["+args+"]",#False,"Functions")
   ;get argument names
   For i=1 To nbargs+1
     pramname.s = Trim(StringField(args,i,","))
@@ -244,7 +247,7 @@ Procedure.s C2PB_FunctionToProtoType(inputstring.s,*cFunc.Function, prefix.s = "
         Break
       EndIf      
     Next
-    pramname = Trim(Mid(pramname,fsr,Len(pramname)-fsr+1))
+    pramname = IsPBReserved(Trim(Mid(pramname,fsr,Len(pramname)-fsr+1)))
     argstype = RemoveString(argstype,pramname,#PB_String_CaseSensitive,fsr)
     
     DebugOut("C2PB_FunctionToProtoType() pramname = ["+pramname+"]",#False,"Functions")
@@ -589,8 +592,8 @@ Procedure C2PB_StructToPB()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 87
-; FirstLine = 68
+; CursorPosition = 249
+; FirstLine = 221
 ; Folding = ---
 ; EnableXP
 ; DPIAware

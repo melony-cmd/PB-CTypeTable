@@ -53,7 +53,7 @@ EndEnumeration
 Enumeration
 	#ZZ_MIXER_XTN = 254	       ;/**< External mixer.                 */
 	#ZZ_MIXER_DEF = 255	       ;/**< Default mixer id.               */
-	#ZZ_MIXER_ERR = #ZZ_MIXER_DEF  ;/**< Error (alias for ZZ_MIXER_DEF). */
+	#ZZ_MIXER_ERR = ZZ_MIXER_DEF  ;/**< Error (alias for ZZ_MIXER_DEF). */
 EndEnumeration
 
 ;/**
@@ -279,8 +279,8 @@ EndEnumeration
 ; * @return error code
 ; * @retval ZZ_OK(0) on success
 ; */
-;zz_err_t zz_load(zz_play_t const play,
-;		 const char * song, const char * vset,
+zz_err_t zz_load(zz_play_t const play,
+		 const char * song, const char * vset,
 ;zz_err_t zz_load(zz_play_t const play,		 const char * song, const char * vset,		 zz_u8_t * pfmt);
 
 
@@ -407,9 +407,7 @@ EndStructure;
 ; * **********************************************************************/
 
 Enumeration
-  #ZZ_SEEK_SET
-  #ZZ_SEEK_CUR
-  #ZZ_SEEK_END
+	#ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
 EndEnumeration
 
 ;#define ZZ_EOF ((zz_u32_t)-1)
@@ -436,7 +434,7 @@ Structure zz_vfs_dri_s
 	_ismine.Prototype_ismine					;/**< is mine.            */
 	_new.Prototype_new					;/**< create VFS.         */
 	_del.Prototype_del					;/**< destroy VFS.        */
-;	const					??
+	const					
 	_uri.Prototype_uri					;/**< get URI.       */
 	_open.Prototype_open					;/**< open.          */
 	_close.Prototype_close					;/**< close.         */
@@ -450,7 +448,7 @@ EndStructure;
 ; * Common (inherited) part to all VFS instance.
 ; */
 Structure vfs_s
-	dri.i					;/**< pointer to the VFS driver. */
+	dri					;/**< pointer to the VFS driver. */
 	err.i					;/**< last error number.         */
 	pb_pos.i					;/**< push-back position.        */
 	pb_len.i					;/**< push-back length.          */
@@ -481,13 +479,13 @@ PrototypeC.l zz_core_init(core.l,mixer,spr.i) : Global zz_core_init.zz_core_init
 PrototypeC zz_core_kill(core.l) : Global zz_core_kill.zz_core_kill
 PrototypeC.l zz_core_tick(core) : Global zz_core_tick.zz_core_tick
 PrototypeC.l zz_core_play(core.l,*pcm,n.l) : Global zz_core_play.zz_core_play
-PrototypeC.i zz_core_blend(core.l,Map.a,lr8.i) : Global zz_core_blend.zz_core_blend
+PrototypeC.i zz_core_blend(core.l,_Map,lr8.i) : Global zz_core_blend.zz_core_blend
 PrototypeC.a zz_log_bit(clr,set) : Global zz_log_bit.zz_log_bit
 PrototypeC zz_log_fun(func,*user) : Global zz_log_fun.zz_log_fun
 PrototypeC zz_mem(newf,delf) : Global zz_mem.zz_mem
 PrototypeC.l zz_new(*pplay) : Global zz_new.zz_new
 PrototypeC zz_del(*pplay) : Global zz_del.zz_del
-PrototypeC.l zz_load(play,*song,*vset,*pfmt) : Global zz_load.zz_load
+PrototypeC.l zz_load(play,*song.l,*vset.l,*pfmt) : Global zz_load.zz_load
 PrototypeC.l zz_close(play) : Global zz_close.zz_close
 PrototypeC.l zz_info(play,*pinfo) : Global zz_info.zz_info
 PrototypeC.l zz_init(play,rate.i,ms.i) : Global zz_init.zz_init
@@ -495,11 +493,11 @@ PrototypeC.l zz_setup(play,mixer.a,spr.i) : Global zz_setup.zz_setup
 PrototypeC.l zz_tick(play) : Global zz_tick.zz_tick
 PrototypeC.l zz_play(play,*pcm,n.l) : Global zz_play.zz_play
 PrototypeC.i zz_position(play) : Global zz_position.zz_position
-PrototypeC.a zz_mixer_info(id.a,*pname,*pdesc) : Global zz_mixer_info.zz_mixer_info
+PrototypeC.a zz_mixer_info(id.a,*pname.l,*pdesc.l) : Global zz_mixer_info.zz_mixer_info
 PrototypeC.l zz_vfs_add(dri) : Global zz_vfs_add.zz_vfs_add
 PrototypeC.l zz_vfs_del(dri) : Global zz_vfs_del.zz_vfs_del
 
-Procedure.l _OpenLibrary(library.s)
+Procedure.l <%PRJ>_OpenLibrary(library.s)
   dll = OpenLibrary(#PB_Any,library)
   If dll_plugin
 	zz_core_version = GetFunction(dll,"zz_core_version")
@@ -531,11 +529,3 @@ Procedure.l _OpenLibrary(library.s)
   ProcedureReturn dll_plugin
 EndProcedure
 
-
-; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 501
-; FirstLine = 493
-; Folding = -
-; EnableXP
-; DPIAware
-; CompileSourceDirectory

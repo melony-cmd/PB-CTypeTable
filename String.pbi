@@ -145,6 +145,13 @@ Procedure.s IsPBReserved(string.s)
   ProcedureReturn string
 EndProcedure
 
+;
+; Yep this looks asinine! but it's not because I'm expecting other variable anomalies that need patching out.
+;
+Procedure.s CheckVariablesAnomalies(string.s) 
+  string = ReplaceString(string,"**","*")  
+  ProcedureReturn string
+EndProcedure
 
 ;Debug "["+GetStringBetween("  zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	/**< offset,whence. */","(",")",2)+"]"
 ;Debug "["+RemoveStringList("  zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	/**< offset,whence. */","()")+"]"
@@ -152,8 +159,8 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 148
-; FirstLine = 113
+; CursorPosition = 151
+; FirstLine = 121
 ; Folding = --
 ; EnableXP
 ; DPIAware
