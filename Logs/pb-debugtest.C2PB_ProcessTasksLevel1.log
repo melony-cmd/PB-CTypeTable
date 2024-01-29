@@ -1,0 +1,3190 @@
+[19:39:22][0] ---------------------------------------------
+[19:39:22][0] Process Tasks Order = 1
+[19:39:22][0] CountGadgetItems = 5
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Replace A->B
+[19:39:22][0] ***** Case Replace A->B
+[19:39:22][0] Str(order) = 1
+[19:39:22][0] task = Delete A
+[19:39:22][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Replace A->B
+[19:39:23][0] ***** Case Replace A->B
+[19:39:23][0] Str(order) = 1
+[19:39:23][0] task = Delete A
+[19:39:23][0] ***** Case Delete A
+[19:39:23][0] Lines Dones = 531

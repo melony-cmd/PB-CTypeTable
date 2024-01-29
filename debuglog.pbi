@@ -57,33 +57,71 @@ Procedure DebugClear()
   Next  
 EndProcedure
 
+;-
+; DebugFind_TagNameState()
+; Finds the state of a given tagname
+;-
+Procedure.b DebugFind_TagNameState(tag.s)
+  ForEach stddebugloglevel()
+    If stddebugloglevel()\tagname = tag
+      ProcedureReturn stddebugloglevel()\enabled
+    EndIf    
+  Next
+  ProcedureReturn #False
+EndProcedure
+  
+; -
+; DebugWrite() 
+; Does the actual writting
+; -
+Procedure DebugWrite(string.s,splittag.s)
+  date.s = ""
+  
+  ofh = OpenFile(#PB_Any,stddebug\outfolder+stddebug\outfilename+splittag+".log")
+  If ofh
+    If stddebug\enabledate=#True
+      date = "["+FormatDate("%hh:%ii:%ss", Date())+"]"
+    EndIf        
+    outstring.s = date + "["+loglevel+"] "+string    
+    FileSeek(ofh,Lof(ofh))
+    WriteStringN(ofh,outstring)
+    CloseFile(ofh)
+  Else
+    Debug("Failed to Create: "+stddebug\outfolder+stddebug\outfilename+splittag+".log")
+  EndIf  
+EndProcedure
+
 ; -
 ; DebugOut() 
 ; Use to output debug information to a file, based on settings.
 ; -
 Procedure DebugOut(string.s,clearlog.b = #False,loglevel.s="")
   If clearlog = #True : DebugClear() : ProcedureReturn : EndIf  
-  date.s = ""
+
   splittag.s = ""
-  ForEach stddebugloglevel()    
-    If stddebugloglevel()\enabled=#True And loglevel=stddebugloglevel()\tagname
-      If stddebug\splitfileloglevel=#True
-        splittag = "."+loglevel
-      EndIf      
-      ofh = OpenFile(#PB_Any,stddebug\outfolder+stddebug\outfilename+splittag+".log")
-      If ofh
-        If stddebug\enabledate=#True
-          date = "["+FormatDate("%hh:%ii:%ss", Date())+"]"
-        EndIf        
-        outstring.s = date + "["+loglevel+"] "+string    
-        FileSeek(ofh,Lof(ofh))
-        WriteStringN(ofh,outstring)
-        CloseFile(ofh)
-      Else
-        Debug("Failed to create logfile")
-      EndIf  
-    EndIf    
-  Next  
+  debugallstate.b = DebugFind_TagNameState("All")
+  
+  If debugallstate = #False
+    ForEach stddebugloglevel()
+      ; Are we debuging all or loglevel?
+      ; if loglevel is defined we do the following
+      If stddebugloglevel()\enabled=#True And loglevel=stddebugloglevel()\tagname
+        If stddebug\splitfileloglevel=#True
+          splittag = "."+loglevel
+        EndIf      
+        DebugWrite(string,splittag)
+      EndIf
+    Next
+  EndIf
+  
+  ; if we are just spewing everything then ignore loglevel except for the if split is enabled.
+  If debugallstate = #True
+    If stddebug\splitfileloglevel=#True
+      splittag = "."+loglevel
+    EndIf      
+    DebugWrite(string,splittag)
+  EndIf        
+
 EndProcedure
 
 ; -
@@ -191,9 +229,9 @@ CompilerIf #DEBUG_DEBUGGEROUT = #True
 CompilerEndIf 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 100
-; FirstLine = 60
-; Folding = s-
+; CursorPosition = 115
+; FirstLine = 77
+; Folding = cg
 ; EnableXP
 ; DPIAware
 ; CompileSourceDirectory

@@ -1,0 +1,1526 @@
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] };
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] ---> #define
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:48][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:33:49][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] ---> #define
+[19:37:18][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:37:18][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:37:18][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:37:18][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:37:18][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:37:18][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:37:18][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:37:18][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:37:18][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:37:18][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:37:18][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:37:18][0] };
+[19:37:18][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:37:18][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:37:18][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:37:18][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:37:18][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:37:18][0] };
+[19:37:18][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:37:18][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:37:18][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:37:18][0] };
+[19:37:18][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:37:18][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:37:18][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:37:18][0] };
+[19:37:18][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:37:18][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:37:18][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:37:18][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:37:18][0] };
+[19:37:18][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:37:18][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:37:18][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:37:18][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:37:18][0] };
+[19:37:18][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:37:18][0] };
+[19:37:18][0] ---> #define
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:37:18][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] ---> #define
+[19:39:22][0]   ZZ_OK		   /**< (0) No error.                       */
+[19:39:22][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[19:39:22][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[19:39:22][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[19:39:22][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[19:39:22][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[19:39:22][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[19:39:22][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[19:39:22][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[19:39:22][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[19:39:22][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[19:39:22][0] };
+[19:39:22][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[19:39:22][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[19:39:22][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[19:39:22][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[19:39:22][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[19:39:22][0] };
+[19:39:22][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[19:39:22][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[19:39:22][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[19:39:22][0] };
+[19:39:22][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[19:39:22][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[19:39:22][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[19:39:22][0] };
+[19:39:22][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[19:39:22][0]   ZZ_LQ				/**< (2) Low quality.     */
+[19:39:22][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[19:39:22][0]   ZZ_HQ					/**< (4) High quality.    */
+[19:39:22][0] };
+[19:39:22][0]   ZZ_LOG_ERR				/**< Log error.   */
+[19:39:22][0]   ZZ_LOG_WRN				/**< Log warning. */
+[19:39:22][0]   ZZ_LOG_INF				/**< Log info.    */
+[19:39:22][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[19:39:22][0] };
+[19:39:22][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[19:39:22][0] };
+[19:39:22][0] ---> #define
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[19:39:22][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
