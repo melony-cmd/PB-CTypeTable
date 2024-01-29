@@ -53,7 +53,7 @@ EndEnumeration
 Enumeration
 	#ZZ_MIXER_XTN = 254	       ;/**< External mixer.                 */
 	#ZZ_MIXER_DEF = 255	       ;/**< Default mixer id.               */
-	#ZZ_MIXER_ERR = ZZ_MIXER_DEF  ;/**< Error (alias for ZZ_MIXER_DEF). */
+	#ZZ_MIXER_ERR = #ZZ_MIXER_DEF  ;/**< Error (alias for ZZ_MIXER_DEF). */
 EndEnumeration
 
 ;/**
@@ -415,8 +415,8 @@ EndEnumeration
 ;/**
 ; * Virtual filesystem driver.
 ; */
-Prototype Prototype_reg(pram_a) 
-Prototype Prototype_unreg(pram_a) 
+Prototype.i Prototype_reg(pram_a.i) 
+Prototype.i Prototype_unreg(pram_a.i) 
 Prototype.l Prototype_ismine(pram_a.l) 
 Prototype.l Prototype_new(pram_a.l,pram_b.l) 
 Prototype Prototype_del(pram_a) 
@@ -448,7 +448,7 @@ EndStructure;
 ; * Common (inherited) part to all VFS instance.
 ; */
 Structure vfs_s
-	dri					;/**< pointer to the VFS driver. */
+	dri.i					;/**< pointer to the VFS driver. */
 	err.i					;/**< last error number.         */
 	pb_pos.i					;/**< push-back position.        */
 	pb_len.i					;/**< push-back length.          */
@@ -494,8 +494,8 @@ PrototypeC.l zz_tick(play) : Global zz_tick.zz_tick
 PrototypeC.l zz_play(play,*pcm,n.l) : Global zz_play.zz_play
 PrototypeC.i zz_position(play) : Global zz_position.zz_position
 PrototypeC.a zz_mixer_info(id.a,*pname.l,*pdesc.l) : Global zz_mixer_info.zz_mixer_info
-PrototypeC.l zz_vfs_add(dri) : Global zz_vfs_add.zz_vfs_add
-PrototypeC.l zz_vfs_del(dri) : Global zz_vfs_del.zz_vfs_del
+PrototypeC.l zz_vfs_add(dri.i) : Global zz_vfs_add.zz_vfs_add
+PrototypeC.l zz_vfs_del(dri.i) : Global zz_vfs_del.zz_vfs_del
 
 Procedure.l <%PRJ>_OpenLibrary(library.s)
   dll = OpenLibrary(#PB_Any,library)

@@ -1,4 +1,11 @@
-﻿;
+﻿; Author: T.J.Roughton
+; File: C2PureBasic.pbi
+; Description: The engine that assists with translating a .h to .pbi
+; Version: 0
+; Licence: Dilligaf
+
+
+;
 ; Function -> Procedure Structure
 ;
 Structure Function
@@ -592,8 +599,7 @@ Procedure C2PB_StructToPB()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 249
-; FirstLine = 221
+; CursorPosition = 2
 ; Folding = ---
 ; EnableXP
 ; DPIAware

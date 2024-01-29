@@ -1,5 +1,46 @@
+; Author: T.J.Roughton
+; File: main.pb
+; Description:
 ;
+;   On a simple level it's designed to be purely a window that displays what PB variable types translate to C variable types with
+;   the user editable additional types that I might not have thought of or don't know about, including typedef translation tables.
+;   
+;   The more complicated level is the Header Assistant which attempts to translate .h to .pbi, it will likely never be a one catch all
+;   one button click affair to do this task due to the complexities and the individuals style that orginally wrote the .h file, but
+;   we can simplify it down by taking out hopefully a huge chunk of the more time consuming tedious details that are common jobs
+;   when moving a .lib/.dll to the language of PureBasic which is far superior, even though we are still missing unsigned variable types
+;   which would make these types of tasks by far a simpler job to undertake as you'd have 1:1 like for like variable in from one arcane 
+;   language to PureBasic anyway... >> {sigh}.
+;   
+; Version: 0.0.1a (yeah we're still in alpha)
+; Licence: Dilligaf
+
+; Known Bugs: 
+;   (likely location: C2PureBasic.pbi)
+;   Multi line C functions prototypes don't get commented out
+;   -- its actually part of another issue of the translated function in PB format not being placed below it but instead in a list which
+;   is designed to work that way, but I needs a redesign, because sometimes developers are nice enough to actually comment/document their
+;   code, which is why the translated PB procedure should be below it's counter part C function prototype, where by we don't actually know
+;   it has documentation we can predictively presume it would be close to it's definition. -- wow that was a mouthful.
 ;
+;   (likely location: C2PureBasic.pbi)
+;   *varible.l is not proper PureBasic syntax *variable is however, but that's not what it being written it's been written as *v.l 
+;
+;   (*)
+;   It's not a bug but it is cousing some anxiety, this code has never been tested on 'other' .h files other than zingzong.h while it has made
+;   a lot of progress over the weeks of designing this application, it's never really been tested on anything else, mainly because requires
+;   building a whole new project for something else, this has me nervious and I am expecting it to break and break pretty bad!
+;
+; ToDo:
+;   [ ] - Clean up the debug output file, sure I can read it but I'm pretty sure no one else is going to be able to, which makes it
+;         really hard for someone to report a bug when they can't even ready the debuglog.
+;   [ ] - Complete Code Blocks.
+;         + the design is taking awhile because I'm still not entirely sure I should put a whole editor in, or open a pre-existing editor
+;         + or go a completely different direction.
+
+
+;
+; Setup USE
 ;
 UseSQLiteDatabase()
 
@@ -14,6 +55,7 @@ Declare.s Get_TasksDetails(idx.l,value.l=0)
 ;
 ; Includes
 ;
+IncludeFile "debuglog.pbi"
 IncludeFile "GoScintilla.pbi"
 
 ;
@@ -97,6 +139,7 @@ IncludeFile "ListIconGadgetInclude.pbi"
 IncludeFile "DataBase.pbi"
 IncludeFile "C2Tasks.pbi"
 IncludeFile "C2PureBasic.pbi"
+IncludeFile "C2CodeBlocks.pbi"
 
 Global default_database.s = "default.sqlite"
 Global current_hsourcefile.s = ""
@@ -137,65 +180,6 @@ Procedure.s ReadSelection(arg_input.s)
     CloseFile(0)
   EndIf
   ProcedureReturn Mid(inline,cs,ce-cs)  
-EndProcedure
-
-;
-;  6 Data.s "All Debug Log"                ,"Enable/Disable all log file output (overrides)"
-;  7 Data.s "Log Garbage Collector"        ,"Enable/Disable Garbage Collector log file output"
-;  8 Data.s "Log C2PB_ProcessTasks Level 0","Enable/Disable C2PB_ProcessTasks Level 0 log file output"
-;  9 Data.s "Log C2PB_ProcessTasks Level 1","Enable/Disable C2PB_ProcessTasks Level 1 log file output"
-; 10 Data.s "Log Process Lines"            ,"Enable/Disable Process Lines log file output"
-; 11 Data.s "Log Functions"                ,"Enable/Disable Functions log file output"
-; 12 Data.s "Log Struct"                   ,"Enable/Disable Struct log file output"
-; 13 Data.s "Log Define"                   ,"Enable/Disable Define log file output"
-; 14 Data.s "Log Enumeration"              ,"Enable/Disable Enumeration log file output"
-; 15 Data.s "Log Comments"                 ,"Enable/Disable Comments log file output"
-; 16 Data.s "Log Tasks"                    ,"Enable/Disable Tasks log file output"
-
-Procedure DebugOut(string.s,clearlog.b = #False,loglevel.s="")
-  debugenable = #False
-  
-  If clearlog = #True
-    Debug("DeleteFile(pb-ctypetable.log)")
-    DeleteFile("pb-ctypetable.log")
-    ProcedureReturn 
-  EndIf
-  
-  Select loglevel
-    Case "GarbageCollector" : If GetGadgetItemState(#LI_HASETTINGS,7) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "C2PB_ProcessTasksLevel0" : If GetGadgetItemState(#LI_HASETTINGS,8) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "C2PB_ProcessTasksLevel1" : If GetGadgetItemState(#LI_HASETTINGS,9) = #PB_ListIcon_Checked : debugenable = #True :  EndIf      
-    Case "ProcessLines" : If GetGadgetItemState(#LI_HASETTINGS,10) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "Functions" : If GetGadgetItemState(#LI_HASETTINGS,11) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "Struct" : If GetGadgetItemState(#LI_HASETTINGS,12) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "Define" : If GetGadgetItemState(#LI_HASETTINGS,13) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "Enumeration" : If GetGadgetItemState(#LI_HASETTINGS,14) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "Comments" : If GetGadgetItemState(#LI_HASETTINGS,15) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "Tasks" : If GetGadgetItemState(#LI_HASETTINGS,16) = #PB_ListIcon_Checked : debugenable = #True : EndIf      
-    Case "" : debugenable = #True
-  Default
-    Debug "Unhandled Loglevel State: ["+loglevel+"]"
-    debugenable = #True
-  EndSelect
-    
-  If GetGadgetItemState(#LI_HASETTINGS,6) = #PB_ListIcon_Checked                ;"All Debug Log"
-    debugenable = #True
-  EndIf
-  
-  ;If loglevel = "Struct" : Debug Str(debugenable) + "--" + loglevel + "--" + Str(#True) : EndIf
-  
-  If debugenable = #True
-    ofh = OpenFile(#PB_Any,"pb-ctypetable.log")
-    If ofh
-      WindowEvent()
-      outstring.s = "["+FormatDate("%hh:%ii:%ss", Date())+"] ["+loglevel+"] "+string    
-      FileSeek(ofh,Lof(ofh))
-      WriteStringN(ofh,outstring)
-      CloseFile(ofh)
-    Else
-      Debug("Failed to create logfile")
-    EndIf  
-  EndIf  
 EndProcedure
 
 ;
@@ -370,7 +354,11 @@ Procedure SaveConfig()
   If CreatePreferences("CTypeTable.cfg")
     PreferenceGroup("HeaderAssistant")
     For li=0 To CountGadgetItems(#LI_HASETTINGS)-1
-      hasettings.s + Str(GetGadgetItemState(#LI_HASETTINGS, li))
+      chk.s = "0"
+      If GetGadgetItemState(#LI_HASETTINGS, li) & #PB_ListIcon_Checked
+        chk.s = "1"
+      EndIf        
+      hasettings.s + chk
     Next    
     WritePreferenceString("Settings",hasettings)
     
@@ -391,8 +379,15 @@ Procedure LoadConfig()
     PreferenceGroup("HeaderAssistant")
     hasettings.s = ReadPreferenceString("Settings","")
     For li=0 To Len(hasettings)-1
-      SetGadgetItemState(#LI_HASETTINGS,li,Val(Mid(hasettings,1+li,1)))
-    Next
+      ; well well. well, cannot just save value of GetGadgetItemState() must save as 1 or 0 and then SetGadgetItemState(#LI_HASETTINGS .... #PB_ListIcon_Checked) with the flag.
+      ; based on 0 or 1.. weird quirk.
+      chkstate = Val(Mid(hasettings,1+li,1))
+      If chkstate=1 : SetGadgetItemState(#LI_HASETTINGS,li,#PB_ListIcon_Checked) : EndIf      
+      If DebugGetID_LogLevel(Str(li))
+        If chkstate=0 : DebugSetIDState_LogLevel(Str(li),#False) : EndIf          
+        If chkstate=1 : DebugSetIDState_LogLevel(Str(li),#True) : EndIf          
+      EndIf
+    Next        
     PreferenceGroup("ReservedWord")    
     Repeat      
       wrd.s = ReadPreferenceString("rword_"+Str(i),"-1")
@@ -629,6 +624,8 @@ Procedure CustomLI_TaskEditCallback_ComboItem(Gadget.i, Line.i, Column.i, ComboB
 	AddGadgetItem(ComboBox, -1, "RegReplace") 
 	AddGadgetItem(ComboBox, -1, "Delete A") 
 	AddGadgetItem(ComboBox, -1, "Delete Line #") 
+	AddGadgetItem(ComboBox, -1, "Replace A->Code Block") 
+	AddGadgetItem(ComboBox, -1, "Insert Code Block") 
 EndProcedure
 
 ;
@@ -839,9 +836,20 @@ EndProcedure
 
 
 ;-----------------------------------------------------------------------------
-;- 
+;-Setup Main Window Events
 ;-----------------------------------------------------------------------------
 
+;
+;
+;
+Procedure HasSettings_Update()
+  selectionidx = GetGadgetState(#LI_HASETTINGS)
+  If GetGadgetItemState(#LI_HASETTINGS,selectionidx) & #PB_ListIcon_Checked
+    DebugSetIDState_LogLevel(Str(selectionidx),#True)
+  Else
+    DebugSetIDState_LogLevel(Str(selectionidx),#False)
+  EndIf
+EndProcedure
 
 ;
 ;
@@ -871,15 +879,35 @@ Procedure SetupMainWindow()
   ;LIG_Edit_SetCallback(#LI_TASKS, #LIG_Callback_EditYesNo, @CustomLI_TaskEditCallback_YesNo())
   LIG_EnableEditSetting(#LI_TASKS, #LIG_EditSetting_ApplyOnExit|#LIG_EditSetting_AllowCtrlC|#LIG_EditSetting_AllowCtrlV)
   
-  Restore headerass_settings
-  Read.s name.s
-  Read.s desc.s
-  While name<>"--"
-    AddGadgetItem(#LI_HASETTINGS,-1,name+Chr(10)+desc)
-    Read.s name.s
-    Read.s desc.s
-  Wend
+  ;- needs configuring
+  DebugAdd_LogLevel("6","All","All Debug Log"                                    ,"Enable/Disable all log file output (overrides)",#True)
+  DebugAdd_LogLevel("7","GarbageCollector","Log Garbage Collector"               ,"Enable/Disable Garbage Collector log file output",#True)
+  DebugAdd_LogLevel("8","C2PB_ProcessTasksLevel0","Log C2PB_ProcessTasks Level 0","Enable/Disable C2PB_ProcessTasks Level 0 log file output",#True)
+  DebugAdd_LogLevel("9","C2PB_ProcessTasksLevel1","Log C2PB_ProcessTasks Level 1","Enable/Disable C2PB_ProcessTasks Level 1 log file output",#True)
+  DebugAdd_LogLevel("10","ProcessLines","Log Process Lines"                      ,"Enable/Disable Process Lines log file output",#True)
+  DebugAdd_LogLevel("11","Functions","Log Functions"                             ,"Enable/Disable Functions log file output",#True)
+  DebugAdd_LogLevel("12","Struct","Log Struct"                                   ,"Enable/Disable Struct log file output",#True)
+  DebugAdd_LogLevel("13","Define","Log Define"                                   ,"Enable/Disable Define log file output",#True)
+  DebugAdd_LogLevel("14","Enumeration","Log Enumeration"                         ,"Enable/Disable Enumeration log file output",#True)
+  DebugAdd_LogLevel("15","Comments","Log Comments"                               ,"Enable/Disable Comments log file output",#True)
+  DebugAdd_LogLevel("16","Tasks","Log Task"                                      ,"Enable/Disable Task log file output",#True)  
+  DebugAdd_LogLevel("17","DataBase","Log Database"                               ,"Enable/Disable Database log file output",#True)  
   
+  DebugClear()
+  
+  Restore headerass_settings
+  id.s="" : tagname.s="" : name.s="" : desc.s=""
+  Read.s id : Read.s tagname : Read.s name : Read.s desc
+  While name<>"--"
+    If id<>"{{DEBUGGER}}"
+      AddGadgetItem(#LI_HASETTINGS,-1,name+Chr(10)+desc)
+    Else
+      ForEach stddebugloglevel()
+        AddGadgetItem(#LI_HASETTINGS,-1,stddebugloglevel()\shortdescription+Chr(10)+stddebugloglevel()\longdescription)
+      Next
+    EndIf
+    Read.s id : Read.s tagname : Read.s name : Read.s desc
+  Wend
   
   MainPanel(eventType)
 EndProcedure
@@ -958,7 +986,9 @@ Procedure MainWindow_Events(event)
         Case #BT_UNMARKPROC
           UnMarkProc(EventType())        
         Case #BT_Update
-          Update(EventType())          
+          Update(EventType())
+        Case #LI_HASETTINGS
+          HasSettings_Update()
       EndSelect
   EndSelect
   ProcedureReturn event
@@ -967,9 +997,9 @@ EndProcedure
 ;
 ; Begin
 ;
-ProgArgs()
+DebugInit()
 
-DebugOut("",#True)
+ProgArgs()
 
 If OpenDatabase(0,default_database,"","")
 EndIf
@@ -977,17 +1007,6 @@ EndIf
 OpenMainWindow()
 SetupMainWindow()
 LoadConfig()
-
-DebugOut("TEST",#False,"GarbageCollector")
-DebugOut("TEST",#False,"C2PB_ProcessTasksLevel0")
-DebugOut("TEST",#False,"C2PB_ProcessTasksLevel1")
-DebugOut("TEST",#False,"ProcessLines")
-DebugOut("TEST",#False,"Functions")
-DebugOut("TEST",#False,"Struct")
-DebugOut("TEST",#False,"Define")
-DebugOut("TEST",#False,"Enumeration")
-DebugOut("TEST",#False,"Comments")
-DebugOut("TEST",#False,"Tasks")
 
 ;Header_Import("D:\Work\Code\SDK\ZingZong\src\zz_private.h")
 Open("D:\Work\Code\SDK\ZingZong\src\zingzong.h")
@@ -1009,26 +1028,16 @@ End
 
 DataSection
   headerass_settings:
-  Data.s "Garbage Collector"            ,"Removes C pre-processor statements & deletes ;"
-  Data.s "C2PB_ProcessTasks Level 0"    ,"Enable/Disable Tasks Level 0"
-  Data.s "C2PB_ProcessTasks Level 1"    ,"Enable/Disable Tasks Level 1"
-  Data.s "Process Lines"                ,"?"
-  Data.s "C Functions to PB"            ,"?"
-  Data.s "C Struct to PB"               ,"?"
-  Data.s "All Debug Log"                ,"Enable/Disable all log file output (overrides)"
-  Data.s "Log Garbage Collector"        ,"Enable/Disable Garbage Collector log file output"
-  Data.s "Log C2PB_ProcessTasks Level 0","Enable/Disable C2PB_ProcessTasks Level 0 log file output"
-  Data.s "Log C2PB_ProcessTasks Level 1","Enable/Disable C2PB_ProcessTasks Level 1 log file output"
-  Data.s "Log Process Lines"            ,"Enable/Disable Process Lines log file output"
-  Data.s "Log Functions"                ,"Enable/Disable Functions log file output"
-  Data.s "Log Struct"                   ,"Enable/Disable Struct log file output"
-  Data.s "Log Define"                   ,"Enable/Disable Define log file output"
-  Data.s "Log Enumeration"              ,"Enable/Disable Enumeration log file output"
-  Data.s "Log Comments"                 ,"Enable/Disable Comments log file output"
-  Data.s "Log Task"                     ,"Enable/Disable Task log file output"
-  Data.s "AutoDoc Header"               ,"Enable/Disable Basic Documenation"  
-  Data.s "AutoDoc Procedure"            ,"Enable/Disable Basic Documenation"  
-  Data.s "--","--"
+  Data.s "","","Garbage Collector"                                    ,"Removes C pre-processor statements & deletes ;"
+  Data.s "","","C2PB_ProcessTasks Level 0"                            ,"Enable/Disable Tasks Level 0"
+  Data.s "","","C2PB_ProcessTasks Level 1"                            ,"Enable/Disable Tasks Level 1"
+  Data.s "","","Process Lines"                                        ,"?"
+  Data.s "","","C Functions to PB"                                    ,"?"
+  Data.s "","","C Struct to PB"                                       ,"?"
+  Data.s "{{DEBUGGER}}","","",""
+  Data.s "","","AutoDoc Header"                                       ,"Enable/Disable Basic Documenation"  
+  Data.s "","","AutoDoc Procedure"                                    ,"Enable/Disable Basic Documenation"  
+  Data.s "--","--","--"
   autodoc_header:
   Data.s "--"
   autodoc_procedure:
@@ -1061,14 +1070,15 @@ DataSection
   Data.s "  EndIf"
   Data.s "  ProcedureReturn dll_plugin"
   Data.s "EndProcedure"
-  Data.s "--"     
+  Data.s "--"
+
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 436
-; FirstLine = 404
-; Folding = +------
-; Markers = 508
+; CursorPosition = 893
+; FirstLine = 422
+; Folding = AAMAAA3
+; Markers = 503
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

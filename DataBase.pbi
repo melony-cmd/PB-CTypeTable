@@ -1,4 +1,11 @@
-﻿UseSQLiteDatabase()
+﻿; Author: T.J.Roughton
+; File: DataBase.pbi
+; Description: Editable Database of C and PureBasic variable types.
+; Version: 0
+; Licence: Dilligaf
+
+
+UseSQLiteDatabase()
 
 ;
 ;
@@ -211,8 +218,8 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 47
-; FirstLine = 26
+; CursorPosition = 2
 ; Folding = 8-
 ; EnableXP
 ; DPIAware
+; CompileSourceDirectory

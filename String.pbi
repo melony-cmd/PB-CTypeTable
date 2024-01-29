@@ -1,6 +1,8 @@
-﻿;
-; String Tools
-;
+﻿; Author: T.J.Roughton
+; File: String.pbi
+; Description: Custom string tools that assist other procedures to translate .h to .pbi
+; Version: 0
+; Licence: Dilligaf
 
 ;
 ; Get Last Word By Terminator
@@ -159,8 +161,7 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 151
-; FirstLine = 121
+; CursorPosition = 6
 ; Folding = --
 ; EnableXP
 ; DPIAware

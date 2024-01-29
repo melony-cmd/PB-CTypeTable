@@ -1,4 +1,10 @@
-﻿;
+﻿; Author: T.J.Roughton
+; File: C2Tasks.pbi
+; Description: Designed to perform certain tasks before & after the main chunk of translating a .h file to .pbi takes place             
+; Version: 0
+; Licence: Dilligaf
+
+;
 ;
 ;
 Procedure.s C2Tasks_GetPramDetails(task.s)
@@ -143,8 +149,8 @@ Procedure C2Tasks_DeleteLine()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 133
-; FirstLine = 105
+; CursorPosition = 5
 ; Folding = -
 ; EnableXP
 ; DPIAware
+; CompileSourceDirectory
