@@ -51,6 +51,7 @@ Declare Callback_Scintilla_Translation(Gadget, *scinotify.SCNotification)
 Declare DebugOut(string.s,clearlog.b=#False,loglevel.s="")
 Declare Header_Import(file.s="")
 Declare.s Get_TasksDetails(idx.l,value.l=0)
+Declare Update_TagCodeBlocks()
 
 ;
 ; Includes
@@ -620,12 +621,12 @@ EndProcedure
 ;
 ;
 Procedure CustomLI_TaskEditCallback_ComboItem(Gadget.i, Line.i, Column.i, ComboBox.i)
-	AddGadgetItem(ComboBox, -1, "Replace A->B") 
-	AddGadgetItem(ComboBox, -1, "RegReplace") 
-	AddGadgetItem(ComboBox, -1, "Delete A") 
-	AddGadgetItem(ComboBox, -1, "Delete Line #") 
-	AddGadgetItem(ComboBox, -1, "Replace A->Code Block") 
-	AddGadgetItem(ComboBox, -1, "Insert Code Block") 
+	AddGadgetItem(ComboBox, -1, "Replace A->B")               ; -> C2Tasks.pbi
+	AddGadgetItem(ComboBox, -1, "RegReplace")                 ; -> C2Tasks.pbi
+	AddGadgetItem(ComboBox, -1, "Delete A")                   ; -> C2Tasks.pbi
+	AddGadgetItem(ComboBox, -1, "Delete Line #")              ; -> C2Tasks.pbi
+	AddGadgetItem(ComboBox, -1, "Replace A->Code Block")      ; -> C2CodeBlocks.pbi
+	AddGadgetItem(ComboBox, -1, "Insert Code Block")          ; -> C2CodeBlocks.pbi
 EndProcedure
 
 ;
@@ -665,6 +666,9 @@ Procedure Add_TaskList(Task.s="(Select)",ValueA.s="<value a>",ValueB.s="<value b
   AddGadgetItem(#LI_TASKS, -1,Task+Chr(10)+ValueA+Chr(10)+ValueB+Chr(10)+Parms+Chr(10)+Order)
 EndProcedure
 
+;
+;
+;
 Procedure Add_Task(eventType)
   Add_TaskList()
 EndProcedure
@@ -676,29 +680,25 @@ Procedure Delete_Task(eventType)
   RemoveGadgetItem(#LI_TASKS,LIG_GetGadgetState(#LI_TASKS))  
 EndProcedure
 
-;
-;
-;
+; -
+; Save Tasks to perform on .h file
+; Notes: the way i've written this code may appear a little strange, a guide to the philosophy is to push all code that has
+; a function to perform also houses the macros to write/read preference data, making Open/Save_TaskList() in this case
+; smaller and easier to read the follow and order.
+; -
 Procedure Save_TaskList(eventType)   
   pattern.s = "INI File (*.ini)|*.ini;|All files (*.*)|*.*"  
   file.s = SaveFileRequester("Save TaskList","",pattern,0)
   If file<>""
-    If CreatePreferences(file)  
-      For row = 0 To CountGadgetItems(#LI_TASKS)    
-        PreferenceGroup("Task_"+Str(row))
-        For column = 0 To 4
-          WritePreferenceString("Pram_"+Str(column),GetGadgetItemText(#LI_TASKS, row, column))          
-        Next    
-      Next
+    If CreatePreferences(file)
+      C2Tasks_WritePreferenceTasks            ; -> C2Tasks.pbi as a Macro
+      
       PreferenceGroup("MarkedProcedures")
-      markers.s=""
-      lnmax = GOSCI_GetNumberOfLines(#SCI_CText)
-      For iln = 0 To lnmax
-        cmarker = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,iln)
-        If cmarker<0 : cmarker=0 : EndIf
-        markers + Str(cmarker) + ","
-      Next     
-      WritePreferenceString("ProcMakers",markers)
+      C2Tasks_WritePreferenceMarkers          ; -> C2Tasks.pbi as a Macro
+      
+      PreferenceGroup("CodeBlocks")
+      C2CodeBlocks_WritePreference            ; -> C2CodeBlocks.pbi as a Macro
+      
       ClosePreferences()
     EndIf    
   EndIf  
@@ -715,27 +715,14 @@ Procedure Open_TaskList(file.s="")
   If file<>""
     ClearGadgetItems(#LI_TASKS)
     If OpenPreferences(file)
-      While PreferenceGroup("Task_"+Str(row)) <> 0
-        Task.s = ReadPreferenceString("Pram_0","")
-        ValueA.s = ReadPreferenceString("Pram_1","")
-        ValueB.s = ReadPreferenceString("Pram_2","")
-        Parm.s = ReadPreferenceString("Pram_3","")
-        Order.s = ReadPreferenceString("Pram_4","")
-        Add_TaskList(Task,ValueA,ValueB,Parm,Order)
-        row=row+1
-      Wend
-      PreferenceGroup("MarkedProcedures")
-      markers.s = ReadPreferenceString("ProcMakers","")
-      GOSCI_DeleteBookmarksAll(#SCI_CText)
+      C2Tasks_ReadPreferenceTasks
       
-      For iln=0 To CountString(markers,",")
-        mark = Val(StringField(markers,1+iln,","))
-        If mark = 0 : mark=-1 : EndIf
-        If mark = 2 : mark=#MARK_CIRCLEPLUS : EndIf
-        If mark = 4 : mark=#MARK_VLINE : EndIf
-        If mark = 16 : mark=#MARK_CURVELINE : EndIf
-        GOSCI_SetLineBookmark(#SCI_CText,iln,#True,mark)
-      Next            
+      PreferenceGroup("MarkedProcedures")
+      C2Tasks_ReadPreferenceMarkers
+      
+      PreferenceGroup("CodeBlocks")
+      C2CodeBlocks_ReadPreference
+      
       ClosePreferences()
     EndIf
   EndIf  
@@ -834,7 +821,19 @@ Procedure MarkProcEnd(eventType)
   EndIf
 EndProcedure
 
+;-----------------------------------------------------------------------------
+;-Code Blocks
+;-----------------------------------------------------------------------------
 
+;
+;
+;
+Procedure Update_TagCodeBlocks()
+  ForEach cblist()    
+    AddGadgetItem(#CBE_TagCodeBlocks,-1,MapKey(cblist()))
+  Next
+EndProcedure
+  
 ;-----------------------------------------------------------------------------
 ;-Setup Main Window Events
 ;-----------------------------------------------------------------------------
@@ -866,8 +865,7 @@ Procedure SetupMainWindow()
   
   ; Scintilla Setup
   ; ScintillaSendMessage(#SCI_CText,#SCI_SETMARGINS,0)
-  GOSCI_SetColor(#SCI_CText,#GOSCI_LINENUMBERBACKCOLOR,RGB(0,0,0))
-  
+  GOSCI_SetColor(#SCI_CText,#GOSCI_LINENUMBERBACKCOLOR,RGB(0,0,0))  
   ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_CIRCLEPLUS,#SC_MARK_CIRCLEPLUS)  
   ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_VLINE,#SC_MARK_VLINE) 
   ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_CURVELINE,#SC_MARK_LCORNERCURVE) 
@@ -908,6 +906,8 @@ Procedure SetupMainWindow()
     EndIf
     Read.s id : Read.s tagname : Read.s name : Read.s desc
   Wend
+  
+  Update_TagCodeBlocks()
   
   MainPanel(eventType)
 EndProcedure
@@ -989,6 +989,21 @@ Procedure MainWindow_Events(event)
           Update(EventType())
         Case #LI_HASETTINGS
           HasSettings_Update()
+        Case #BTI_AddTask_CodeBlock_Update
+          C2CodeBlock_Update(GetGadgetText(#CBE_TagCodeBlocks))
+        Case #BTI_AddTask_CodeBlock_View
+          GOSCI_Clear(#SCI_CodeBlocksText)
+          C2CodeBlock_View(#SCI_CodeBlocksText,GetGadgetText(#CBE_TagCodeBlocks))          
+        Case #CBE_TagCodeBlocks
+          ;it's not a good idea updating the SCI text box here --> use a button.
+        Case #BTI_AddTask_CodeBlock
+          C2CodeBlock_Add(GetGadgetText(#CBE_TagCodeBlocks))
+          ClearGadgetItems(#CBE_TagCodeBlocks)
+          Update_TagCodeBlocks()
+        Case #BTI_DeleteTask_CodeBlock
+          C2CodeBlock_Delete(GetGadgetText(#CBE_TagCodeBlocks))
+          ClearGadgetItems(#CBE_TagCodeBlocks)
+          Update_TagCodeBlocks()
       EndSelect
   EndSelect
   ProcedureReturn event
@@ -1075,10 +1090,10 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 893
-; FirstLine = 422
-; Folding = AAMAAA3
-; Markers = 503
+; CursorPosition = 54
+; FirstLine = 36
+; Folding = AIAQgJu-
+; Markers = 504
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

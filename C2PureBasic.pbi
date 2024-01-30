@@ -201,7 +201,14 @@ Procedure C2PB_ProcessTasks(order)
             EndIf            
           Case "Delete Line #"
             DebugOut("***** Delete Line #",#False,"C2PB_ProcessTasksLevel"+Str(Order))
-            ValueA = Val(Get_TasksDetails(i,#TASK_VALUEA))            
+            ValueA = Val(Get_TasksDetails(i,#TASK_VALUEA))
+            
+          Case "Replace A->Code Block"
+            DebugOut("***** Replace A->Code Block",#False,"C2PB_ProcessTasksLevel"+Str(Order))
+            
+          Case "Insert Code Block"
+            DebugOut("***** Insert Code Block",#False,"C2PB_ProcessTasksLevel"+Str(Order))
+            
          EndSelect
       EndIf    
     Next    
@@ -599,7 +606,8 @@ Procedure C2PB_StructToPB()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 2
+; CursorPosition = 209
+; FirstLine = 183
 ; Folding = ---
 ; EnableXP
 ; DPIAware

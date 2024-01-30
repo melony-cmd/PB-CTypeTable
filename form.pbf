@@ -11,7 +11,7 @@ InitScintilla()
 
 Global Panel_2, Text_2, Text_2_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Text_2_Copy1_Copy1
 
-Global Img_MainWindow_0, Img_MainWindow_1, Img_MainWindow_2, Img_MainWindow_3, Img_MainWindow_4, Img_MainWindow_5, Img_MainWindow_6, Img_MainWindow_7, Img_MainWindow_8, Img_MainWindow_9
+Global Img_MainWindow_0, Img_MainWindow_1, Img_MainWindow_2, Img_MainWindow_3, Img_MainWindow_4, Img_MainWindow_5, Img_MainWindow_6, Img_MainWindow_7, Img_MainWindow_8, Img_MainWindow_9, Img_MainWindow_10, Img_MainWindow_11
 
 Enumeration FormWindow
   #MainWindow
@@ -28,6 +28,10 @@ Enumeration FormGadget
   #LI_PBTypeTable
   #LI_CTypeTable
   #LI_DefTypeTable
+  #BTI_AddTask_CodeBlock_Update
+  #BTI_AddTask_CodeBlock_View
+  #BTI_DeleteTask_CodeBlock
+  #BTI_AddTask_CodeBlock
   #BT_Convert
   #SCI_CText
   #BT_MARKPROCSTART
@@ -74,6 +78,8 @@ Img_MainWindow_6 = LoadImage(#PB_Any,"D:\Work\Code\PureBasic\CTypesTable\PB-CTyp
 Img_MainWindow_7 = LoadImage(#PB_Any,"D:\Work\Code\PureBasic\CTypesTable\PB-CTypeTable\Icons\information.png")
 Img_MainWindow_8 = LoadImage(#PB_Any,"D:\Work\Code\PureBasic\CTypesTable\PB-CTypeTable\Icons\book_open.png")
 Img_MainWindow_9 = LoadImage(#PB_Any,"D:\Work\Code\PureBasic\CTypesTable\PB-CTypeTable\Icons\lightning.png")
+Img_MainWindow_10 = LoadImage(#PB_Any,"D:\Work\Code\PureBasic\CTypesTable\PB-CTypeTable\Icons\page_white_edit.png")
+Img_MainWindow_11 = LoadImage(#PB_Any,"D:\Work\Code\PureBasic\CTypesTable\PB-CTypeTable\Icons\arrow_refresh.png")
 
 
 Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 664)
@@ -129,7 +135,11 @@ Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 664)
   ButtonGadget(#BT_UNMARKPROC, 207, 370, 54, 30, "Unmark")
   ButtonGadget(#BT_MARKPROCEND, 105, 370, 100, 30, "Mark Proc (End)")
   AddGadgetItem(Panel_2, -1, "Replacement Code Blocks")
-  ComboBoxGadget(#CBE_TagCodeBlocks, 242, 2, 302, 25, #PB_ComboBox_Editable)
+  ButtonImageGadget(#BTI_AddTask_CodeBlock_Update, 2, 2, 30, 25, ImageID(Img_MainWindow_11))
+  ButtonImageGadget(#BTI_AddTask_CodeBlock_View, 514, 2, 30, 25, ImageID(Img_MainWindow_10))
+  ButtonImageGadget(#BTI_DeleteTask_CodeBlock, 160, 2, 30, 25, ImageID(Img_MainWindow_1))
+  ButtonImageGadget(#BTI_AddTask_CodeBlock, 126, 2, 30, 25, ImageID(Img_MainWindow_2))
+  ComboBoxGadget(#CBE_TagCodeBlocks, 194, 2, 317, 25, #PB_ComboBox_Editable)
   ScintillaGadget(#SCI_CodeBlocksText, 2, 30, 542, 368, 0)
   AddGadgetItem(Panel_2, -1, "Tasks")
   ListIconGadget(#LI_TASKS, 5, 36, 540, 308, "Task", 100, #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)

@@ -4,6 +4,68 @@
 ; Version: 0
 ; Licence: Dilligaf
 
+; -
+; C2Tasks_WritePreferenceTasks - Write Preference Data
+; -> See: Save_TaskList(eventType)
+; -
+Macro C2Tasks_WritePreferenceTasks
+  For row = 0 To CountGadgetItems(#LI_TASKS)    
+    PreferenceGroup("Task_"+Str(row))
+      For column = 0 To 4
+        WritePreferenceString("Pram_"+Str(column),GetGadgetItemText(#LI_TASKS, row, column))          
+      Next    
+  Next  
+EndMacro
+
+; -
+; C2Tasks_WritePreferenceMarkers - Write Preference Data
+; -> See: Save_TaskList(eventType)
+; -
+Macro C2Tasks_WritePreferenceMarkers
+  markers.s=""
+  lnmax = GOSCI_GetNumberOfLines(#SCI_CText)
+  For iln = 0 To lnmax
+    cmarker = ScintillaSendMessage(#SCI_CText,#SCI_MARKERGET,iln)
+    If cmarker<0 : cmarker=0 : EndIf
+    markers + Str(cmarker) + ","
+  Next     
+  WritePreferenceString("ProcMakers",markers)  
+EndMacro
+
+; -
+; C2Tasks_ReadPreferenceTasks - Read Preference Data
+; -> See: Open_TaskList(eventType)
+; -
+Macro C2Tasks_ReadPreferenceTasks
+  While PreferenceGroup("Task_"+Str(row)) <> 0
+    Task.s = ReadPreferenceString("Pram_0","")
+    ValueA.s = ReadPreferenceString("Pram_1","")
+    ValueB.s = ReadPreferenceString("Pram_2","")
+    Parm.s = ReadPreferenceString("Pram_3","")
+    Order.s = ReadPreferenceString("Pram_4","")
+    Add_TaskList(Task,ValueA,ValueB,Parm,Order)
+    row=row+1
+  Wend
+EndMacro
+
+; -
+; C2Tasks_ReadPreferenceMarkers - Read Preference Data
+; -> See: Open_TaskList(eventType)
+; -
+Macro C2Tasks_ReadPreferenceMarkers
+  markers.s = ReadPreferenceString("ProcMakers","")
+  GOSCI_DeleteBookmarksAll(#SCI_CText)
+      
+  For iln=0 To CountString(markers,",")
+    mark = Val(StringField(markers,1+iln,","))
+    If mark = 0 : mark=-1 : EndIf
+    If mark = 2 : mark=#MARK_CIRCLEPLUS : EndIf
+    If mark = 4 : mark=#MARK_VLINE : EndIf
+    If mark = 16 : mark=#MARK_CURVELINE : EndIf
+    GOSCI_SetLineBookmark(#SCI_CText,iln,#True,mark)
+  Next 
+EndMacro
+
 ;
 ;
 ;
@@ -149,8 +211,9 @@ Procedure C2Tasks_DeleteLine()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 5
-; Folding = -
+; CursorPosition = 68
+; FirstLine = 38
+; Folding = --
 ; EnableXP
 ; DPIAware
 ; CompileSourceDirectory
