@@ -32,12 +32,15 @@
 ;   building a whole new project for something else, this has me nervious and I am expecting it to break and break pretty bad!
 ;
 ; ToDo:
-;   [ ] - Clean up the debug output file, sure I can read it but I'm pretty sure no one else is going to be able to, which makes it
+;   [x] - Clean up the debug output file, sure I can read it but I'm pretty sure no one else is going to be able to, which makes it
 ;         really hard for someone to report a bug when they can't even ready the debuglog.
-;   [ ] - Complete Code Blocks.
+;   [-] - Complete Code Blocks.
 ;         + the design is taking awhile because I'm still not entirely sure I should put a whole editor in, or open a pre-existing editor
 ;         + or go a completely different direction.
-
+;
+; Bugs:
+;   [ ] - Opening Code Block results in blank document ??
+;         in: C2CodeBlocks.pbi -> C2CodeBlock_Update() if called innocently with string = "" list cleared. Oops!
 
 ;
 ; Setup USE
@@ -890,6 +893,7 @@ Procedure SetupMainWindow()
   DebugAdd_LogLevel("15","Comments","Log Comments"                               ,"Enable/Disable Comments log file output",#True)
   DebugAdd_LogLevel("16","Tasks","Log Task"                                      ,"Enable/Disable Task log file output",#True)  
   DebugAdd_LogLevel("17","DataBase","Log Database"                               ,"Enable/Disable Database log file output",#True)  
+  DebugAdd_LogLevel("18","CodeBlock","Log CodeBlock"                             ,"Enable/Disable CodeBlock log file output",#True)  
   
   DebugClear()
   
@@ -1090,10 +1094,10 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 54
-; FirstLine = 36
+; CursorPosition = 42
+; FirstLine = 18
 ; Folding = AIAQgJu-
-; Markers = 504
+; Markers = 507
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

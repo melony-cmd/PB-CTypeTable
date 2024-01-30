@@ -47,7 +47,9 @@ Macro C2CodeBlocks_ReadPreference
       C2CodeBlock_Add(key)
       ExaminePreferenceKeys()
       While NextPreferenceKey()
-        C2CodeBlock_Update(key,PreferenceKeyValue())
+        value.s = PreferenceKeyValue()
+        If value="" : value=" " : EndIf
+        C2CodeBlock_Update(key,value)
       Wend      
     Next
     Update_TagCodeBlocks()
@@ -86,6 +88,7 @@ EndProcedure
 ; 
 ; -
 Procedure C2CodeBlock_Update(codeblockname.s,string.s = "")
+  DebugOut("C2CodeBlock_Update() -> "+codeblockname+" "+string,#False,"CodeBlock")
   If FindMapElement(cblist(),codeblockname)
     If string<>""
       AddElement(cblist()\codeln())
@@ -107,11 +110,14 @@ EndProcedure
 ; 
 ; -
 Procedure C2CodeBlock_View(id,codeblockname.s)
+  DebugOut("C2CodeBlock_View() -> "+Str(id)+" "+codeblockname,#False,"CodeBlock")
   bufstr.s = ""
   If FindMapElement(cblist(),codeblockname)
     ForEach cblist()\codeln()
+      Debug cblist()\codeln()
       bufstr = bufstr + cblist()\codeln() + Chr(10)   
     Next
+    Debug bufstr
     GOSCI_SetText(id,bufstr,#True)
   EndIf  
 EndProcedure
@@ -154,8 +160,8 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 52
-; FirstLine = 29
+; CursorPosition = 51
+; FirstLine = 36
 ; Folding = --
 ; EnableXP
 ; DPIAware
