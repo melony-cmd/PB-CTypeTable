@@ -4,6 +4,10 @@
 ; Version: 0
 ; Licence: Dilligaf
 
+;-
+;- Macros
+;-
+
 ; -
 ; C2Tasks_WritePreferenceTasks - Write Preference Data
 ; -> See: Save_TaskList(eventType)
@@ -66,10 +70,15 @@ Macro C2Tasks_ReadPreferenceMarkers
   Next 
 EndMacro
 
-;
-;
-;
-Procedure.s C2Tasks_GetPramDetails(task.s)
+;-
+;- Procedures
+;-
+
+; -
+; C2Tasks_GetPramDetails()
+; Help details output based on 'Task' name.
+; -
+Procedure.s C2Tasks_GetPramDetails(task.s)  
   Select task
     Case "Replace A->B" ; (#StartPosition,#NbOcurrences)
       ProcedureReturn "CaseSensitive|NoCase|Inplace #StartPosition,#NbOcurrences,#ForceColumnPosition"
@@ -85,9 +94,11 @@ Procedure.s C2Tasks_GetPramDetails(task.s)
       ProcedureReturn "No Task Set."
   EndSelect
 EndProcedure
-;
-;
-;
+
+; -
+; C2Tasks_Replace()
+; Replaces string found in va with vb, parms are the pass through for flags to ReplaceString()
+; -
 Procedure.s C2Tasks_Replace(inline.s,va.s,vb.s,parms.s)
   ;#PB_String_CaseSensitive :: CaseSensitive,#,#
   ;#PB_String_NoCase        :: NoCase,#,#
@@ -133,9 +144,10 @@ Procedure.s C2Tasks_Replace(inline.s,va.s,vb.s,parms.s)
   ProcedureReturn outline
 EndProcedure
 
-;
-;
-;
+; -
+; C2Tasks_RegReplace()
+; I've no idea what this actually does so we've just passed the strings along to the right places in the hope that the user does know.
+; -
 Procedure.s C2Tasks_RegReplace(inline.s, va.s, vb.s, parms.s)
    ;#PB_RegularExpression_DotAll    :: DotAll           ;'.' matches anything including newlines.
    ;#PB_RegularExpression_Extended  :: Extended         ;whitespace And '#' comments will be ignored.
@@ -149,9 +161,10 @@ Procedure.s C2Tasks_RegReplace(inline.s, va.s, vb.s, parms.s)
   EndIf
 EndProcedure
 
-;
-;
-;
+; -
+; C2Tasks_RemoveString()
+; Removes string found in va, parms are the pass through for flags to RemoveString()
+; -
 Procedure.s C2Tasks_RemoveString(inline.s,va.s,parms.s)
   ;
   ; Character Index Nb
@@ -206,16 +219,18 @@ Procedure.s C2Tasks_RemoveString(inline.s,va.s,parms.s)
   ProcedureReturn outline  
 EndProcedure
 
-;
-;
-;
+; -
+; C2Tasks_DeleteLine()
+; oddly this is incomplete 
+; -
 Procedure C2Tasks_DeleteLine()
+;-incomplete
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 82
-; FirstLine = 53
-; Folding = --
+; CursorPosition = 100
+; FirstLine = 33
+; Folding = A9
 ; EnableXP
 ; DPIAware
 ; CompileSourceDirectory

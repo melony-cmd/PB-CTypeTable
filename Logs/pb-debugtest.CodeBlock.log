@@ -1,5 +1,8 @@
-[13:10:35][0] C2CodeBlock_Update() -> FixEnumA #ZZ_SEEK_SET
-[13:10:35][0] C2CodeBlock_Update() -> FixEnumA #ZZ_SEEK_CUR
-[13:10:35][0] C2CodeBlock_Update() -> FixEnumA #ZZ_SEEK_END
-[13:10:35][0] C2CodeBlock_Update() -> FixEnumA  
-[13:10:35][0] C2CodeBlock_Update() -> FixEnumA  
+[04:04:37][0] C2CodeBlock_Update() -> FixEnumA #ZZ_SEEK_SET
+[04:04:37][0] C2CodeBlock_Update() -> FixEnumA #ZZ_SEEK_CUR
+[04:04:37][0] C2CodeBlock_Update() -> FixEnumA #ZZ_SEEK_END
+[04:04:37][0] C2CodeBlock_Update() -> FixEnumA  
+[04:04:37][0] C2CodeBlock_Update() -> FixEnumA  
+[04:05:11][0] C2CodeBlock_View() -> 20 FixEnumA
+[04:05:25][0] C2CodeBlock_Update() -> FixEnumA 
+[04:05:29][0] C2CodeBlock_View() -> 20 FixEnumA

@@ -407,7 +407,12 @@ EndStructure;
 ; * **********************************************************************/
 
 Enumeration
-	#ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+#ZZ_SEEK_SET
+#ZZ_SEEK_CUR
+#ZZ_SEEK_END
+ 
+ 
+
 EndEnumeration
 
 ;#define ZZ_EOF ((zz_u32_t)-1)

@@ -171,10 +171,12 @@ Procedure C2PB_ProcessTasks(order)
   
   For i_ln=0 To maxlines
     linein.s = GOSCI_GetLineText(#SCI_CText, i_ln)
-    For i=0 To CountGadgetItems(#LI_TASKS)-1
+    For i=0 To CountGadgetItems(#LI_TASKS)
       If Get_TasksDetails(i,#TASK_ORDER)=Str(order)
         task.s = Get_TasksDetails(i,#TASK_TYPE)
-        DebugOut("task = "+task,#False,"C2PB_ProcessTasksLevel"+Str(Order))     
+        
+        DebugOut("task = "+task,#False,"C2PB_ProcessTasksLevel"+Str(Order))
+        
         Select task            
           Case "Replace A->B"
             StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
@@ -195,9 +197,13 @@ Procedure C2PB_ProcessTasks(order)
             EndIf            
           Case "Delete Line #"
             ValueA = Val(Get_TasksDetails(i,#TASK_VALUEA))            
-          Case "Replace A->Code Block"            
+          Case "Replace A->Code Block"
+            StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
+            StrValueB.s = Get_TasksDetails(i,#TASK_VALUEB)
+            C2CodeBlock_ReplacePaste(StrValueB,StrValueA,linein,i_ln)
           Case "Insert Code Block"
-            
+          Default
+            Debug "Unsupported Task Definition!"
          EndSelect
       EndIf    
     Next    
@@ -595,8 +601,8 @@ Procedure C2PB_StructToPB()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 175
-; FirstLine = 159
+; CursorPosition = 202
+; FirstLine = 187
 ; Folding = ---
 ; EnableXP
 ; DPIAware

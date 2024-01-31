@@ -1,169 +1,169 @@
-[13:10:45][0] Struct Found... [Structure zz_info_s]
-[13:10:45][0] varstruct = [] ()
-[13:10:45][0] Struct Found... [Structure]
-[13:10:45][0] varstruct = [zz_u8_t	 num] (num.a)
-[13:10:45][0] varstruct = [const char * str] (str.l)
-[13:10:45][0] [fmt			]
-[13:10:45][0] Struct Found... [Structure]
-[13:10:45][0] varstruct = [zz_u16_t	 rate] (rate.i)
-[13:10:45][0] varstruct = [zz_u32_t	 ms] (ms.i)
-[13:10:45][0] [len			]
-[13:10:45][0] Struct Found... [Structure]
-[13:10:45][0] varstruct = [zz_u32_t	 spr] (spr.i)
-[13:10:45][0] varstruct = [zz_u8_t	 num] (num.a)
-[13:10:45][0] varstruct = [zz_u8_t	 map] (_Map.a)
-[13:10:45][0] varstruct = [zz_u16_t	 lr8] (lr8.i)
-[13:10:45][0] varstruct = [] ()
-[13:10:45][0] varstruct = [const char * name] (name.l)
-[13:10:45][0] varstruct = [const char * desc] (desc.l)
-[13:10:45][0] [mix		]
-[13:10:45][0] Struct Found... [Structure]
-[13:10:45][0] varstruct = [const char * uri] (uri.l)
-[13:10:45][0] varstruct = [zz_u32_t	 khz] (khz.i)
-[13:10:45][0] [NO SINGLE NAME]! = [set]
-[13:10:45][0] [NO SINGLE NAME]! = [sng]
-[13:10:45][0] [SOLUTION]! = [set,sng]
-[13:10:45][0] Struct Found... [Structure]
-[13:10:45][0] varstruct = [const char * album] (album.l)
-[13:10:45][0] varstruct = [const char * title] (title.l)
-[13:10:45][0] varstruct = [const char * artist] (artist.l)
-[13:10:45][0] varstruct = [const char * ripper] (ripper.l)
-[13:10:45][0] [tag			]
-[13:10:45][0] Struct Found... [Structure mixer_s]
-[13:10:45][0] varstruct = [const char * name] (name.l)
-[13:10:45][0] varstruct = [const char * desc] (desc.l)
-[13:10:45][0] varstruct = [] ()
-[13:10:45][0] varstruct = [] ()
-[13:10:45][0] varstruct = [zz_err_t (*init)(zz_core_t const, zz_u32_t)] (zz_u32_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_err_t (*init)(zz_core_t const, zz_u32_t);}
-[13:10:45][0] Args = {1} {zz_u32_t} \pb_type = {.i}
-[13:10:45][0] NewArgs = {1} {pram_a,pram_b.i}
-[13:10:45][0] Prototype.i Prototype_init(pram_a,pram_b.i) 
-[13:10:45][0] Struct Replace :   zz_err_t (*init)(zz_core_t const, zz_u32_t);
-[13:10:45][0] Insert Into Structure At Line (387):= _init.Prototype_init					
-[13:10:45][0] varstruct = [] ()
-[13:10:45][0] varstruct = [] ()
-[13:10:45][0] varstruct = [void (*free)(zz_core_t const)] (const))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {void (*free)(zz_core_t const);}
-[13:10:45][0] Args = {0} {zz_core_t const} \pb_type = {}
-[13:10:45][0] NewArgs = {0} {pram_a}
-[13:10:45][0] Prototype Prototype_free(pram_a) 
-[13:10:45][0] Struct Replace :   void (*free)(zz_core_t const);
-[13:10:45][0] Insert Into Structure At Line (390):= _free.Prototype_free					
-[13:10:45][0] varstruct = [] ()
-[13:10:45][0] varstruct = [] ()
-[13:10:45][0] varstruct = [zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t)] (zz_i16_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t);}
-[13:10:45][0] Args = {2} {zz_i16_t} \pb_type = {.l}
-[13:10:45][0] NewArgs = {2} {pram_a,pram_b,pram_c.l}
-[13:10:45][0] Prototype.l Prototype_push(pram_a,pram_b,pram_c.l) 
-[13:10:45][0] Struct Replace :   zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t);
-[13:10:45][0] Insert Into Structure At Line (393):= _push.Prototype_push					
-[13:10:45][0] Struct Found... [Structure zz_vfs_dri_s]
-[13:10:45][0] varstruct = [const char * name] (name.l)
-[13:10:45][0] varstruct = [zz_err_t (*reg)(zz_vfs_dri_t)] (reg)(zz_vfs_dri_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_err_t (*reg)(zz_vfs_dri_t);}
-[13:10:45][0] Args = {0} {zz_vfs_dri_t} \pb_type = {.i}
-[13:10:45][0] NewArgs = {0} {pram_a.i}
-[13:10:45][0] Prototype.i Prototype_reg(pram_a.i) 
-[13:10:45][0] Struct Replace :   zz_err_t (*reg)(zz_vfs_dri_t);	  ;/**< register driver.    */
-[13:10:45][0] Insert Into Structure At Line (416):= _reg.Prototype_reg					;/**< register driver.    */
-[13:10:45][0] varstruct = [zz_err_t (*unreg)(zz_vfs_dri_t)] (unreg)(zz_vfs_dri_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_err_t (*unreg)(zz_vfs_dri_t);}
-[13:10:45][0] Args = {0} {zz_vfs_dri_t} \pb_type = {.i}
-[13:10:45][0] NewArgs = {0} {pram_a.i}
-[13:10:45][0] Prototype.i Prototype_unreg(pram_a.i) 
-[13:10:45][0] Struct Replace :   zz_err_t (*unreg)(zz_vfs_dri_t);	  ;/**< un-register driver. */
-[13:10:45][0] Insert Into Structure At Line (417):= _unreg.Prototype_unreg					;/**< un-register driver. */
-[13:10:45][0] varstruct = [zz_u16_t (*ismine)(const char *)] ())
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_u16_t (*ismine)(const char *);}
-[13:10:45][0] Args = {0} {const char *} \pb_type = {.l}
-[13:10:45][0] NewArgs = {0} {pram_a.l}
-[13:10:45][0] Prototype.l Prototype_ismine(pram_a.l) 
-[13:10:45][0] Struct Replace :   zz_u16_t (*ismine)(const char *);	  ;/**< is mine.            */
-[13:10:45][0] Insert Into Structure At Line (418):= _ismine.Prototype_ismine					;/**< is mine.            */
-[13:10:45][0] varstruct = [zz_vfs_t (*new)(const char *, va_list)] (va_list))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_vfs_t (*new)(const char *, va_list);}
-[13:10:45][0] Args = {1} {va_list} \pb_type = {.l}
-[13:10:45][0] NewArgs = {1} {pram_a.l,pram_b.l}
-[13:10:45][0] Prototype.l Prototype_new(pram_a.l,pram_b.l) 
-[13:10:45][0] Struct Replace :   zz_vfs_t (*new)(const char *, va_list); ;/**< create VFS.         */
-[13:10:45][0] Insert Into Structure At Line (419):= _new.Prototype_new					;/**< create VFS.         */
-[13:10:45][0] varstruct = [void	   (*del)(zz_vfs_t)] (del)(zz_vfs_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {void   (*del)(zz_vfs_t);}
-[13:10:45][0] Args = {0} {zz_vfs_t} \pb_type = {}
-[13:10:45][0] NewArgs = {0} {pram_a}
-[13:10:45][0] Prototype Prototype_del(pram_a) 
-[13:10:45][0] Struct Replace :   void	   (*del)(zz_vfs_t);		  ;/**< destroy VFS.        */
-[13:10:45][0] Insert Into Structure At Line (420):= _del.Prototype_del					;/**< destroy VFS.        */
-[13:10:45][0] varstruct = [] (const)
-[13:10:45][0] varstruct = [char *   (*uri)(zz_vfs_t)] (uri)(zz_vfs_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {char *   (*uri)(zz_vfs_t);}
-[13:10:45][0] Args = {0} {zz_vfs_t} \pb_type = {}
-[13:10:45][0] NewArgs = {0} {pram_a}
-[13:10:45][0] Prototype Prototype_uri(pram_a) 
-[13:10:45][0] Struct Replace :   char *   (*uri)(zz_vfs_t);			;/**< get URI.       */
-[13:10:45][0] Insert Into Structure At Line (422):= _uri.Prototype_uri					;/**< get URI.       */
-[13:10:45][0] varstruct = [zz_err_t (*open)(zz_vfs_t)] (open)(zz_vfs_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_err_t (*open)(zz_vfs_t);}
-[13:10:45][0] Args = {0} {zz_vfs_t} \pb_type = {}
-[13:10:45][0] NewArgs = {0} {pram_a}
-[13:10:45][0] Prototype Prototype_open(pram_a) 
-[13:10:45][0] Struct Replace :   zz_err_t (*open)(zz_vfs_t);			;/**< open.          */
-[13:10:45][0] Insert Into Structure At Line (423):= _open.Prototype_open					;/**< open.          */
-[13:10:45][0] varstruct = [zz_err_t (*close)(zz_vfs_t)] (close)(zz_vfs_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_err_t (*close)(zz_vfs_t);}
-[13:10:45][0] Args = {0} {zz_vfs_t} \pb_type = {}
-[13:10:45][0] NewArgs = {0} {pram_a}
-[13:10:45][0] Prototype Prototype_close(pram_a) 
-[13:10:45][0] Struct Replace :   zz_err_t (*close)(zz_vfs_t);			;/**< close.         */
-[13:10:45][0] Insert Into Structure At Line (424):= _close.Prototype_close					;/**< close.         */
-[13:10:45][0] varstruct = [zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t)] (zz_u32_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t);}
-[13:10:45][0] Args = {2} {zz_u32_t} \pb_type = {.i}
-[13:10:45][0] NewArgs = {2} {pram_a,pram_b,pram_c.i}
-[13:10:45][0] Prototype.i Prototype_read(pram_a,pram_b,pram_c.i) 
-[13:10:45][0] Struct Replace :   zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t); ;/**< read.          */
-[13:10:45][0] Insert Into Structure At Line (425):= _read.Prototype_read					;/**< read.          */
-[13:10:45][0] varstruct = [zz_u32_t (*tell)(zz_vfs_t)] (tell)(zz_vfs_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_u32_t (*tell)(zz_vfs_t);}
-[13:10:45][0] Args = {0} {zz_vfs_t} \pb_type = {}
-[13:10:45][0] NewArgs = {0} {pram_a}
-[13:10:45][0] Prototype Prototype_tell(pram_a) 
-[13:10:45][0] Struct Replace :   zz_u32_t (*tell)(zz_vfs_t);			;/**< get position.  */
-[13:10:45][0] Insert Into Structure At Line (426):= _tell.Prototype_tell					;/**< get position.  */
-[13:10:45][0] varstruct = [zz_u32_t (*size)(zz_vfs_t)] (size)(zz_vfs_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_u32_t (*size)(zz_vfs_t);}
-[13:10:45][0] Args = {0} {zz_vfs_t} \pb_type = {}
-[13:10:45][0] NewArgs = {0} {pram_a}
-[13:10:45][0] Prototype Prototype_size(pram_a) 
-[13:10:45][0] Struct Replace :   zz_u32_t (*size)(zz_vfs_t);			;/**< get size.      */
-[13:10:45][0] Insert Into Structure At Line (427):= _size.Prototype_size					;/**< get size.      */
-[13:10:45][0] varstruct = [zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t)] (seek)(zz_vfs_t,zz_u32_t,zz_u8_t))
-[13:10:45][0] - Prototype ------------------------------------------------
-[13:10:45][0] noremcline = {zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);}
-[13:10:45][0] Args = {2} {zz_u8_t} \pb_type = {.a}
-[13:10:45][0] NewArgs = {2} {pram_a,pram_b.i,pram_c.a}
-[13:10:45][0] Prototype.a Prototype_seek(pram_a,pram_b.i,pram_c.a) 
-[13:10:45][0] Struct Replace :   zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	;/**< offset,whence. */
-[13:10:45][0] Insert Into Structure At Line (428):= _seek.Prototype_seek					;/**< offset,whence. */
-[13:10:45][0] Struct Found... [Structure vfs_s]
-[13:10:45][0] varstruct = [zz_vfs_dri_t dri] (dri.i)
-[13:10:45][0] varstruct = [int err] (err.i)
-[13:10:45][0] varstruct = [int pb_pos] (pb_pos.i)
-[13:10:45][0] varstruct = [int pb_len] (pb_len.i)
-[13:10:45][0] varstruct = [uint8_t pb_buf[16]] (pb_buf[16].i)
+[04:04:41][0] Struct Found... [Structure zz_info_s]
+[04:04:41][0] varstruct = [] ()
+[04:04:41][0] Struct Found... [Structure]
+[04:04:41][0] varstruct = [zz_u8_t	 num] (num.a)
+[04:04:41][0] varstruct = [const char * str] (str.l)
+[04:04:41][0] [fmt			]
+[04:04:41][0] Struct Found... [Structure]
+[04:04:41][0] varstruct = [zz_u16_t	 rate] (rate.i)
+[04:04:41][0] varstruct = [zz_u32_t	 ms] (ms.i)
+[04:04:41][0] [len			]
+[04:04:41][0] Struct Found... [Structure]
+[04:04:41][0] varstruct = [zz_u32_t	 spr] (spr.i)
+[04:04:41][0] varstruct = [zz_u8_t	 num] (num.a)
+[04:04:41][0] varstruct = [zz_u8_t	 map] (_Map.a)
+[04:04:41][0] varstruct = [zz_u16_t	 lr8] (lr8.i)
+[04:04:41][0] varstruct = [] ()
+[04:04:41][0] varstruct = [const char * name] (name.l)
+[04:04:41][0] varstruct = [const char * desc] (desc.l)
+[04:04:41][0] [mix		]
+[04:04:41][0] Struct Found... [Structure]
+[04:04:41][0] varstruct = [const char * uri] (uri.l)
+[04:04:41][0] varstruct = [zz_u32_t	 khz] (khz.i)
+[04:04:41][0] [NO SINGLE NAME]! = [set]
+[04:04:41][0] [NO SINGLE NAME]! = [sng]
+[04:04:41][0] [SOLUTION]! = [set,sng]
+[04:04:41][0] Struct Found... [Structure]
+[04:04:41][0] varstruct = [const char * album] (album.l)
+[04:04:41][0] varstruct = [const char * title] (title.l)
+[04:04:41][0] varstruct = [const char * artist] (artist.l)
+[04:04:41][0] varstruct = [const char * ripper] (ripper.l)
+[04:04:41][0] [tag			]
+[04:04:41][0] Struct Found... [Structure mixer_s]
+[04:04:41][0] varstruct = [const char * name] (name.l)
+[04:04:41][0] varstruct = [const char * desc] (desc.l)
+[04:04:41][0] varstruct = [] ()
+[04:04:41][0] varstruct = [] ()
+[04:04:41][0] varstruct = [zz_err_t (*init)(zz_core_t const, zz_u32_t)] (zz_u32_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_err_t (*init)(zz_core_t const, zz_u32_t);}
+[04:04:41][0] Args = {1} {zz_u32_t} \pb_type = {.i}
+[04:04:41][0] NewArgs = {1} {pram_a,pram_b.i}
+[04:04:41][0] Prototype.i Prototype_init(pram_a,pram_b.i) 
+[04:04:41][0] Struct Replace :   zz_err_t (*init)(zz_core_t const, zz_u32_t);
+[04:04:41][0] Insert Into Structure At Line (387):= _init.Prototype_init					
+[04:04:41][0] varstruct = [] ()
+[04:04:41][0] varstruct = [] ()
+[04:04:41][0] varstruct = [void (*free)(zz_core_t const)] (const))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {void (*free)(zz_core_t const);}
+[04:04:41][0] Args = {0} {zz_core_t const} \pb_type = {}
+[04:04:41][0] NewArgs = {0} {pram_a}
+[04:04:41][0] Prototype Prototype_free(pram_a) 
+[04:04:41][0] Struct Replace :   void (*free)(zz_core_t const);
+[04:04:41][0] Insert Into Structure At Line (390):= _free.Prototype_free					
+[04:04:41][0] varstruct = [] ()
+[04:04:41][0] varstruct = [] ()
+[04:04:41][0] varstruct = [zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t)] (zz_i16_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t);}
+[04:04:41][0] Args = {2} {zz_i16_t} \pb_type = {.l}
+[04:04:41][0] NewArgs = {2} {pram_a,pram_b,pram_c.l}
+[04:04:41][0] Prototype.l Prototype_push(pram_a,pram_b,pram_c.l) 
+[04:04:41][0] Struct Replace :   zz_i16_t (*push)(zz_core_t const, void *, zz_i16_t);
+[04:04:41][0] Insert Into Structure At Line (393):= _push.Prototype_push					
+[04:04:41][0] Struct Found... [Structure zz_vfs_dri_s]
+[04:04:41][0] varstruct = [const char * name] (name.l)
+[04:04:41][0] varstruct = [zz_err_t (*reg)(zz_vfs_dri_t)] (reg)(zz_vfs_dri_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_err_t (*reg)(zz_vfs_dri_t);}
+[04:04:41][0] Args = {0} {zz_vfs_dri_t} \pb_type = {.i}
+[04:04:41][0] NewArgs = {0} {pram_a.i}
+[04:04:41][0] Prototype.i Prototype_reg(pram_a.i) 
+[04:04:41][0] Struct Replace :   zz_err_t (*reg)(zz_vfs_dri_t);	  ;/**< register driver.    */
+[04:04:41][0] Insert Into Structure At Line (416):= _reg.Prototype_reg					;/**< register driver.    */
+[04:04:41][0] varstruct = [zz_err_t (*unreg)(zz_vfs_dri_t)] (unreg)(zz_vfs_dri_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_err_t (*unreg)(zz_vfs_dri_t);}
+[04:04:41][0] Args = {0} {zz_vfs_dri_t} \pb_type = {.i}
+[04:04:41][0] NewArgs = {0} {pram_a.i}
+[04:04:41][0] Prototype.i Prototype_unreg(pram_a.i) 
+[04:04:41][0] Struct Replace :   zz_err_t (*unreg)(zz_vfs_dri_t);	  ;/**< un-register driver. */
+[04:04:41][0] Insert Into Structure At Line (417):= _unreg.Prototype_unreg					;/**< un-register driver. */
+[04:04:41][0] varstruct = [zz_u16_t (*ismine)(const char *)] ())
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_u16_t (*ismine)(const char *);}
+[04:04:41][0] Args = {0} {const char *} \pb_type = {.l}
+[04:04:41][0] NewArgs = {0} {pram_a.l}
+[04:04:41][0] Prototype.l Prototype_ismine(pram_a.l) 
+[04:04:41][0] Struct Replace :   zz_u16_t (*ismine)(const char *);	  ;/**< is mine.            */
+[04:04:41][0] Insert Into Structure At Line (418):= _ismine.Prototype_ismine					;/**< is mine.            */
+[04:04:41][0] varstruct = [zz_vfs_t (*new)(const char *, va_list)] (va_list))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_vfs_t (*new)(const char *, va_list);}
+[04:04:41][0] Args = {1} {va_list} \pb_type = {.l}
+[04:04:41][0] NewArgs = {1} {pram_a.l,pram_b.l}
+[04:04:41][0] Prototype.l Prototype_new(pram_a.l,pram_b.l) 
+[04:04:41][0] Struct Replace :   zz_vfs_t (*new)(const char *, va_list); ;/**< create VFS.         */
+[04:04:41][0] Insert Into Structure At Line (419):= _new.Prototype_new					;/**< create VFS.         */
+[04:04:41][0] varstruct = [void	   (*del)(zz_vfs_t)] (del)(zz_vfs_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {void   (*del)(zz_vfs_t);}
+[04:04:41][0] Args = {0} {zz_vfs_t} \pb_type = {}
+[04:04:41][0] NewArgs = {0} {pram_a}
+[04:04:41][0] Prototype Prototype_del(pram_a) 
+[04:04:41][0] Struct Replace :   void	   (*del)(zz_vfs_t);		  ;/**< destroy VFS.        */
+[04:04:41][0] Insert Into Structure At Line (420):= _del.Prototype_del					;/**< destroy VFS.        */
+[04:04:41][0] varstruct = [] (const)
+[04:04:41][0] varstruct = [char *   (*uri)(zz_vfs_t)] (uri)(zz_vfs_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {char *   (*uri)(zz_vfs_t);}
+[04:04:41][0] Args = {0} {zz_vfs_t} \pb_type = {}
+[04:04:41][0] NewArgs = {0} {pram_a}
+[04:04:41][0] Prototype Prototype_uri(pram_a) 
+[04:04:41][0] Struct Replace :   char *   (*uri)(zz_vfs_t);			;/**< get URI.       */
+[04:04:41][0] Insert Into Structure At Line (422):= _uri.Prototype_uri					;/**< get URI.       */
+[04:04:41][0] varstruct = [zz_err_t (*open)(zz_vfs_t)] (open)(zz_vfs_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_err_t (*open)(zz_vfs_t);}
+[04:04:41][0] Args = {0} {zz_vfs_t} \pb_type = {}
+[04:04:41][0] NewArgs = {0} {pram_a}
+[04:04:41][0] Prototype Prototype_open(pram_a) 
+[04:04:41][0] Struct Replace :   zz_err_t (*open)(zz_vfs_t);			;/**< open.          */
+[04:04:41][0] Insert Into Structure At Line (423):= _open.Prototype_open					;/**< open.          */
+[04:04:41][0] varstruct = [zz_err_t (*close)(zz_vfs_t)] (close)(zz_vfs_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_err_t (*close)(zz_vfs_t);}
+[04:04:41][0] Args = {0} {zz_vfs_t} \pb_type = {}
+[04:04:41][0] NewArgs = {0} {pram_a}
+[04:04:41][0] Prototype Prototype_close(pram_a) 
+[04:04:41][0] Struct Replace :   zz_err_t (*close)(zz_vfs_t);			;/**< close.         */
+[04:04:41][0] Insert Into Structure At Line (424):= _close.Prototype_close					;/**< close.         */
+[04:04:41][0] varstruct = [zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t)] (zz_u32_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t);}
+[04:04:41][0] Args = {2} {zz_u32_t} \pb_type = {.i}
+[04:04:41][0] NewArgs = {2} {pram_a,pram_b,pram_c.i}
+[04:04:41][0] Prototype.i Prototype_read(pram_a,pram_b,pram_c.i) 
+[04:04:41][0] Struct Replace :   zz_u32_t (*read)(zz_vfs_t, void *, zz_u32_t); ;/**< read.          */
+[04:04:41][0] Insert Into Structure At Line (425):= _read.Prototype_read					;/**< read.          */
+[04:04:41][0] varstruct = [zz_u32_t (*tell)(zz_vfs_t)] (tell)(zz_vfs_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_u32_t (*tell)(zz_vfs_t);}
+[04:04:41][0] Args = {0} {zz_vfs_t} \pb_type = {}
+[04:04:41][0] NewArgs = {0} {pram_a}
+[04:04:41][0] Prototype Prototype_tell(pram_a) 
+[04:04:41][0] Struct Replace :   zz_u32_t (*tell)(zz_vfs_t);			;/**< get position.  */
+[04:04:41][0] Insert Into Structure At Line (426):= _tell.Prototype_tell					;/**< get position.  */
+[04:04:41][0] varstruct = [zz_u32_t (*size)(zz_vfs_t)] (size)(zz_vfs_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_u32_t (*size)(zz_vfs_t);}
+[04:04:41][0] Args = {0} {zz_vfs_t} \pb_type = {}
+[04:04:41][0] NewArgs = {0} {pram_a}
+[04:04:41][0] Prototype Prototype_size(pram_a) 
+[04:04:41][0] Struct Replace :   zz_u32_t (*size)(zz_vfs_t);			;/**< get size.      */
+[04:04:41][0] Insert Into Structure At Line (427):= _size.Prototype_size					;/**< get size.      */
+[04:04:41][0] varstruct = [zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t)] (seek)(zz_vfs_t,zz_u32_t,zz_u8_t))
+[04:04:41][0] - Prototype ------------------------------------------------
+[04:04:41][0] noremcline = {zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);}
+[04:04:41][0] Args = {2} {zz_u8_t} \pb_type = {.a}
+[04:04:41][0] NewArgs = {2} {pram_a,pram_b.i,pram_c.a}
+[04:04:41][0] Prototype.a Prototype_seek(pram_a,pram_b.i,pram_c.a) 
+[04:04:41][0] Struct Replace :   zz_err_t (*seek)(zz_vfs_t,zz_u32_t,zz_u8_t);	;/**< offset,whence. */
+[04:04:41][0] Insert Into Structure At Line (428):= _seek.Prototype_seek					;/**< offset,whence. */
+[04:04:41][0] Struct Found... [Structure vfs_s]
+[04:04:41][0] varstruct = [zz_vfs_dri_t dri] (dri.i)
+[04:04:41][0] varstruct = [int err] (err.i)
+[04:04:41][0] varstruct = [int pb_pos] (pb_pos.i)
+[04:04:41][0] varstruct = [int pb_len] (pb_len.i)
+[04:04:41][0] varstruct = [uint8_t pb_buf[16]] (pb_buf[16].i)

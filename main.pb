@@ -50,11 +50,7 @@ UseSQLiteDatabase()
 ;
 ; Declare
 ;
-Declare Callback_Scintilla_Translation(Gadget, *scinotify.SCNotification)
-Declare DebugOut(string.s,clearlog.b=#False,loglevel.s="")
-Declare Header_Import(file.s="")
-Declare.s Get_TasksDetails(idx.l,value.l=0)
-Declare Update_TagCodeBlocks()
+IncludeFile "Declarations.pbi"
 
 ;
 ; Includes
@@ -738,7 +734,6 @@ Procedure.s Get_TasksDetails(idx.l,value.l=0)
   For row = 0 To CountGadgetItems(#LI_TASKS)    
     If row = idx
       task.s = GetGadgetItemText(#LI_TASKS, row, value)
-      Debug task
       ProcedureReturn task
     EndIf      
   Next  
@@ -1096,10 +1091,10 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 740
-; FirstLine = 448
+; CursorPosition = 56
+; FirstLine = 36
 ; Folding = AIACgLu-
-; Markers = 507
+; Markers = 503
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe

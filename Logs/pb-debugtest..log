@@ -2480,3 +2480,1420 @@
 [13:10:45][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
 [13:10:45][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
 [13:10:45][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] ---> #define
+[13:32:23][0]   ZZ_OK		   /**< (0) No error.                       */
+[13:32:23][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[13:32:23][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[13:32:23][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[13:32:23][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[13:32:23][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[13:32:23][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[13:32:23][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[13:32:23][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[13:32:23][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[13:32:23][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[13:32:23][0] };
+[13:32:23][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[13:32:23][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[13:32:23][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[13:32:23][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[13:32:23][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[13:32:23][0] };
+[13:32:23][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[13:32:23][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[13:32:23][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[13:32:23][0] };
+[13:32:23][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[13:32:23][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[13:32:23][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[13:32:23][0] };
+[13:32:23][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[13:32:23][0]   ZZ_LQ				/**< (2) Low quality.     */
+[13:32:23][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[13:32:23][0]   ZZ_HQ					/**< (4) High quality.    */
+[13:32:23][0] };
+[13:32:23][0]   ZZ_LOG_ERR				/**< Log error.   */
+[13:32:23][0]   ZZ_LOG_WRN				/**< Log warning. */
+[13:32:23][0]   ZZ_LOG_INF				/**< Log info.    */
+[13:32:23][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[13:32:23][0] };
+[13:32:23][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[13:32:23][0] };
+[13:32:23][0] ---> #define
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:32:23][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] ---> #define
+[13:39:02][0]   ZZ_OK		   /**< (0) No error.                       */
+[13:39:02][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[13:39:02][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[13:39:02][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[13:39:02][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[13:39:02][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[13:39:02][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[13:39:02][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[13:39:02][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[13:39:02][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[13:39:02][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[13:39:02][0] };
+[13:39:02][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[13:39:02][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[13:39:02][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[13:39:02][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[13:39:02][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[13:39:02][0] };
+[13:39:02][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[13:39:02][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[13:39:02][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[13:39:02][0] };
+[13:39:02][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[13:39:02][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[13:39:02][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[13:39:02][0] };
+[13:39:02][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[13:39:02][0]   ZZ_LQ				/**< (2) Low quality.     */
+[13:39:02][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[13:39:02][0]   ZZ_HQ					/**< (4) High quality.    */
+[13:39:02][0] };
+[13:39:02][0]   ZZ_LOG_ERR				/**< Log error.   */
+[13:39:02][0]   ZZ_LOG_WRN				/**< Log warning. */
+[13:39:02][0]   ZZ_LOG_INF				/**< Log info.    */
+[13:39:02][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[13:39:02][0] };
+[13:39:02][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[13:39:02][0] };
+[13:39:02][0] ---> #define
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:39:02][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] ---> #define
+[13:42:46][0]   ZZ_OK		   /**< (0) No error.                       */
+[13:42:46][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[13:42:46][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[13:42:46][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[13:42:46][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[13:42:46][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[13:42:46][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[13:42:46][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[13:42:46][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[13:42:46][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[13:42:46][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[13:42:46][0] };
+[13:42:46][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[13:42:46][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[13:42:46][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[13:42:46][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[13:42:46][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[13:42:46][0] };
+[13:42:46][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[13:42:46][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[13:42:46][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[13:42:46][0] };
+[13:42:46][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[13:42:46][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[13:42:46][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[13:42:46][0] };
+[13:42:46][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[13:42:46][0]   ZZ_LQ				/**< (2) Low quality.     */
+[13:42:46][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[13:42:46][0]   ZZ_HQ					/**< (4) High quality.    */
+[13:42:46][0] };
+[13:42:46][0]   ZZ_LOG_ERR				/**< Log error.   */
+[13:42:46][0]   ZZ_LOG_WRN				/**< Log warning. */
+[13:42:46][0]   ZZ_LOG_INF				/**< Log info.    */
+[13:42:46][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[13:42:46][0] };
+[13:42:46][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[13:42:46][0] };
+[13:42:46][0] ---> #define
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:42:46][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] ---> #define
+[13:43:57][0]   ZZ_OK		   /**< (0) No error.                       */
+[13:43:57][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[13:43:57][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[13:43:57][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[13:43:57][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[13:43:57][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[13:43:57][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[13:43:57][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[13:43:57][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[13:43:57][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[13:43:57][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[13:43:57][0] };
+[13:43:57][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[13:43:57][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[13:43:57][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[13:43:57][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[13:43:57][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[13:43:57][0] };
+[13:43:57][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[13:43:57][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[13:43:57][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[13:43:57][0] };
+[13:43:57][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[13:43:57][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[13:43:57][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[13:43:57][0] };
+[13:43:57][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[13:43:57][0]   ZZ_LQ				/**< (2) Low quality.     */
+[13:43:57][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[13:43:57][0]   ZZ_HQ					/**< (4) High quality.    */
+[13:43:57][0] };
+[13:43:57][0]   ZZ_LOG_ERR				/**< Log error.   */
+[13:43:57][0]   ZZ_LOG_WRN				/**< Log warning. */
+[13:43:57][0]   ZZ_LOG_INF				/**< Log info.    */
+[13:43:57][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[13:43:57][0] };
+[13:43:57][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[13:43:57][0] };
+[13:43:57][0] ---> #define
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:43:57][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] ---> #define
+[13:57:47][0]   ZZ_OK		   /**< (0) No error.                       */
+[13:57:47][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[13:57:47][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[13:57:47][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[13:57:47][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[13:57:47][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[13:57:47][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[13:57:47][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[13:57:47][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[13:57:47][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[13:57:47][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[13:57:47][0] };
+[13:57:47][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[13:57:47][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[13:57:47][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[13:57:47][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[13:57:47][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[13:57:47][0] };
+[13:57:47][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[13:57:47][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[13:57:47][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[13:57:47][0] };
+[13:57:47][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[13:57:47][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[13:57:47][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[13:57:47][0] };
+[13:57:47][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[13:57:47][0]   ZZ_LQ				/**< (2) Low quality.     */
+[13:57:47][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[13:57:47][0]   ZZ_HQ					/**< (4) High quality.    */
+[13:57:47][0] };
+[13:57:47][0]   ZZ_LOG_ERR				/**< Log error.   */
+[13:57:47][0]   ZZ_LOG_WRN				/**< Log warning. */
+[13:57:47][0]   ZZ_LOG_INF				/**< Log info.    */
+[13:57:47][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[13:57:47][0] };
+[13:57:47][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[13:57:47][0] };
+[13:57:47][0] ---> #define
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:57:47][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] ---> #define
+[13:58:59][0]   ZZ_OK		   /**< (0) No error.                       */
+[13:58:59][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[13:58:59][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[13:58:59][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[13:58:59][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[13:58:59][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[13:58:59][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[13:58:59][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[13:58:59][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[13:58:59][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[13:58:59][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[13:58:59][0] };
+[13:58:59][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[13:58:59][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[13:58:59][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[13:58:59][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[13:58:59][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[13:58:59][0] };
+[13:58:59][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[13:58:59][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[13:58:59][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[13:58:59][0] };
+[13:58:59][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[13:58:59][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[13:58:59][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[13:58:59][0] };
+[13:58:59][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[13:58:59][0]   ZZ_LQ				/**< (2) Low quality.     */
+[13:58:59][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[13:58:59][0]   ZZ_HQ					/**< (4) High quality.    */
+[13:58:59][0] };
+[13:58:59][0]   ZZ_LOG_ERR				/**< Log error.   */
+[13:58:59][0]   ZZ_LOG_WRN				/**< Log warning. */
+[13:58:59][0]   ZZ_LOG_INF				/**< Log info.    */
+[13:58:59][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[13:58:59][0] };
+[13:58:59][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[13:58:59][0] };
+[13:58:59][0] ---> #define
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:58:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:41][0] ---> #define
+[13:59:41][0]   ZZ_OK		   /**< (0) No error.                       */
+[13:59:41][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[13:59:41][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[13:59:41][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[13:59:41][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[13:59:41][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[13:59:41][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[13:59:41][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[13:59:41][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[13:59:41][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[13:59:41][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[13:59:41][0] };
+[13:59:41][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[13:59:41][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[13:59:41][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[13:59:41][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[13:59:41][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[13:59:41][0] };
+[13:59:41][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[13:59:41][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[13:59:41][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[13:59:41][0] };
+[13:59:41][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[13:59:41][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[13:59:41][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[13:59:41][0] };
+[13:59:41][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[13:59:41][0]   ZZ_LQ				/**< (2) Low quality.     */
+[13:59:41][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[13:59:41][0]   ZZ_HQ					/**< (4) High quality.    */
+[13:59:41][0] };
+[13:59:41][0]   ZZ_LOG_ERR				/**< Log error.   */
+[13:59:41][0]   ZZ_LOG_WRN				/**< Log warning. */
+[13:59:41][0]   ZZ_LOG_INF				/**< Log info.    */
+[13:59:41][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[13:59:41][0] };
+[13:59:41][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[13:59:41][0] };
+[13:59:41][0] ---> #define
+[13:59:41][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[13:59:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[13:59:42][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] ---> #define
+[14:07:41][0]   ZZ_OK		   /**< (0) No error.                       */
+[14:07:41][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[14:07:41][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[14:07:41][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[14:07:41][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[14:07:41][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[14:07:41][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[14:07:41][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[14:07:41][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[14:07:41][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[14:07:41][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[14:07:41][0] };
+[14:07:41][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[14:07:41][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[14:07:41][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[14:07:41][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[14:07:41][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[14:07:41][0] };
+[14:07:41][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[14:07:41][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[14:07:41][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[14:07:41][0] };
+[14:07:41][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[14:07:41][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[14:07:41][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[14:07:41][0] };
+[14:07:41][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[14:07:41][0]   ZZ_LQ				/**< (2) Low quality.     */
+[14:07:41][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[14:07:41][0]   ZZ_HQ					/**< (4) High quality.    */
+[14:07:41][0] };
+[14:07:41][0]   ZZ_LOG_ERR				/**< Log error.   */
+[14:07:41][0]   ZZ_LOG_WRN				/**< Log warning. */
+[14:07:41][0]   ZZ_LOG_INF				/**< Log info.    */
+[14:07:41][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[14:07:41][0] };
+[14:07:41][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[14:07:41][0] };
+[14:07:41][0] ---> #define
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[14:07:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] ---> #define
+[14:16:15][0]   ZZ_OK		   /**< (0) No error.                       */
+[14:16:15][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[14:16:15][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[14:16:15][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[14:16:15][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[14:16:15][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[14:16:15][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[14:16:15][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[14:16:15][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[14:16:15][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[14:16:15][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[14:16:15][0] };
+[14:16:15][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[14:16:15][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[14:16:15][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[14:16:15][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[14:16:15][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[14:16:15][0] };
+[14:16:15][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[14:16:15][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[14:16:15][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[14:16:15][0] };
+[14:16:15][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[14:16:15][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[14:16:15][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[14:16:15][0] };
+[14:16:15][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[14:16:15][0]   ZZ_LQ				/**< (2) Low quality.     */
+[14:16:15][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[14:16:15][0]   ZZ_HQ					/**< (4) High quality.    */
+[14:16:15][0] };
+[14:16:15][0]   ZZ_LOG_ERR				/**< Log error.   */
+[14:16:15][0]   ZZ_LOG_WRN				/**< Log warning. */
+[14:16:15][0]   ZZ_LOG_INF				/**< Log info.    */
+[14:16:15][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[14:16:15][0] };
+[14:16:15][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[14:16:15][0] };
+[14:16:15][0] ---> #define
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[14:16:15][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] ---> #define
+[14:17:00][0]   ZZ_OK		   /**< (0) No error.                       */
+[14:17:00][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[14:17:00][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[14:17:00][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[14:17:00][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[14:17:00][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[14:17:00][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[14:17:00][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[14:17:00][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[14:17:00][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[14:17:00][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[14:17:00][0] };
+[14:17:00][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[14:17:00][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[14:17:00][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[14:17:00][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[14:17:00][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[14:17:00][0] };
+[14:17:00][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[14:17:00][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[14:17:00][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[14:17:00][0] };
+[14:17:00][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[14:17:00][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[14:17:00][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[14:17:00][0] };
+[14:17:00][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[14:17:00][0]   ZZ_LQ				/**< (2) Low quality.     */
+[14:17:00][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[14:17:00][0]   ZZ_HQ					/**< (4) High quality.    */
+[14:17:00][0] };
+[14:17:00][0]   ZZ_LOG_ERR				/**< Log error.   */
+[14:17:00][0]   ZZ_LOG_WRN				/**< Log warning. */
+[14:17:00][0]   ZZ_LOG_INF				/**< Log info.    */
+[14:17:00][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[14:17:00][0] };
+[14:17:00][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[14:17:00][0] };
+[14:17:00][0] ---> #define
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[14:17:00][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:58][0] ---> #define
+[14:17:58][0]   ZZ_OK		   /**< (0) No error.                       */
+[14:17:58][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[14:17:58][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[14:17:58][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[14:17:58][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[14:17:58][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[14:17:58][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[14:17:58][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[14:17:58][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[14:17:58][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[14:17:58][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[14:17:58][0] };
+[14:17:58][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[14:17:58][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[14:17:58][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[14:17:58][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[14:17:58][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[14:17:58][0] };
+[14:17:58][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[14:17:58][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[14:17:58][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[14:17:58][0] };
+[14:17:58][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[14:17:58][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[14:17:58][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[14:17:58][0] };
+[14:17:58][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[14:17:58][0]   ZZ_LQ				/**< (2) Low quality.     */
+[14:17:58][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[14:17:58][0]   ZZ_HQ					/**< (4) High quality.    */
+[14:17:58][0] };
+[14:17:59][0]   ZZ_LOG_ERR				/**< Log error.   */
+[14:17:59][0]   ZZ_LOG_WRN				/**< Log warning. */
+[14:17:59][0]   ZZ_LOG_INF				/**< Log info.    */
+[14:17:59][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[14:17:59][0] };
+[14:17:59][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[14:17:59][0] };
+[14:17:59][0] ---> #define
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[14:17:59][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] ---> #define
+[04:02:43][0]   ZZ_OK		   /**< (0) No error.                       */
+[04:02:43][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[04:02:43][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[04:02:43][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[04:02:43][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[04:02:43][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[04:02:43][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[04:02:43][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[04:02:43][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[04:02:43][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[04:02:43][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[04:02:43][0] };
+[04:02:43][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[04:02:43][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[04:02:43][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[04:02:43][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[04:02:43][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[04:02:43][0] };
+[04:02:43][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[04:02:43][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[04:02:43][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[04:02:43][0] };
+[04:02:43][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[04:02:43][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[04:02:43][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[04:02:43][0] };
+[04:02:43][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[04:02:43][0]   ZZ_LQ				/**< (2) Low quality.     */
+[04:02:43][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[04:02:43][0]   ZZ_HQ					/**< (4) High quality.    */
+[04:02:43][0] };
+[04:02:43][0]   ZZ_LOG_ERR				/**< Log error.   */
+[04:02:43][0]   ZZ_LOG_WRN				/**< Log warning. */
+[04:02:43][0]   ZZ_LOG_INF				/**< Log info.    */
+[04:02:43][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[04:02:43][0] };
+[04:02:43][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[04:02:43][0] };
+[04:02:43][0] ---> #define
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[04:02:43][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] ---> #define
+[04:04:41][0]   ZZ_OK		   /**< (0) No error.                       */
+[04:04:41][0]   ZZ_ERR		   /**< (1) Unspecified error.              */
+[04:04:41][0]   ZZ_EARG		   /**< (2) Argument error.                 */
+[04:04:41][0]   ZZ_ESYS		   /**< (3) System error (I/O memory ...). */
+[04:04:41][0]   ZZ_EINP		   /**< (4) Problem with input.             */
+[04:04:41][0]   ZZ_EOUT		   /**< (5) Problem with output.            */
+[04:04:41][0]   ZZ_ESNG		   /**< (6) Song error.                     */
+[04:04:41][0]   ZZ_ESET		   /**< (7) Voice set error                 */
+[04:04:41][0]   ZZ_EPLA		   /**< (8) Player error.                   */
+[04:04:41][0]   ZZ_EMIX		   /**< (9) Mixer error.                    */
+[04:04:41][0]   ZZ_666 = 66		   /**< Internal error.                     */
+[04:04:41][0] };
+[04:04:41][0]   ZZ_FORMAT_UNKNOWN	       /**< Not yet determined (must be 0)  */
+[04:04:41][0]   ZZ_FORMAT_4V		       /**< Original Atari ST song.         */
+[04:04:41][0]   ZZ_FORMAT_BUNDLE = 64       /**< Next formats are bundles.       */
+[04:04:41][0]   ZZ_FORMAT_4Q		       /**< Single song bundle (MUG UK ?).  */
+[04:04:41][0]   ZZ_FORMAT_QUAR	       /**< Multi song bundle (SC68).       */
+[04:04:41][0] };
+[04:04:41][0]   ZZ_MIXER_XTN = 254	       /**< External mixer.                 */
+[04:04:41][0]   ZZ_MIXER_DEF = 255	       /**< Default mixer id.               */
+[04:04:41][0]   ZZ_MIXER_ERR = #ZZ_MIXER_DEF  /**< Error (alias for ZZ_MIXER_DEF). */
+[04:04:41][0] };
+[04:04:41][0]   ZZ_MAP_ABCD			       /**< (0) Left:A+B Right:C+D. */
+[04:04:41][0]   ZZ_MAP_ACBD			       /**< (1) Left:A+C Right:B+D. */
+[04:04:41][0]   ZZ_MAP_ADBC			       /**< (2) Left:A+D Right:B+C. */
+[04:04:41][0] };
+[04:04:41][0]   ZZ_FQ = 1				/**< (1) Fastest quality. */
+[04:04:41][0]   ZZ_LQ				/**< (2) Low quality.     */
+[04:04:41][0]   ZZ_MQ				/**< (3) Medium quality.  */
+[04:04:41][0]   ZZ_HQ					/**< (4) High quality.    */
+[04:04:41][0] };
+[04:04:41][0]   ZZ_LOG_ERR				/**< Log error.   */
+[04:04:41][0]   ZZ_LOG_WRN				/**< Log warning. */
+[04:04:41][0]   ZZ_LOG_INF				/**< Log info.    */
+[04:04:41][0]   ZZ_LOG_DBG				/**< Log debug.   */
+[04:04:41][0] };
+[04:04:41][0]   ZZ_SEEK_SET ZZ_SEEK_CUR ZZ_SEEK_END
+[04:04:41][0] };
+[04:04:41][0] ---> #define
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[void] type=[]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[const char *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[K] type=[zz_core_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[uint8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[uint8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[uint8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_mixer_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t const]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[core] type=[zz_core_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[_Map] type=[zz_u8_t map]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[lr8] type=[zz_u16_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[clr] type=[const zz_u8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[set] type=[const zz_u8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[func] type=[zz_log_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[user] type=[void *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[newf] type=[zz_new_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[delf] type=[zz_del_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pplay] type=[zz_play_t *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[void]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[song] type=[const char *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[vset] type=[const char *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pfmt] type=[zz_u8_t *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t const]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pinfo] type=[zz_info_t *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[rate] type=[zz_u16_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[ms] type=[zz_u32_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[mixer] type=[zz_u8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[spr] type=[zz_u32_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[pcm] type=[void *]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[n] type=[zz_i16_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_i16_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[play] type=[zz_play_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u32_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[id] type=[zz_u8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[*pname] type=[const char]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[*pdesc] type=[const char]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_u8_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[dri] type=[zz_vfs_dri_t]
+[04:04:41][0] #STD_PROCEDURE / SearchTypeDef() name=[] type=[zz_err_t]

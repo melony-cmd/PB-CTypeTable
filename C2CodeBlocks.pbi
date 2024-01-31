@@ -126,10 +126,13 @@ EndProcedure
 ; C2CodeBlock_Paste()
 ; 
 ; -
-Procedure C2CodeBlock_Paste(codeblockname.s,strreplace.s="",atline=-1)
+Procedure C2CodeBlock_ReplacePaste(codeblockname.s,strreplace.s="",currentln.s="",atline=-1)
+  If FindString(currentln,strreplace)=0 : ProcedureReturn : EndIf
   If FindMapElement(cblist(),codeblockname)
+    GOSCI_SetLineText(#SCI_CText,atline,"")
     ForEach cblist()\codeln()
-      ;cblist()\codeln()
+      GOSCI_InsertLineOfText(#SCI_CText,atline+iins,cblist()\codeln())
+      iins=iins+1
     Next
   EndIf    
 EndProcedure
@@ -160,8 +163,8 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 51
-; FirstLine = 36
+; CursorPosition = 131
+; FirstLine = 109
 ; Folding = --
 ; EnableXP
 ; DPIAware
