@@ -173,13 +173,10 @@ Procedure C2PB_ProcessTasks(order)
     linein.s = GOSCI_GetLineText(#SCI_CText, i_ln)
     For i=0 To CountGadgetItems(#LI_TASKS)-1
       If Get_TasksDetails(i,#TASK_ORDER)=Str(order)
-        DebugOut("Str(order) = "+Str(order),#False,"C2PB_ProcessTasksLevel"+Str(Order))
         task.s = Get_TasksDetails(i,#TASK_TYPE)
         DebugOut("task = "+task,#False,"C2PB_ProcessTasksLevel"+Str(Order))     
-        Select task
-            
+        Select task            
           Case "Replace A->B"
-            DebugOut("***** Case Replace A->B",#False,"C2PB_ProcessTasksLevel"+Str(Order))
             StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
             StrValueB.s = Get_TasksDetails(i,#TASK_VALUEB)
             Param.s = Get_TasksDetails(i,#TASK_PARM)
@@ -188,11 +185,8 @@ Procedure C2PB_ProcessTasks(order)
               GOSCI_SetLineText(#SCI_CText,i_ln,outline)
             EndIf
             
-          Case "RegReplace"
-            DebugOut("***** RegReplace",#False,"C2PB_ProcessTasksLevel"+Str(Order))
-            
+          Case "RegReplace"            
           Case "Delete A"
-            DebugOut("***** Case Delete A",#False,"C2PB_ProcessTasksLevel"+Str(Order))
             StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
             Param.s = Get_TasksDetails(i,#TASK_PARM)
             outline.s = C2Tasks_RemoveString(linein,StrValueA,Param)
@@ -200,20 +194,15 @@ Procedure C2PB_ProcessTasks(order)
               GOSCI_SetLineText(#SCI_CText,i_ln,outline)
             EndIf            
           Case "Delete Line #"
-            DebugOut("***** Delete Line #",#False,"C2PB_ProcessTasksLevel"+Str(Order))
-            ValueA = Val(Get_TasksDetails(i,#TASK_VALUEA))
-            
-          Case "Replace A->Code Block"
-            DebugOut("***** Replace A->Code Block",#False,"C2PB_ProcessTasksLevel"+Str(Order))
-            
+            ValueA = Val(Get_TasksDetails(i,#TASK_VALUEA))            
+          Case "Replace A->Code Block"            
           Case "Insert Code Block"
-            DebugOut("***** Insert Code Block",#False,"C2PB_ProcessTasksLevel"+Str(Order))
             
          EndSelect
       EndIf    
     Next    
   Next  
-  DebugOut("Lines Dones = "+Str(i_ln),#False,"C2PB_ProcessTasksLevel"+Str(Order))
+  DebugOut("Lines Done = "+Str(i_ln),#False,"C2PB_ProcessTasksLevel"+Str(Order))
 EndProcedure
 
 ;
@@ -606,8 +595,8 @@ Procedure C2PB_StructToPB()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 209
-; FirstLine = 183
+; CursorPosition = 175
+; FirstLine = 159
 ; Folding = ---
 ; EnableXP
 ; DPIAware

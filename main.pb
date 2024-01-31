@@ -39,7 +39,7 @@
 ;         + or go a completely different direction.
 ;
 ; Bugs:
-;   [ ] - Opening Code Block results in blank document ??
+;   [x] - Opening Code Block results in blank document ??
 ;         in: C2CodeBlocks.pbi -> C2CodeBlock_Update() if called innocently with string = "" list cleared. Oops!
 
 ;
@@ -736,8 +736,10 @@ EndProcedure
 ;
 Procedure.s Get_TasksDetails(idx.l,value.l=0)
   For row = 0 To CountGadgetItems(#LI_TASKS)    
-    If row = idx 
-      ProcedureReturn GetGadgetItemText(#LI_TASKS, row, value)
+    If row = idx
+      task.s = GetGadgetItemText(#LI_TASKS, row, value)
+      Debug task
+      ProcedureReturn task
     EndIf      
   Next  
 EndProcedure
@@ -1094,9 +1096,9 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 42
-; FirstLine = 18
-; Folding = AIAQgJu-
+; CursorPosition = 740
+; FirstLine = 448
+; Folding = AIACgLu-
 ; Markers = 507
 ; EnableXP
 ; DPIAware

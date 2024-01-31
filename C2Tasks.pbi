@@ -79,6 +79,8 @@ Procedure.s C2Tasks_GetPramDetails(task.s)
       ProcedureReturn "CaseSensitive|NoCase #StartPosition,#NbOcurrences,#ForceColumnPosition"      
     Case "Delete Line #"
       ProcedureReturn "ValueA=#Line"
+    Case "Replace A->Code Block"
+      ProcedureReturn ""
     Default
       ProcedureReturn "No Task Set."
   EndSelect
@@ -211,8 +213,8 @@ Procedure C2Tasks_DeleteLine()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 68
-; FirstLine = 38
+; CursorPosition = 82
+; FirstLine = 53
 ; Folding = --
 ; EnableXP
 ; DPIAware
