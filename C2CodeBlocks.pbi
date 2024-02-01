@@ -117,7 +117,6 @@ Procedure C2CodeBlock_View(id,codeblockname.s)
       Debug cblist()\codeln()
       bufstr = bufstr + cblist()\codeln() + Chr(10)   
     Next
-    Debug bufstr
     GOSCI_SetText(id,bufstr,#True)
   EndIf  
 EndProcedure
@@ -163,8 +162,8 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 131
-; FirstLine = 109
+; CursorPosition = 118
+; FirstLine = 91
 ; Folding = --
 ; EnableXP
 ; DPIAware

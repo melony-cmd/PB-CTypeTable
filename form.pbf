@@ -9,7 +9,7 @@
 
 InitScintilla()
 
-Global Panel_2, Text_2, Text_2_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Text_2_Copy1_Copy1
+Global Text_2_Copy1_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Panel_2
 
 Global Img_MainWindow_0, Img_MainWindow_1, Img_MainWindow_2, Img_MainWindow_3, Img_MainWindow_4, Img_MainWindow_5, Img_MainWindow_6, Img_MainWindow_7, Img_MainWindow_8, Img_MainWindow_9, Img_MainWindow_10, Img_MainWindow_11
 
@@ -18,13 +18,16 @@ Enumeration FormWindow
 EndEnumeration
 
 Enumeration FormGadget
-  #ST_TypeDef
-  #BT_Delete
-  #BT_Insert
   #ST_Search
   #BT_Search
-  #CB_PureTypes
   #MainPanel
+  #ST_Extension
+  #ST_TypeDef
+  #CB_CTypes
+  #CB_PureTypes
+  #BT_Delete
+  #BT_Insert
+  #BT_Update
   #LI_PBTypeTable
   #LI_CTypeTable
   #LI_DefTypeTable
@@ -48,12 +51,6 @@ Enumeration FormGadget
   #BTI_ClearTasks
   #ST_PRAMDETAILS
   #LI_HASETTINGS
-  #CB_CTypes
-  #ST_Min
-  #ST_Max
-  #BT_Update
-  #ST_ByteSize
-  #ST_Extension
 EndEnumeration
 
 Enumeration FormMenu
@@ -102,47 +99,54 @@ Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 664)
   MenuItem(#MenuItem_7, "About", ImageID(Img_MainWindow_7))
   MenuBar()
   MenuItem(#MenuItem_9, "Quit")
-  StringGadget(#ST_TypeDef, 60, 495, 150, 25, "")
-  GadgetToolTip(#ST_TypeDef, "TypeDef")
-  ButtonGadget(#BT_Delete, 505, 584, 60, 30, "Delete")
-  ButtonGadget(#BT_Insert, 440, 584, 60, 30, "Insert")
-  StringGadget(#ST_Search, 4, 464, 510, 25, "")
-  ButtonGadget(#BT_Search, 520, 464, 45, 25, "Search")
-  ComboBoxGadget(#CB_PureTypes, 285, 555, 120, 25)
-  PanelGadget(#MainPanel, 5, 4, 560, 455)
+  StringGadget(#ST_Search, 6, 2, 510, 23, "")
+  ButtonGadget(#BT_Search, 520, 2, 45, 23, "Search")
+  PanelGadget(#MainPanel, 5, 28, 560, 586)
   AddGadgetItem(#MainPanel, -1, "PureBasic Types")
-  ListIconGadget(#LI_PBTypeTable, 5, 3, 545, 420, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  ListIconGadget(#LI_PBTypeTable, 5, 3, 545, 497, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
   AddGadgetColumn(#LI_PBTypeTable, 1, "Extension", 100)
   AddGadgetColumn(#LI_PBTypeTable, 2, "ByteSize", 100)
   AddGadgetColumn(#LI_PBTypeTable, 3, "MinRage", 100)
   AddGadgetColumn(#LI_PBTypeTable, 4, "MaxRage", 100)
   AddGadgetItem(#MainPanel, -1, "C Types")
-  ListIconGadget(#LI_CTypeTable, 5, 3, 545, 420, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  ListIconGadget(#LI_CTypeTable, 5, 3, 545, 497, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
   AddGadgetColumn(#LI_CTypeTable, 1, "ByteSize", 100)
   AddGadgetColumn(#LI_CTypeTable, 2, "MinRange", 100)
   AddGadgetColumn(#LI_CTypeTable, 3, "MaxRange", 100)
   AddGadgetColumn(#LI_CTypeTable, 4, "PBType", 100)
   AddGadgetItem(#MainPanel, -1, "TypeDefs")
-  ListIconGadget(#LI_DefTypeTable, 5, 3, 545, 420, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  StringGadget(#ST_Extension, 276, 502, 90, 25, "")
+  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 210, 502, 62, 25, "Extension:", #PB_Text_Right)
+  StringGadget(#ST_TypeDef, 58, 502, 150, 25, "")
+  GadgetToolTip(#ST_TypeDef, "TypeDef")
+  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 4, 502, 50, 25, "TypeDef:", #PB_Text_Right)
+  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 4, 474, 49, 25, "C Types:", #PB_Text_Right)
+  ComboBoxGadget(#CB_CTypes, 56, 474, 115, 25)
+  Text_2_Copy1 = TextGadget(#PB_Any, 210, 474, 51, 25, "PBTypes:", #PB_Text_Right)
+  ComboBoxGadget(#CB_PureTypes, 266, 474, 120, 25)
+  ButtonGadget(#BT_Delete, 428, 528, 60, 30, "Delete")
+  ButtonGadget(#BT_Insert, 364, 528, 60, 30, "Insert")
+  ButtonGadget(#BT_Update, 492, 528, 60, 30, "Update")
+  ListIconGadget(#LI_DefTypeTable, 3, 3, 546, 467, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
   AddGadgetColumn(#LI_DefTypeTable, 1, "CType", 100)
   AddGadgetColumn(#LI_DefTypeTable, 2, "PBType", 100)
   AddGadgetItem(#MainPanel, -1, "Header Assistant")
-  Panel_2 = PanelGadget(#PB_Any, 2, 0, 555, 428)
+  Panel_2 = PanelGadget(#PB_Any, 2, 0, 555, 564)
   AddGadgetItem(Panel_2, -1, "Header Source")
-  ButtonGadget(#BT_Convert, 390, 370, 155, 30, "Convert")
-  ScintillaGadget(#SCI_CText, 0, 3, 545, 364, @Callback_Scintilla_Translation())
-  ButtonGadget(#BT_MARKPROCSTART, 3, 370, 100, 30, "Mark Proc (Start)")
-  ButtonGadget(#BT_UNMARKPROC, 207, 370, 54, 30, "Unmark")
-  ButtonGadget(#BT_MARKPROCEND, 105, 370, 100, 30, "Mark Proc (End)")
+  ButtonGadget(#BT_Convert, 390, 502, 155, 30, "Convert")
+  ScintillaGadget(#SCI_CText, 0, 3, 545, 495, @Callback_Scintilla_Translation())
+  ButtonGadget(#BT_MARKPROCSTART, 3, 502, 100, 30, "Mark Proc (Start)")
+  ButtonGadget(#BT_UNMARKPROC, 207, 502, 54, 30, "Unmark")
+  ButtonGadget(#BT_MARKPROCEND, 105, 502, 100, 30, "Mark Proc (End)")
   AddGadgetItem(Panel_2, -1, "Replacement Code Blocks")
   ButtonImageGadget(#BTI_AddTask_CodeBlock_Update, 2, 2, 30, 25, ImageID(Img_MainWindow_11))
   ButtonImageGadget(#BTI_AddTask_CodeBlock_View, 514, 2, 30, 25, ImageID(Img_MainWindow_10))
   ButtonImageGadget(#BTI_DeleteTask_CodeBlock, 160, 2, 30, 25, ImageID(Img_MainWindow_1))
   ButtonImageGadget(#BTI_AddTask_CodeBlock, 126, 2, 30, 25, ImageID(Img_MainWindow_2))
   ComboBoxGadget(#CBE_TagCodeBlocks, 194, 2, 317, 25, #PB_ComboBox_Editable)
-  ScintillaGadget(#SCI_CodeBlocksText, 2, 30, 542, 368, 0)
+  ScintillaGadget(#SCI_CodeBlocksText, 2, 30, 542, 502, 0)
   AddGadgetItem(Panel_2, -1, "Tasks")
-  ListIconGadget(#LI_TASKS, 5, 36, 540, 308, "Task", 100, #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
+  ListIconGadget(#LI_TASKS, 5, 36, 540, 434, "Task", 100, #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
   AddGadgetColumn(#LI_TASKS, 1, "Value A", 150)
   AddGadgetColumn(#LI_TASKS, 2, "Value B", 150)
   AddGadgetColumn(#LI_TASKS, 3, "Parms", 100)
@@ -153,26 +157,11 @@ Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 664)
   ButtonImageGadget(#BTI_LOADTASK, 5, 6, 30, 25, ImageID(Img_MainWindow_4))
   ButtonImageGadget(#BTI_TaskHelp, 515, 6, 30, 25, ImageID(Img_MainWindow_0))
   ButtonImageGadget(#BTI_ClearTasks, 140, 6, 30, 25, ImageID(Img_MainWindow_9))
-  StringGadget(#ST_PRAMDETAILS, 5, 346, 540, 55, "", #PB_String_ReadOnly | #PB_String_BorderLess)
+  StringGadget(#ST_PRAMDETAILS, 5, 476, 540, 55, "", #PB_String_ReadOnly | #PB_String_BorderLess)
   AddGadgetItem(Panel_2, -1, "Settings")
-  ListIconGadget(#LI_HASETTINGS, 5, 4, 540, 386, "S", 180, #PB_ListIcon_CheckBoxes | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
+  ListIconGadget(#LI_HASETTINGS, 5, 4, 540, 528, "S", 180, #PB_ListIcon_CheckBoxes | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
   AddGadgetColumn(#LI_HASETTINGS, 1, "Description", 350)
   CloseGadgetList()
   CloseGadgetList()
-  ComboBoxGadget(#CB_CTypes, 60, 555, 115, 25)
-  StringGadget(#ST_Min, 285, 495, 120, 25, "")
-  GadgetToolTip(#ST_Min, "Min Value")
-  StringGadget(#ST_Max, 285, 525, 120, 25, "")
-  GadgetToolTip(#ST_Max, "Max Value")
-  ButtonGadget(#BT_Update, 375, 584, 60, 30, "Update")
-  Text_2 = TextGadget(#PB_Any, 212, 525, 70, 25, "Max Range:", #PB_Text_Right)
-  Text_2_Copy1 = TextGadget(#PB_Any, 212, 495, 70, 25, "Min Range:", #PB_Text_Right)
-  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 5, 495, 50, 25, "TypeDef:", #PB_Text_Right)
-  Text_2_Copy1 = TextGadget(#PB_Any, 212, 555, 70, 25, "PBTypes:", #PB_Text_Right)
-  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 5, 555, 50, 25, "C Types:", #PB_Text_Right)
-  StringGadget(#ST_ByteSize, 60, 525, 150, 25, "")
-  Text_2_Copy1 = TextGadget(#PB_Any, 5, 525, 50, 25, "ByteSize:", #PB_Text_Right)
-  StringGadget(#ST_Extension, 475, 495, 90, 25, "")
-  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 410, 495, 62, 25, "Extension:", #PB_Text_Right)
 EndProcedure
 

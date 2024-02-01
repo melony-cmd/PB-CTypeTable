@@ -16,7 +16,7 @@ Declare Update_TagCodeBlocks()
 ;
 Declare C2CodeBlock_ReplacePaste(codeblockname.s,strreplace.s="",currentln.s="",atline=-1)
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 16
+; CursorPosition = 12
 ; EnableXP
 ; DPIAware
 ; CompileSourceDirectory

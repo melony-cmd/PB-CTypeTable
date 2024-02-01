@@ -114,14 +114,13 @@ Structure ReservedWords
   reword.s
 EndStructure
 
-;
-;
-;
 Structure PrototypeList
   proc.s
   getproc.s
 EndStructure
 
+;
+;
 ;
 Global NewList PTList.PrototypeList()
 Global NewList PBTypeList.s()
@@ -865,7 +864,12 @@ Procedure SetupMainWindow()
   
   ; Scintilla Setup
   ; ScintillaSendMessage(#SCI_CText,#SCI_SETMARGINS,0)
-  GOSCI_SetColor(#SCI_CText,#GOSCI_LINENUMBERBACKCOLOR,RGB(0,0,0))  
+  GOSCI_SetColor(#SCI_CText,#GOSCI_LINENUMBERBACKCOLOR,RGB(0,0,0)) 
+  
+  ScintillaSendMessage(#SCI_CText, #SCI_SETMARGINWIDTHN, 0, 48)
+  ScintillaSendMessage(#SCI_CText, #SCI_STYLESETBACK, #STYLE_LINENUMBER, RGB(128,128,128))  
+  ScintillaSendMessage(#SCI_CText, #SCI_SETMARGINWIDTHN, 1, 16)
+    
   ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_CIRCLEPLUS,#SC_MARK_CIRCLEPLUS)  
   ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_VLINE,#SC_MARK_VLINE) 
   ScintillaSendMessage(#SCI_CText,#SCI_MARKERDEFINE,#MARK_CURVELINE,#SC_MARK_LCORNERCURVE) 
@@ -1091,10 +1095,10 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 56
-; FirstLine = 36
+; CursorPosition = 120
+; FirstLine = 96
 ; Folding = AIACgLu-
-; Markers = 503
+; Markers = 502
 ; EnableXP
 ; DPIAware
 ; Executable = CTypeTable.exe
