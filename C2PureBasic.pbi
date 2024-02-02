@@ -202,6 +202,9 @@ Procedure C2PB_ProcessTasks(order)
             StrValueB.s = Get_TasksDetails(i,#TASK_VALUEB)
             C2CodeBlock_ReplacePaste(StrValueB,StrValueA,linein,i_ln)
           Case "Insert Code Block"
+            StrValueA.s = Get_TasksDetails(i,#TASK_VALUEA)
+            StrValueB.s = Get_TasksDetails(i,#TASK_VALUEB)
+            C2CodeBlock_PasteAtLine(StrValueB,Val(StrValueA))
           Default
             Debug "Unsupported Task Definition!"
          EndSelect
@@ -601,7 +604,7 @@ Procedure C2PB_StructToPB()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 202
+; CursorPosition = 206
 ; FirstLine = 187
 ; Folding = ---
 ; EnableXP

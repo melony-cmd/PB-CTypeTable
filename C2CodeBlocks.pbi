@@ -8,6 +8,7 @@
 
 Structure CodeBlockList
   List codeln.s()
+  codeblockcompleted.b
 EndStructure
 
 Global NewMap cblist.CodeBlockList()
@@ -69,6 +70,7 @@ EndMacro
 ; -
 Procedure C2CodeBlock_Add(codeblockname.s)
   AddMapElement(cblist(),codeblockname)
+  cblist()\codeblockcompleted = #False
 EndProcedure
 
 ; -
@@ -136,6 +138,21 @@ Procedure C2CodeBlock_ReplacePaste(codeblockname.s,strreplace.s="",currentln.s="
   EndIf    
 EndProcedure
 
+; -
+; C2CodeBlock_PasteAtLine()
+; 
+; -
+Procedure C2CodeBlock_PasteAtLine(codeblockname.s,atline=-1)
+  If FindMapElement(cblist(),codeblockname)
+    If cblist()\codeblockcompleted=#False
+      ForEach cblist()\codeln()
+        GOSCI_InsertLineOfText(#SCI_CText,-1+atline+iins,cblist()\codeln())      
+        iins=iins+1
+      Next
+    EndIf
+    cblist()\codeblockcompleted=#True
+  EndIf  
+EndProcedure
 
 ;
 ; Test Fill because we don't actually have anything to use this feature with yet
@@ -162,9 +179,9 @@ EndProcedure
 
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 118
-; FirstLine = 91
-; Folding = --
+; CursorPosition = 148
+; FirstLine = 86
+; Folding = G-
 ; EnableXP
 ; DPIAware
 ; CompileSourceDirectory

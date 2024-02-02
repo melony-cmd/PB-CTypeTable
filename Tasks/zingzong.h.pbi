@@ -117,6 +117,12 @@ EndStructure
 Structure  tag;			    ;/**< meta tags.                 */
 	album.l					;/**< album or "".               */
 	title.l					;/**< title or "".               */
+;Begin Inserted Code Block
+;
+;
+;
+;End ; Inserted Code Block
+ 
 	artist.l					;/**< artist or "".              */
 	ripper.l					;/**< ripper or "".              */
 EndStructure

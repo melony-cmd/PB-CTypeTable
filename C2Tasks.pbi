@@ -13,7 +13,7 @@
 ; -> See: Save_TaskList(eventType)
 ; -
 Macro C2Tasks_WritePreferenceTasks
-  For row = 0 To CountGadgetItems(#LI_TASKS)    
+  For row = 0 To CountGadgetItems(#LI_TASKS)-1    
     PreferenceGroup("Task_"+Str(row))
       For column = 0 To 4
         WritePreferenceString("Pram_"+Str(column),GetGadgetItemText(#LI_TASKS, row, column))          
@@ -228,9 +228,8 @@ Procedure C2Tasks_DeleteLine()
 EndProcedure
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 100
-; FirstLine = 33
-; Folding = A9
+; CursorPosition = 15
+; Folding = B9
 ; EnableXP
 ; DPIAware
 ; CompileSourceDirectory
