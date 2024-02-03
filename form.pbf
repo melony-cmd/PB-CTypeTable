@@ -9,7 +9,7 @@
 
 InitScintilla()
 
-Global Text_2_Copy1_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Panel_2
+Global Text_2_Copy1_Copy1, Text_2_Copy1_Copy1, Text_2_Copy1, Panel_2
 
 Global Img_MainWindow_0, Img_MainWindow_1, Img_MainWindow_2, Img_MainWindow_3, Img_MainWindow_4, Img_MainWindow_5, Img_MainWindow_6, Img_MainWindow_7, Img_MainWindow_8, Img_MainWindow_9, Img_MainWindow_10, Img_MainWindow_11
 
@@ -18,10 +18,7 @@ Enumeration FormWindow
 EndEnumeration
 
 Enumeration FormGadget
-  #ST_Search
-  #BT_Search
   #MainPanel
-  #ST_Extension
   #ST_TypeDef
   #CB_CTypes
   #CB_PureTypes
@@ -79,7 +76,7 @@ Img_MainWindow_10 = LoadImage(#PB_Any,"D:\Work\Code\PureBasic\CTypesTable\PB-CTy
 Img_MainWindow_11 = LoadImage(#PB_Any,"D:\Work\Code\PureBasic\CTypesTable\PB-CTypeTable\Icons\arrow_refresh.png")
 
 
-Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 664)
+Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 640)
   OpenWindow(#MainWindow, x, y, width, height, "CTypeTable", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
   CreateStatusBar(0, WindowID(#MainWindow))
   AddStatusBarField(100)
@@ -99,11 +96,9 @@ Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 664)
   MenuItem(#MenuItem_7, "About", ImageID(Img_MainWindow_7))
   MenuBar()
   MenuItem(#MenuItem_9, "Quit")
-  StringGadget(#ST_Search, 6, 2, 510, 23, "")
-  ButtonGadget(#BT_Search, 520, 2, 45, 23, "Search")
-  PanelGadget(#MainPanel, 5, 28, 560, 586)
+  PanelGadget(#MainPanel, 5, 4, 560, 586)
   AddGadgetItem(#MainPanel, -1, "PureBasic Types")
-  ListIconGadget(#LI_PBTypeTable, 5, 3, 545, 497, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  ListIconGadget(#LI_PBTypeTable, 5, 3, 545, 551, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
   AddGadgetColumn(#LI_PBTypeTable, 1, "Extension", 100)
   AddGadgetColumn(#LI_PBTypeTable, 2, "ByteSize", 100)
   AddGadgetColumn(#LI_PBTypeTable, 3, "MinRage", 100)
@@ -115,19 +110,17 @@ Procedure OpenMainWindow(x = 0, y = 0, width = 570, height = 664)
   AddGadgetColumn(#LI_CTypeTable, 3, "MaxRange", 100)
   AddGadgetColumn(#LI_CTypeTable, 4, "PBType", 100)
   AddGadgetItem(#MainPanel, -1, "TypeDefs")
-  StringGadget(#ST_Extension, 276, 502, 90, 25, "")
-  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 210, 502, 62, 25, "Extension:", #PB_Text_Right)
-  StringGadget(#ST_TypeDef, 58, 502, 150, 25, "")
+  StringGadget(#ST_TypeDef, 58, 4, 150, 25, "")
   GadgetToolTip(#ST_TypeDef, "TypeDef")
-  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 4, 502, 50, 25, "TypeDef:", #PB_Text_Right)
-  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 4, 474, 49, 25, "C Types:", #PB_Text_Right)
-  ComboBoxGadget(#CB_CTypes, 56, 474, 115, 25)
-  Text_2_Copy1 = TextGadget(#PB_Any, 210, 474, 51, 25, "PBTypes:", #PB_Text_Right)
-  ComboBoxGadget(#CB_PureTypes, 266, 474, 120, 25)
-  ButtonGadget(#BT_Delete, 428, 528, 60, 30, "Delete")
-  ButtonGadget(#BT_Insert, 364, 528, 60, 30, "Insert")
-  ButtonGadget(#BT_Update, 492, 528, 60, 30, "Update")
-  ListIconGadget(#LI_DefTypeTable, 3, 3, 546, 467, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
+  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 6, 8, 50, 25, "TypeDef :", #PB_Text_Right)
+  Text_2_Copy1_Copy1 = TextGadget(#PB_Any, 214, 8, 20, 25, "C :", #PB_Text_Right)
+  ComboBoxGadget(#CB_CTypes, 238, 4, 115, 25)
+  Text_2_Copy1 = TextGadget(#PB_Any, 358, 8, 24, 25, "PB :", #PB_Text_Right)
+  ComboBoxGadget(#CB_PureTypes, 390, 4, 161, 25)
+  ButtonGadget(#BT_Delete, 490, 526, 60, 30, "Delete")
+  ButtonGadget(#BT_Insert, 4, 526, 60, 30, "Insert")
+  ButtonGadget(#BT_Update, 70, 526, 60, 30, "Update")
+  ListIconGadget(#LI_DefTypeTable, 5, 36, 546, 488, "Type", 100, #PB_ListIcon_MultiSelect | #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect)
   AddGadgetColumn(#LI_DefTypeTable, 1, "CType", 100)
   AddGadgetColumn(#LI_DefTypeTable, 2, "PBType", 100)
   AddGadgetItem(#MainPanel, -1, "Header Assistant")

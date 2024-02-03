@@ -858,8 +858,7 @@ Procedure SetupMainWindow()
   Update_DefTypeList()
   
   SetGadgetState(#CB_PureTypes,0)
-  SetGadgetState(#CB_CTypes,0)
-  SetGadgetText(#ST_Search,lnselected)    
+  SetGadgetState(#CB_CTypes,0)  
   StatusBarText(0,1,default_database)
   
   ; Scintilla Setup
@@ -965,9 +964,7 @@ Procedure MainWindow_Events(event)
         Case #BT_Delete
           Delete(EventType())          
         Case #BT_Insert
-          Insert(EventType())          
-        Case #BT_Search
-          Search(EventType())          
+          Insert(EventType())                    
         Case #MainPanel
           MainPanel(EventType())          
         Case #BT_Convert
@@ -1095,9 +1092,9 @@ DataSection
 EndDataSection
 
 ; IDE Options = PureBasic 6.03 LTS (Windows - x86)
-; CursorPosition = 120
-; FirstLine = 96
-; Folding = AIACgLu-
+; CursorPosition = 966
+; FirstLine = 640
+; Folding = AoACgLu-
 ; Markers = 502
 ; EnableXP
 ; DPIAware
